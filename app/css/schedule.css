@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif; }
+
+.schedule {
+  width: 100%; }
+
+.lecture {
+  display: flex;
+  justify-content: center;
+  margin: 20px; }
+
+.button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: 2px solid #3f2d27;
+  margin-right: 20px; }
+
+.date {
+  font-size: 25px; }
+
+.name {
+  font-size: 35px;
+  display: block; }
+
+.leftside {
+  margin-top: 50px;
+  display: inline; }
+
+.rightside {
+  display: inline;
+  margin-left: 20px;
+  margin-top: 50px; }
+
+img {
+  display: inline; }
+
+.date {
+  display: block; }
+
+.hour {
+  display: block; }
+
+.who {
+  display: block; }
+
+.title {
+  display: block; }
+
+.band {
+  width: 120%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: solid 5px;
+  position: relative;
+  z-index: 10; }
+
+.blue {
+  border: blue; }
+
+.red {
+  border: red; }
+
+.green {
+  border: green; }
