@@ -1,0 +1,28 @@
+body {
+  margin: 0; }
+
+#home {
+  background-image: url(../background.jpg);
+  height: 100vh;
+  position: relative; }
+  #home #home-topbar {
+    margin: 0 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between; }
+  #home #social-items {
+    display: inline-flex; }
+  #home #title {
+    margin: 20vh 25%;
+    display: flex;
+    text-align: center;
+    flex-direction: column; }
+    #home #title button {
+      width: 25%;
+      margin: 0 50%;
+      transform: translateX(-50%); }
+  #home #home-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 5vh;
+    transform: translateX(-50%); }
