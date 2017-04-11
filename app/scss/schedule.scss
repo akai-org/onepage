@@ -1,9 +1,9 @@
 body{
-    font-family: sans-serif;
+    color: #454545;
+    font-family: Century Gothic, sans-serif;
 }
 .schedule{
-    width: 100%;
-    
+    width: 100%;    
 }
 .lecture{
     display: flex;
@@ -17,11 +17,22 @@ body{
     padding-bottom: 8px;
     padding-left: 2px;
     padding-right:2px;
-    border: 2px solid #3f2d27;
-    margin-right: 20px; 
+    border: 1px solid #454545;
+    margin-right: 20px;
+    font-size: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #454545;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.button:hover{
+    background-color: #454545;
+    color:white;
 }
 .date{
-    font-size: 25px;
+    font-size: 35px;
 }
 .name{
     font-size: 35px;
@@ -30,6 +41,7 @@ body{
 .leftside{
     margin-top: 50px;
     display: inline;
+    margin-right: 20px;
     
 }
 .rightside{
@@ -42,33 +54,39 @@ img{
 }
 .date{
     display:block;
+    
 }
 .hour{
     display: block;
+    font-size: 25px;
+    color:#AAAAAA;
 }
 
 .who{
-    display: block; 
+    display: block;
+    font-size:13px;
+    color:#AAAAAA;
 }
 .title{
     display: block;
+    font-size: 30px;
+    font-weight: bold;
 }
 .band{
     width: 120%;
     margin-top: 5px;
-    margin-bottom: 5px;
-    border: solid 5px;
+    margin-bottom: 10px;
     position: relative;
     z-index: 10;
 }
 .blue{
-    border: blue;
+    border: solid 3px blue;
 }
 
 .red{
-    border: red;
+    border : solid 3px red;
 }
 
 .green{
-    border: green;
+    border: solid 3px green;
 }
