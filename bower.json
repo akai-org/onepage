@@ -1,0 +1,20 @@
+{
+  "name": "one-page",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "dominikbrandon <grzelak.dominik@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/akai-org/onepage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.7.0"
+  }
+}

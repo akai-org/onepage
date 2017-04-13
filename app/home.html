@@ -6,28 +6,68 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/home.css">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
     <section id="home">
         <div id="home-topbar">
-            <img src="" alt="Logo">
+            <img src="logo.svg" alt="Logo" id="home-logo">
             
-            <div id="social-items">
-                <img src="" alt="Facebook">
-                <img src="" alt="Twitter">
-            </div>
+            <span id="home-social">
+                <!--<a class="home-icon" href="https://www.facebook.com/akai.pp">
+                    <div class="home-icon-container">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a class="home-icon" href="https://twitter.com/akai_pp">
+                    <div class="home-icon-container">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a class="home-icon" href="mailto:kontakt@akai.org.pl">
+                    <div class="home-icon-container">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                </a>
+                <a class="home-icon" href="http://feeds.feedburner.com/feedburner/akai-main">
+                    <div class="home-icon-container">
+                        <i class="fa fa-rss" aria-hidden="true"></i>
+                    </div>
+                </a>-->
+                <a href="https://www.facebook.com/akai.pp" class="home-icon">
+                    <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/akai_pp" class="home-icon">
+                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:kontakt@akai.org.pl" class="home-icon">
+                    <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+                </a>
+                <a href="http://feeds.feedburner.com/feedburner/akai-main" class="home-icon">
+                    <i class="fa fa-rss fa-lg" aria-hidden="true"></i>
+                </a>
+            </span>
         </div>
         
         <div id="title">
             <h1 id="page-title">AKAI Events</h1>
             <h2 id="page-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
             
-            <button>Check our events</button>
-            <p>Button description</p>
+            <a href="#two" id="home-button" class="button"><strong>Check our events</strong></a>
+            <p id="home-button-description">Button description</p>
         </div>
         
-        <button id="home-scroll">Scroll down</button>
+        <a id="home-scroll" href="#one">
+            <div class="home-icon-container">
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+        </a>
     </section>
+    
+    <section id="one">abc</section>
+    
+    <section id="two">def</section>
     
 </body>
 </html>

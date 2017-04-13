@@ -1,37 +1,136 @@
+@import 'font-awesome.scss';
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($property, $duration, $timing) {
+  -webkit-transition: $property $duration $timing;
+     -moz-transition: $property $duration $timing;
+      -ms-transition: $property $duration $timing;
+       -o-transition: $property $duration $timing;
+          transition: $property $duration $timing;
+}
+@mixin appearance() {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+      -ms-appearance: button;
+       -o-appearance: button;
+          appearance: button;
+}
+
+$font-color: #222;
+$font-color-hover: #44f;
+$border-color: #333;
+$border-color-hover: #44f;
+$button-color: #44f;
+$button-color-hover: #66f;
+
+
+
 body {
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: $font-color;
+}
+a {
+    color: $font-color;
+    text-decoration: none;
+}
+a.button {
+    @include appearance();
+
+    text-decoration: none;
+    color: initial;
+}
+#one, #two {
+    height: 100vh;
 }
 
 #home {
     background-image: url(../background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
     position: relative;
 
+    .home-icon {
+        margin: 0 1rem;
+        @include transition(all, 0.3s, ease-out);
+        
+        &:hover {
+            color: $font-color-hover;
+            border-color: $border-color-hover;
+        }
+    }
+    
     #home-topbar {
-        margin: 0 5%;
-        width: 90%;
+        margin: 0 10%;
         display: flex;
         justify-content: space-between;
-    }
-    #social-items {
-        display: inline-flex;
+        
+        #home-logo {
+            height: 4rem;
+        }
+        #home-social {
+            display: flex;
+            align-items: center;
+        }
+        #home-logo, #home-social {
+            margin-top: 5vh;
+        }
     }
     #title {
-        margin: 20vh 25%;
+        margin: 10vh 10%;
         display: flex;
         text-align: center;
         flex-direction: column;
         
-        button {
-            width: 25%;
+        #home-button {
+            width: 12rem;
             margin: 0 50%;
             transform: translateX(-50%);
+            padding: 1rem;
+            
+            color: #ddd;
+            background-color: $button-color;
+            
+            border-style: none;
+            border-width: 0;
+            @include transition(all, 0.3s, ease-out);
+            
+            &:hover, &:focus {
+                background-color: $button-color-hover;
+            }
         }
     }
     #home-scroll {
+        height: 2.5rem;
+        width: 2.5rem;
         position: absolute;
         left: 50%;
         bottom: 5vh;
         transform: translateX(-50%);
+        
+        border-style: solid;
+        border-width: thin;
+        border-color: $border-color;
+        @include border-radius(50%);
+        @include transition(all, 0.3s, ease-out);
+        
+        .home-icon-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover {
+            color: $font-color-hover;
+            border-color: $border-color-hover;
+        }
     }
 }
