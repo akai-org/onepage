@@ -34,8 +34,14 @@ gulp.task('copyscss', function() {
     .pipe(gulp.dest('app/scss'));
 });
 
+// copy jQuery file
+gulp.task('copyjquery', function() {
+  return gulp.src('bower_components/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest('app/js'));
+});
+
 gulp.task('default', function(done) {
-    runSequence('copyfonts', 'copyscss', 'sass', 'serve', function() {
+    runSequence('copyfonts', 'copyscss', 'copyjquery', 'sass', 'serve', function() {
         done();
     });
 });

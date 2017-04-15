@@ -23,11 +23,11 @@
 }
 
 $font-color: #222;
-$font-color-hover: #44f;
-$border-color: #333;
-$border-color-hover: #44f;
-$button-color: #44f;
-$button-color-hover: #66f;
+$font-color-hover: rgb(250,162,27);
+$border-color: #222;
+$border-color-hover: rgb(250,162,27);
+$button-color: rgb(250,162,27);
+$button-color-hover: rgb(250,120,0);
 
 
 
@@ -58,23 +58,23 @@ a.button {
     height: 100vh;
     position: relative;
 
-    .home-icon {
-        margin: 0 1rem;
-        @include transition(all, 0.3s, ease-out);
-        
-        &:hover {
-            color: $font-color-hover;
-            border-color: $border-color-hover;
-        }
-    }
-    
     #home-topbar {
-        margin: 0 10%;
+        margin: 0 5%;
         display: flex;
         justify-content: space-between;
-        
+
+        .home-icon {
+            margin: 0 1em;
+            @include transition(all, 0.4s, ease-out);
+
+            &:hover {
+                color: $font-color-hover;
+                border-color: $border-color-hover;
+            }
+        }
+
         #home-logo {
-            height: 4rem;
+            height: 4em;
         }
         #home-social {
             display: flex;
@@ -85,43 +85,50 @@ a.button {
         }
     }
     #title {
-        margin: 10vh 10%;
+        margin: 15vh 10%;
         display: flex;
         text-align: center;
         flex-direction: column;
-        
+
+        #page-title {
+          font-size: 3.5em;
+          margin: 0;
+        }
+        #page-subtitle {
+          font-size: 1.2em;
+        }
         #home-button {
-            width: 12rem;
-            margin: 0 50%;
+            width: 12em;
+            margin: 5vh 50% 0 50%;
             transform: translateX(-50%);
-            padding: 1rem;
-            
-            color: #ddd;
+            padding: 1em;
+
+            color: #eee;
             background-color: $button-color;
-            
+
             border-style: none;
             border-width: 0;
-            @include transition(all, 0.3s, ease-out);
-            
+            @include transition(all, 0.4s, ease-out);
+
             &:hover, &:focus {
                 background-color: $button-color-hover;
             }
         }
     }
     #home-scroll {
-        height: 2.5rem;
-        width: 2.5rem;
+        height: 2.5em;
+        width: 2.5em;
         position: absolute;
         left: 50%;
         bottom: 5vh;
         transform: translateX(-50%);
-        
+
         border-style: solid;
-        border-width: thin;
+        border-width: medium;
         border-color: $border-color;
         @include border-radius(50%);
-        @include transition(all, 0.3s, ease-out);
-        
+        @include transition(all, 0.4s, ease-out);
+
         .home-icon-container {
             height: 100%;
             display: flex;
@@ -133,4 +140,24 @@ a.button {
             border-color: $border-color-hover;
         }
     }
+}
+
+@media all and (max-width:450px), (max-height: 600px) { // width < 450px || height < 600px
+  #home {
+    font-size: 0.8rem;
+  }
+}
+
+@media all and (max-width:350px), (max-height: 500px) { // width < 350px || height < 500px
+  #home {
+    font-size: 0.7rem;
+  }
+}
+
+@media all and (max-height: 400px) {  // height < 400px
+  #home {
+    #title {
+      margin: 5vh 10%;
+    }
+  }
 }

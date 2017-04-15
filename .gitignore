@@ -2,6 +2,10 @@
 node_modules
 bower_components
 
+app/css
+
 app/scss/_*.scss
 app/scss/font-awesome.scss
 app/fonts
+
+app/js/jquery.min.js
