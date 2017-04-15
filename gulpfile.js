@@ -6,9 +6,10 @@ var sass        = require('gulp-sass');
 gulp.task('serve', ['sass'], function() {
 
     browserSync.init({
-        server: "./app"
+        open: 'external',
+        host: 'localhost',
+        proxy: 'localhost/one-page/app/eventsDetails.html'
     });
-
     gulp.watch("app/scss/*.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
