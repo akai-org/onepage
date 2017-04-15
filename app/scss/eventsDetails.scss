@@ -21,18 +21,23 @@ section[id=eventsDetails]{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     div{
       vertical-align: top;
 
 
       .event-main {
-        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
         width: 900px;
+        padding-left: 20px;
         display: inline-block;
 
         .event-header {
           overflow: auto;
+          text-align: left;
+          padding-left: 30px;
 
           h1 {
             font-size: 40px;
@@ -57,6 +62,8 @@ section[id=eventsDetails]{
           .time-container {
             vertical-align: top;
             width: 250px;
+            padding-left: 20px;
+            text-align: left;
             h1{
               font-size: 40px;
               margin: 0;
@@ -98,43 +105,179 @@ section[id=eventsDetails]{
             }
           }
 
+
+
+
+
+
+
+
+
         }
 
       }
 
       .event-sidebar {
         display: inline-block;
-        width: 200px;
+        width: 250px;
+        text-align: left;
 
         .img-container{
           position: relative;
-          width: 200px;
-          height: 200px;
+          width: 250px;
+          height: 250px;
+          display: inline-block;
+          margin-bottom: 10px;
           img {
             position: absolute;
-            width: 200px;
+            width: 100%;
             height: auto;
           }
           .border{
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 125px;
+            height: 125px;
             bottom: -8px;
             right: -8px;
             background-color: blue;
           }
         }
+        div{
+          display: inline-block;
+          p{
+            font-size: 14px;
+          }
+          .name{
+            font-weight: bolder;
+          }
 
-        p{
-          font-size: 14px;
-        }
-        .name{
-          font-weight: bolder;
+          .description>p{
+            color: gray;
+            font-size: 14px;
+          }
         }
 
-        .description>p{
-          color: gray;
-          font-size: 14px;
+        @media screen and (max-width: 1200px)
+        {
+          width: 900px;
+          margin-top: 100px;
+          margin-left: auto;
+          margin-right: auto;
+          .img-container {
+            margin-left: 50px;
+          }
+
+          .description-container{
+            display: inline-block;
+            width: 300px;
+            margin-left: 40px;
+          }
+        }
+
+
+      }
+
+    }
+
+  }
+
+}
+
+
+/*mobile */
+
+@media screen and (max-width: 900px) {
+
+
+
+  section[id=eventsDetails] {
+
+    .event{
+      div{
+        .event-main {
+          padding-left: 10px;
+          padding-right: 10px;
+          width: auto;
+          padding-top: 50px;
+          padding-bottom: 50px;
+
+          .event-header{
+            width: auto;
+          }
+
+          .event-body {
+            display: block;
+
+            .time-container {
+              text-align: left;
+              margin-bottom: 40px;
+
+            }
+
+            .body-container {
+              display: block;
+              text-align: left;
+              padding-left: 20px;
+              width: auto;
+
+
+              p{
+                margin-top: 10px;
+                margin-bottom: 30px;
+                font-size: 20px;
+              }
+              h3{
+                margin-top: 60px;
+              }
+              ul{
+                list-style-image: url('../../img/check.resized.jpg');
+                li{
+                  margin-bottom: 15px;
+                }
+              }
+            }
+
+          }
+
+        }
+
+        .event-sidebar {
+          width: auto;
+          text-align: left;
+          display: block;
+          margin-top: 0;
+          margin-left: 30px;
+
+          .img-container{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            display: inline-block;
+            margin-left: 0;
+            margin-right: 30px;
+
+            img {
+              position: absolute;
+              width: 100%;
+              height: auto;
+            }
+            .border{
+              position: absolute;
+              width: 100px;
+              height: 100px;
+              bottom: -8px;
+              right: -8px;
+              background-color: blue;
+            }
+          }
+
+          .description-container{
+            width: calc(auto - 50px);
+            margin-left: 0;
+            margin-bottom: 50px;
+
+          }
+
         }
 
       }
@@ -142,5 +285,7 @@ section[id=eventsDetails]{
     }
 
   }
+
+
 
 }
