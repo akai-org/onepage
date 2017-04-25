@@ -1,12 +1,13 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
+var fileinclude = require('gulp-file-include');
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['html', 'sass'], function() {
 
     browserSync.init({
-        server: "./app"
+        server: "./public"
     });
 
     gulp.watch("app/scss/*.scss", ['sass']);
@@ -17,8 +18,17 @@ gulp.task('serve', ['sass'], function() {
 gulp.task('sass', function() {
     return gulp.src("app/scss/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("public/css"))
         .pipe(browserSync.stream());
+});
+
+gulp.task('html', function() {
+  return gulp.src("app/index.html")
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest("public/"));
 });
 
 gulp.task('default', ['serve']);
