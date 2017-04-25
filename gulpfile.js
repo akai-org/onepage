@@ -7,9 +7,9 @@ var fileinclude = require('gulp-file-include');
 gulp.task('serve', ['html', 'sass', 'copy'], function() {
 
     browserSync.init({
-
         server: "./public"
     });
+
     gulp.watch("app/scss/*.scss", ['sass']);
     gulp.watch("app/img/*", ['copy']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
@@ -40,6 +40,3 @@ gulp.task('copy', function() {
 });
 
 gulp.task('default', ['serve']);
-
-
-
