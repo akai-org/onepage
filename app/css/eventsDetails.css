@@ -72,7 +72,7 @@ section[id=eventsDetails] {
             section[id=eventsDetails] .event div .event-main .event-body .body-container h3 {
               margin-top: 60px; }
             section[id=eventsDetails] .event div .event-main .event-body .body-container ul {
-              list-style-image: url("../../img/check.resized.jpg"); }
+              list-style-image: url("../img/check.resized.jpg"); }
               section[id=eventsDetails] .event div .event-main .event-body .body-container ul li {
                 margin-bottom: 15px; }
       section[id=eventsDetails] .event div .event-sidebar {
