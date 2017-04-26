@@ -1,5 +1,5 @@
-# Onepage project
-=================
+Onepage project
+===============
 
 Project of a onepage website template with interchangealbe sections, dedicated to promoting events and workshops.
 
