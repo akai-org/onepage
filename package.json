@@ -18,8 +18,10 @@
   "homepage": "https://github.com/akai-org/onepage#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
+    "gulp-file-include": "^1.1.0",
     "gulp-sass": "^3.1.0",
-    "run-sequence": "^1.2.2"
+    "jquery": "^3.2.1"
   }
 }

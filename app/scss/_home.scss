@@ -1,5 +1,3 @@
-@import 'font-awesome.scss';
-
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -51,7 +49,7 @@ a.button {
 }
 
 #home {
-    background-image: url(../background.jpg);
+    background-image: url(../img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

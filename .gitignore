@@ -1,11 +1,3 @@
-# Created by .ignore support plugin (hsz.mobi)
 node_modules
-bower_components
-
-app/css
-
-app/scss/_*.scss
-app/scss/font-awesome.scss
-app/fonts
-
-app/js/jquery.min.js
+public
+.idea

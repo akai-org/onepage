@@ -1,47 +1,71 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
-var runSequence = require('run-sequence');
+var fileinclude = require('gulp-file-include');
 
 // Static Server + watching scss/html files
-gulp.task('serve', function() {
+gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery'], function() {
 
     browserSync.init({
-        server: "./app"
+        server: "./public"
     });
 
     gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/img/*", ['copy']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
+
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src("app/scss/*.scss")
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("public/css"))
         .pipe(browserSync.stream());
 });
 
-// copy Font Awesome fonts
-gulp.task('copyfonts', function() {
-   return gulp.src('./bower_components/font-awesome/fonts/**/*.{ttf,woff,woff2,eot,svg}')
-   .pipe(gulp.dest('app/fonts'));
+gulp.task('html', function() {
+  return gulp.src("app/index.html")
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest("public/"));
 });
 
-// copy Font Awesome scss
-gulp.task('copyscss', function() {
-   return gulp.src('bower_components/font-awesome/scss/**/*')
-    .pipe(gulp.dest('app/scss'));
+// merge & copy JS files
+gulp.task('js', function() {
+  return gulp.src("app/js/main.js")
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest("public/js/"));
+});
+
+// copy images
+gulp.task('copy', function() {
+    return gulp.src("app/img/*")
+        .pipe(gulp.dest("public/img"))
+        .pipe(browserSync.stream());
 });
 
 // copy jQuery file
 gulp.task('copyjquery', function() {
-  return gulp.src('bower_components/jquery/dist/jquery.min.js')
-    .pipe(gulp.dest('app/js'));
+  return gulp.src('node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('default', function(done) {
-    runSequence('copyfonts', 'copyscss', 'copyjquery', 'sass', 'serve', function() {
-        done();
-    });
+// copy Font Awesome fonts
+gulp.task('copyfa', function() {
+   return gulp.src('node_modules/font-awesome/fonts/**/*.{ttf,woff,woff2,eot,svg}')
+   .pipe(gulp.dest('public/fonts'));
 });
+
+// copy Font Awesome css
+gulp.task('copyfacss', function() {
+   return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
+    .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('default', ['serve']);
