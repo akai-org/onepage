@@ -1,0 +1,161 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin transition($property, $duration, $timing) {
+  -webkit-transition: $property $duration $timing;
+     -moz-transition: $property $duration $timing;
+      -ms-transition: $property $duration $timing;
+       -o-transition: $property $duration $timing;
+          transition: $property $duration $timing;
+}
+@mixin appearance() {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+      -ms-appearance: button;
+       -o-appearance: button;
+          appearance: button;
+}
+
+$font-color: #222;
+$font-color-hover: rgb(250,162,27);
+$border-color: #222;
+$border-color-hover: rgb(250,162,27);
+$button-color: rgb(250,162,27);
+$button-color-hover: rgb(250,120,0);
+
+
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: $font-color;
+}
+a {
+    color: $font-color;
+    text-decoration: none;
+}
+a.button {
+    @include appearance();
+
+    text-decoration: none;
+    color: initial;
+}
+#one, #two {
+    height: 100vh;
+}
+
+#home {
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    position: relative;
+
+    #home-topbar {
+        margin: 0 5%;
+        display: flex;
+        justify-content: space-between;
+
+        .home-icon {
+            margin: 0 1em;
+            @include transition(all, 0.4s, ease-out);
+
+            &:hover {
+                color: $font-color-hover;
+                border-color: $border-color-hover;
+            }
+        }
+
+        #home-logo {
+            height: 4em;
+        }
+        #home-social {
+            display: flex;
+            align-items: center;
+        }
+        #home-logo, #home-social {
+            margin-top: 5vh;
+        }
+    }
+    #title {
+        margin: 15vh 10%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+
+        #page-title {
+          font-size: 3.5em;
+          margin: 0;
+        }
+        #page-subtitle {
+          font-size: 1.2em;
+        }
+        #home-button {
+            width: 12em;
+            margin: 5vh 50% 0 50%;
+            transform: translateX(-50%);
+            padding: 1em;
+
+            color: #eee;
+            background-color: $button-color;
+
+            border-style: none;
+            border-width: 0;
+            @include transition(all, 0.4s, ease-out);
+
+            &:hover, &:focus {
+                background-color: $button-color-hover;
+            }
+        }
+    }
+    #home-scroll {
+        height: 2.5em;
+        width: 2.5em;
+        position: absolute;
+        left: 50%;
+        bottom: 5vh;
+        transform: translateX(-50%);
+
+        border-style: solid;
+        border-width: medium;
+        border-color: $border-color;
+        @include border-radius(50%);
+        @include transition(all, 0.4s, ease-out);
+
+        .home-icon-container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover {
+            color: $font-color-hover;
+            border-color: $border-color-hover;
+        }
+    }
+}
+
+@media all and (max-width:450px), (max-height: 600px) { // width < 450px || height < 600px
+  #home {
+    font-size: 0.8rem;
+  }
+}
+
+@media all and (max-width:350px), (max-height: 500px) { // width < 350px || height < 500px
+  #home {
+    font-size: 0.7rem;
+  }
+}
+
+@media all and (max-height: 400px) {  // height < 400px
+  #home {
+    #title {
+      margin: 5vh 10%;
+    }
+  }
+}
