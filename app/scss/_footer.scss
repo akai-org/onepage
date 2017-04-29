@@ -2,36 +2,38 @@ footer{
 	background-color: #fffefc;
 	padding: 20px;
 	width: 100%;
-}
-.akai-logo{
-	display: inline;
-	margin-left: 40%;
-	img{
-		opacity: 0.8;
-		height: 70px;
-		width:  70px;
-		&:hover{
-			opacity: 1;
-		}
-	}
-}
-.social-button
-{
-	display: inline;
-	height: auto;
-	width:auto;
 
-	i{
-		margin-left: 1%;
-		color: #a3a2a1;
-		&:hover{
-		color: #51514f;
+	.footer-logo{
+		display: inline;
+		margin-left: 40%;
+		img{
+			opacity: 0.8;
+			height:	51px;
+			width:  60px;
+			&:hover{
+				opacity: 1;
+			}
 		}
 	}
-}
-p{
-	font-family: Lato;
-	font-size: 13px;
-	color: #31314d;
-	margin-left: 40%;
+
+	.footer-socials
+	{
+		display: inline;
+		height: auto;
+		width:auto;
+
+		.social-icon{
+			margin-left: 1%;
+			color: #a3a2a1;
+			&:hover{
+			color: #51514f;
+			}
+		}
+	}
+	p{
+		font-family: Lato;
+		font-size: 13px;
+		color: #31314d;
+		margin-left: 40%;
+	}
 }
