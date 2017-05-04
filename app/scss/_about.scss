@@ -1,0 +1,30 @@
+$font-color: #222;
+$font-color-hover: rgb(250,162,27);
+$border-color: #222;
+$border-color-hover: rgb(250,162,27);
+$button-color: rgb(250,162,27);
+$button-color-hover: rgb(250,120,0);
+
+#about {
+  color: #222;
+  margin: 10vh 10%;
+  display: flex;
+  align-items: flex-end;
+
+  .about-column {
+    width: 50%;
+
+    h2 {
+      color: $button-color;
+      font-size: 1em;
+    }
+    .divider {
+      width: 3em;
+      border-top: medium solid $button-color;
+      margin-bottom: 3em;
+    }
+    img {
+      margin: 0 15%;
+    }
+  }
+}
