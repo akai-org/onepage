@@ -10,7 +10,7 @@ html, body {
   margin: 0;
 }
 
-#contact {
+.contact {
   color: $heading-color;
   width: 100%;
   background: $bg-color;
@@ -22,7 +22,7 @@ html, body {
     width: 80%;
     text-align: center;
 
-    h2 {
+    .contact-heading {
       font-size: 2.6rem;
 
       &::after {
@@ -35,19 +35,19 @@ html, body {
       }
     }
 
-    p {
+    .contact-info {
       margin: 1.5rem 3rem 4rem;
       color: $text-color;
       line-height: 2.6rem;
       font-size: 1.5rem;
     }
 
-    form {
+    .contact-form {
       margin: 0 auto 2.5rem;
       display: block;
       max-width: 35rem;
 
-      input, textarea {
+      .email, .message {
         box-sizing: border-box;
         font-family: inherit;
         font-size: 1.5rem;
@@ -56,21 +56,23 @@ html, body {
         padding: 1.5rem;
         border-bottom: $border;
         background: transparent;
-        opacity: .6;
-        color: #777;
+        opacity: .8;
+        color: $text-color;
       }
 
-      textarea {
-        margin: 1rem 0;
+      .message {
+        margin: 1.8rem 0;
         resize: none;
       }
 
-      .join-btn {
+      .send-btn {
         font-family: inherit;
+        font-size: 1.4rem;
+        font-weight: bold;
         color: #fff;
-        width: 20rem;
+        width: 22rem;
         padding: 1.2rem 1rem;
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
         background: $akai-yellow;
         border: none;
         border-radius: 25px;
