@@ -1,0 +1,39 @@
+@mixin filter($angle) {
+  -webkit-filter: hue-rotate($angle);
+          filter: hue-rotate($angle);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+$font-color: #222;
+$font-color-hover: rgb(250,162,27);
+$border-color: #222;
+$border-color-hover: rgb(250,162,27);
+$button-color: rgb(250,162,27);
+$button-color-hover: rgb(250,120,0);
+
+#date {
+  margin: 10vh 30%;
+  color: $font-color;
+  display: flex;
+  text-align: center;
+
+  .date-column {
+    width: 50%;
+
+    img {
+      width: 5em;
+      @include filter(90deg);
+    }
+    h1 {
+
+    }
+    h2 {
+      color: #555;
+      font-size: 1em;
+    }
+  }
+}
