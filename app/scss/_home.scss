@@ -20,9 +20,9 @@
           appearance: button;
 }
 
-$font-color: #222;
+$font-color: #eee;
 $font-color-hover: rgb(250,162,27);
-$border-color: #222;
+$border-color: #eee;
 $border-color-hover: rgb(250,162,27);
 $button-color: rgb(250,162,27);
 $button-color-hover: rgb(250,120,0);
@@ -31,8 +31,6 @@ $button-color-hover: rgb(250,120,0);
 
 body {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: $font-color;
 }
 a {
     color: $font-color;
@@ -41,96 +39,91 @@ a {
 a.button {
     @include appearance();
 
-    text-decoration: none;
-    color: initial;
+    padding: 0.7em 3em;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #eee;
+    background-color: $button-color;
+    @include border-radius(2em);
+    border-style: none;
+    border-width: 0;
+
+    @include transition(all, 0.4s, ease-out);
+
+    &:hover, &:focus {
+        background-color: $button-color-hover;
+    }
 }
-#one, #two {
-    height: 100vh;
+a.button-alt {
+  background-color: transparent;
+  border-style: solid;
+  border-width: thin;
 }
 
 #home {
-    background-image: url(../img/background.jpg);
+    // background-image: url(../img/background.jpg);
+    background-color: #444;
+    color: $font-color;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
     position: relative;
 
-    #home-topbar {
-        margin: 0 5%;
+    .home-topbar {
+        margin: 0 10%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
-        .home-icon {
-            margin: 0 1em;
-            @include transition(all, 0.4s, ease-out);
-
-            &:hover {
-                color: $font-color-hover;
-                border-color: $border-color-hover;
-            }
+        .home-logo {
+          height: 4em;
         }
-
-        #home-logo {
-            height: 4em;
-        }
-        #home-social {
-            display: flex;
-            align-items: center;
-        }
-        #home-logo, #home-social {
-            margin-top: 5vh;
+        .home-logo, .button {
+          margin-top: 10vh;
         }
     }
-    #title {
-        margin: 15vh 10%;
+    .home-title {
+        margin: 10vh 20%;
         display: flex;
         text-align: center;
         flex-direction: column;
 
-        #page-title {
+        .page-subtitle {
+          font-size: 1.2em;
+        }
+        .page-title {
           font-size: 3.5em;
           margin: 0;
         }
-        #page-subtitle {
-          font-size: 1.2em;
+        .divider {
+          width: 3em;
+          border-top: medium solid $button-color;
+          margin: .5em 50%;
+          transform: translateX(-50%);
         }
-        #home-button {
-            width: 12em;
-            margin: 5vh 50% 0 50%;
-            transform: translateX(-50%);
-            padding: 1em;
-
-            color: #eee;
-            background-color: $button-color;
-
-            border-style: none;
-            border-width: 0;
-            @include transition(all, 0.4s, ease-out);
-
-            &:hover, &:focus {
-                background-color: $button-color-hover;
-            }
+        .page-description {
+          font-size: 0.8em;
+        }
+        a.button {
+          width: 10em;
+          margin: 0 50%;
+          transform: translateX(-50%);
         }
     }
-    #home-scroll {
-        height: 2.5em;
-        width: 2.5em;
+    .home-scroll {
+        font-size: 0.8em;
         position: absolute;
         left: 50%;
         bottom: 5vh;
         transform: translateX(-50%);
-
-        border-style: solid;
-        border-width: medium;
-        border-color: $border-color;
-        @include border-radius(50%);
         @include transition(all, 0.4s, ease-out);
 
         .home-icon-container {
             height: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
         }
         &:hover {
@@ -154,7 +147,7 @@ a.button {
 
 @media all and (max-height: 400px) {  // height < 400px
   #home {
-    #title {
+    .title {
       margin: 5vh 10%;
     }
   }
