@@ -37,20 +37,18 @@ a {
     text-decoration: none;
 }
 a.button {
-    @include appearance();
-
     padding: 0.7em 3em;
     font-size: 0.9em;
     font-weight: bold;
-    color: #eee;
+    color: $font-color;
     background-color: $button-color;
-    @include border-radius(2em);
     border-style: none;
     border-width: 0;
-
+    @include appearance();
+    @include border-radius(2em);
     @include transition(all, 0.4s, ease-out);
 
-    &:hover, &:focus {
+    &:hover {
         background-color: $button-color-hover;
     }
 }
@@ -58,17 +56,24 @@ a.button-alt {
   background-color: transparent;
   border-style: solid;
   border-width: thin;
+
+  &:hover {
+    background-color: $button-color-hover;
+    border-color: $button-color-hover;
+  }
 }
 
 #home {
-    // background-image: url(../img/background.jpg);
-    background-color: #444;
+    background-image: url(../img/background.jpg);
+    // background-color: #444;
     color: $font-color;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     height: 100vh;
     position: relative;
+    font-size: 1.2em;
 
     .home-topbar {
         margin: 0 10%;
@@ -80,42 +85,43 @@ a.button-alt {
           height: 4em;
         }
         .home-logo, .button {
-          margin-top: 10vh;
+          margin-top: 5vh;
         }
     }
     .home-title {
-        margin: 10vh 20%;
+        margin: 20vh 25%;
         display: flex;
         text-align: center;
         flex-direction: column;
 
         .page-subtitle {
           font-size: 1.2em;
+          margin: 0;
         }
         .page-title {
-          font-size: 3.5em;
+          font-size: 4em;
           margin: 0;
         }
         .divider {
           width: 3em;
           border-top: medium solid $button-color;
-          margin: .5em 50%;
+          margin: 1vh 50% 2vh 50%;
           transform: translateX(-50%);
         }
         .page-description {
-          font-size: 0.8em;
+          font-size: 1em;
         }
         a.button {
           width: 10em;
-          margin: 0 50%;
+          margin: 5vh 50% 0 50%;
           transform: translateX(-50%);
         }
     }
     .home-scroll {
-        font-size: 0.8em;
+        font-size: 0.9em;
         position: absolute;
         left: 50%;
-        bottom: 5vh;
+        bottom: 3vh;
         transform: translateX(-50%);
         @include transition(all, 0.4s, ease-out);
 
