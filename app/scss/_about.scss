@@ -1,18 +1,12 @@
-$font-color: #222;
-$font-color-hover: rgb(250,162,27);
-$border-color: #222;
-$border-color-hover: rgb(250,162,27);
-$button-color: rgb(250,162,27);
-$button-color-hover: rgb(250,120,0);
-
 #about {
   color: #222;
-  margin: 10vh 10%;
+  margin-top: 10vh;
   display: flex;
   align-items: flex-end;
 
-  .about-column {
-    width: 50%;
+  .about-left-column {
+    margin-left: 20%;
+    width: 30%;
 
     h2 {
       color: $button-color;
@@ -23,8 +17,16 @@ $button-color-hover: rgb(250,120,0);
       border-top: medium solid $button-color;
       margin-bottom: 3em;
     }
+    p:last-child {
+      margin-bottom: 10vh;
+    }
+  }
+  .about-right-column {
+    width: 50%;
+
     img {
-      margin: 0 15%;
+      width: 80%;
+      margin: 0 10%;
     }
   }
 }
