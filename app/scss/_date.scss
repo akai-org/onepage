@@ -19,13 +19,14 @@ $button-color-hover: rgb(250,120,0);
   margin: 10vh 30%;
   color: $font-color;
   display: flex;
+  justify-content: space-between;
   text-align: center;
 
   .date-column {
-    width: 50%;
+    width: 40%;
 
     img {
-      width: 5em;
+      width: 6em;
       @include filter(90deg);
     }
     h1 {
