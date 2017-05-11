@@ -1,65 +1,99 @@
-section[id=contact] {
-  font-family: Arial, sans-serif;
-  width: 100%;
-  background: #EFEFEF;
-  padding: 100px 0;
-  position: relative;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition($property, $duration, $timing) {
+  -webkit-transition: $property $duration $timing;
+  -moz-transition: $property $duration $timing;
+  -ms-transition: $property $duration $timing;
+  -o-transition: $property $duration $timing;
+  transition: $property $duration $timing;
+}
 
-  &::before {
-    content: '';
-    height: 400px;
-    display: block;
-    background: orange;
-    padding: 30px 0;
-    box-shadow: 0 0 50px -10px #303030;
-  }
+.contact {
+  color: $heading-color;
+  width: 100%;
+  background: $bg-color;
+  padding: 5rem 0;
 
   .contact-box {
-    position: absolute;
-    width: 50%;
-    left: 25%;
-    right: 25%;
-    top: 50%;
-    transform: translateY(-50%);
+    margin: 0 auto;
+    max-width: 65rem;
+    width: 80%;
     text-align: center;
-    background: #FFF;
-    padding: 30px 0;
-    border-radius: 2px;
-    box-shadow: 0 20px 80px -30px #303030;
 
-    p {
-      margin: 40px 30px;
+    .contact-heading {
+      font-size: 2.6rem;
+
+      &::after {
+        content: '';
+        background: $akai-yellow;
+        width: 4.5rem;
+        height: .3rem;
+        margin: 2.5rem auto;
+        display: block;
+      }
     }
 
-    form {
-      margin: 0 auto 30px;
-      display: block;
-      max-width: 350px;
+    .contact-info {
+      margin: 1.5rem 3rem 4rem;
+      color: $text-color;
+      line-height: 2.6rem;
+      font-size: 1.5rem;
+    }
 
-      input, textarea {
-        font-family: Arial, sans-serif;
+    .contact-form {
+      margin: 0 auto 2.5rem;
+      display: block;
+      max-width: 35rem;
+
+      .email, .message {
         box-sizing: border-box;
+        font-family: inherit;
+        font-size: 1.5rem;
+        border: none;
         width: 100%;
-        padding: 10px 20px;
-        border: 1px solid #CCC;
-        border-radius: 2px;
+        padding: 1.5rem;
+        border-bottom: $border;
+        background: transparent;
+        opacity: .8;
+        color: $text-color;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.disable:invalid {
+          border-color: $borderInvalid;
+        }
       }
 
-      textarea {
-        margin: 10px 0;
+      .message {
+        margin: 1.8rem 0;
         resize: none;
       }
 
-      .join-btn {
-        width: 100%;
-        padding: 10px;
-        background: orange;
+      .send-btn {
+        font-family: inherit;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        width: 22rem;
+        padding: 1.2rem 1rem;
+        margin-top: 1.5rem;
+        background: $akai-yellow;
         border: none;
-        border-radius: 2px;
+        @include border-radius(25px);
+        box-shadow: 0 5px 30px -5px #aaa;
+        @include transition(all, 0.4s, ease-out);
 
         &:hover {
-          background: #E47C00;
-          color: #FFF;
+          background: darken($akai-yellow, 6%);
+          color: #fff;
+
         }
       }
 
