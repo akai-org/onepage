@@ -10,7 +10,9 @@ gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjq
         server: "./public"
     });
 
-    gulp.watch("app/scss/*.scss", ['sass']);    gulp.watch("app/img/*", ['copy']);
+    gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/img/*", ['copy']);
+    gulp.watch("app/*.html",['html']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 
 });
