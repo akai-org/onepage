@@ -1,10 +1,4 @@
-﻿$orange: #ff9f21;
-
-
-@mixin shadow(){
-
-}
-
+﻿
 
 section[class=event-detail-container]{
   width: 100%;
@@ -101,6 +95,7 @@ section[class=event-detail-container]{
       display: inline-block;
       position: absolute;
       left: -25px;
+      top: -3px;
 
       color: orange;
       font-size: 20px;
@@ -113,18 +108,33 @@ section[class=event-detail-container]{
     margin: 0;
     box-sizing: border-box;
     position: relative;
+    z-index: 10;
 
     img{
-
+      position: relative;
       width: 100%;
       height: auto;
       border-radius: 50%;
-      -webkit-box-shadow: 3px 3px 5px 0px rgba(120,120,120,1);
-      -moz-box-shadow: 3px 3px 5px 0px rgba(120,120,120,1);
-      box-shadow: 3px 3px 5px 0px rgba(120,120,120,1);
+      -webkit-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.75);
+      box-shadow: 0px 3px 30px -5px rgba(0,0,0,0.75);
+      z-index: 20;
     }
   }
+  &--photo::before{
+      position: absolute;
+      height: auto;
+      width: auto;
+      top: -40px;
+      left: -45px;
+      font-size: 140px;
+      font-weight: 900;
+      color: #f5f5f5;
+      z-index: 1;
+      content: "1";
+  }
 }
+
 
 @media screen and (max-width: 960px) {
 

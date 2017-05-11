@@ -9,6 +9,12 @@ for (var i=0; i<num; i++){
     $(toggle[i]).attr("value",""+i);
 }
 
+//numbers before photos:
+var numbers = $('.event-detail--photo::before');
+for (var j=1; j<=numbers.length; j++){
+    console.log(numbers);
+}
+
 
 var toggleDescription = function(){
     var id = this.getAttribute("value");
