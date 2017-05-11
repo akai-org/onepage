@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+$akai-yellow: #f9a11b;
+$heading-color: #333;
+$text-color: #8a8a8a;
+$bg-color: #f5f5f5;
+$border: 3px solid #c7c7c7;
+$borderInvalid: 3px solid #C83939;
+
+html, body {
+  font-size: 10px;
+  margin: 0;
+}
+
+input, textarea {
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
 * {
   font-family: 'Quicksand', sans-serif;
 }
