@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,600,700');
+
+@import "_settings";
 @import "_home";
+@import "_about";
 @import "_date";
 @import "_eventsDetails";
 @import "_contact";
+
+html, body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+input, textarea {
+  background: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
