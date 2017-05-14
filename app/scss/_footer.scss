@@ -1,27 +1,29 @@
 section[class=footer]{
 
 	padding: 20px;
-	width: 80%;
-  margin: 0 10%;
-  height: auto;
+	width: auto;
+	height: auto;
+	margin: 0 15%;
   display: flex;
-  justify-content: space-between;
-  font-size: 1.2rem;
+  justify-content: space-around;
+  font-size: 1rem;
+	color: $heading-color;
 
 
 	.footer-left{
     &--akai{
-      font-size: 1rem;
+      font-size: 0.8rem;
+			color: $text-color;
     }
 	}
 
   .footer-contact{
-    margin-left: 30%;
+    margin-left: 10%;
     &--mailto{
-      font-size: 1rem;
-      color: black;
+      font-size: 0.8rem;
+			color: $text-color;
       &:hover{
-        color: #8f8f8f
+        color: $heading-color;
       }
     }
 
@@ -29,27 +31,38 @@ section[class=footer]{
 
 	.footer-socials
 	{
-
 		&--icon{
-      margin-right: 10px;
-			color: #a3a2a1;
-      opacity: 0.8;
+
+			text-align: center;
+			float: left;
+			width: 40px;
+			height: 40px;
+			border: 1px solid $text-color;
+			border-radius: 100%;
+			margin-right: 7px;
+
+			color: $text-color;
+			i{
+				font-size: 25px;
+				line-height: 43px;
+			}
 			&:hover{
-			opacity: 1;
+				color: $heading-color;
 			}
     }
     &--logo{
       img{
-        opacity: 0.9;
-  			height:	35px;
-  			width:  35px;
+				width: 30px;
+				height: 30px;
+				border: 1px solid $text-color;
+				border-radius: 50%;
+				margin-right: 7px;
+				padding: 5px;
   			&:hover{
-  				opacity: 1;
 			    }
         }
-		}
-color: #51514f;
 
+		}
 	}
 
 }
