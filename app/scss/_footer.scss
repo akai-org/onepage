@@ -1,0 +1,63 @@
+section[class=footer]{
+
+	padding: 20px;
+	width: 80%;
+  margin: 0 10%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+
+
+	.footer-left{
+    &--akai{
+      font-size: 1rem;
+    }
+		img{
+			opacity: 0.8;
+			height:	51px;
+			width:  60px;
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
+
+  .footer-contact{
+    margin-left: 30%;
+    &--mailto{
+      font-size: 1rem;
+      color: black;
+    }
+    &--mailto:hover{
+      color: #8f8f8f
+    }
+
+  }
+
+	.footer-socials
+	{
+
+		&--icon{
+      margin-right: 10px;
+			color: #a3a2a1;
+      opacity: 0.8;
+			&:hover{
+			opacity: 1;
+			}
+    }
+    &--logo{
+      img{
+        opacity: 0.9;
+  			height:	35px;
+  			width:  35px;
+  			&:hover{
+  				opacity: 1;
+			    }
+        }
+		}
+color: #51514f;
+
+	}
+
+}
