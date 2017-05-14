@@ -13,14 +13,6 @@ section[class=footer]{
     &--akai{
       font-size: 1rem;
     }
-		img{
-			opacity: 0.8;
-			height:	51px;
-			width:  60px;
-			&:hover{
-				opacity: 1;
-			}
-		}
 	}
 
   .footer-contact{
@@ -28,9 +20,9 @@ section[class=footer]{
     &--mailto{
       font-size: 1rem;
       color: black;
-    }
-    &--mailto:hover{
-      color: #8f8f8f
+      &:hover{
+        color: #8f8f8f
+      }
     }
 
   }
