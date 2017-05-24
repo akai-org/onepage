@@ -1,6 +1,6 @@
 section[class=footer]{
 
-	padding: 20px;
+	padding: 20px 0 40px 0;
 	width: auto;
 	height: auto;
 	margin: 0 15%;
@@ -13,6 +13,7 @@ section[class=footer]{
 	.footer-left{
     &--akai{
       font-size: 0.8rem;
+      transform: translateY(4px);
 			color: $text-color;
     }
 	}
@@ -29,8 +30,7 @@ section[class=footer]{
 
   }
 
-	.footer-socials
-	{
+	.footer-socials {
 		&--icon{
 
 			text-align: center;
@@ -50,6 +50,13 @@ section[class=footer]{
 				filter: brightness(50%);
 			}
     }
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
     &--logo{
       img{
 				width: 30px;
@@ -68,13 +75,30 @@ section[class=footer]{
 
 	@media screen and (max-width: 960px) {
 		display: block;
+    text-align: center;
+
 		h4{
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 		}
 		p{
 			margin-top: 5px;
 		}
+    .footer-socials {
+      width: 150px;
+      display: inline-block;
 
+      &--heading {
+        margin-top: 10px;  
+      }
+
+      &--icon {
+        float: left;
+        margin: 0 4px;
+      }
+      &--logo {
+        margin: 0 4px;
+      }
+    }
 	}
 
 }
