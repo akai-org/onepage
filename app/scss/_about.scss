@@ -3,7 +3,7 @@ section[class="about"] {
   padding-top: 10vh;
 
   .about-header {
-    margin-left: 10%;
+    margin-left: 20%;
     width: 40%;
 
     h2 {
@@ -22,10 +22,10 @@ section[class="about"] {
   .about-columns {
     display: flex;
     align-items: flex-end;
+    margin: 0 20%;
 
     .about-left {
-      margin-left: 10%;
-      width: 40%;
+      width: 50%;
 
       p:first-child {
         margin-top: 3em;
@@ -35,8 +35,7 @@ section[class="about"] {
       }
     }
     .about-right {
-      margin-right: 10%;
-      width: 40%;
+      width: 50%;
 
       img {
         width: 100%;
@@ -45,8 +44,22 @@ section[class="about"] {
   }
 }
 
-@media all and (max-width: 1000px) {
-  #about {
+@media all and (max-width: 1700px) {
+  section[class="about"] {
+    .about-header, .about-columns {
+      margin: 0 15%;
+    }
+  }
+}
+@media all and (max-width: 1300px) {
+  section[class="about"] {
+    .about-header, .about-columns {
+      margin: 0 5%;
+    }
+  }
+}
+@media all and (max-width: 1000px) {  // one column layout
+  section[class="about"] {
     .about-header, .about-columns {
       margin-left: 15%;
       width: 70%;
@@ -56,7 +69,6 @@ section[class="about"] {
       align-items: center;
 
       .about-right, .about-left {
-        margin: 0;
         width: 100%;
 
         p:first-child {
@@ -71,7 +83,7 @@ section[class="about"] {
 }
 
 @media all and (max-width: 600px) {
-  #about {
+  section[class="about"] {
     .about-header, .about-columns {
       margin-left: 10%;
       width: 80%;
