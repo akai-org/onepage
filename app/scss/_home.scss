@@ -13,7 +13,6 @@
           transition: $property $duration $timing;
 }
 @mixin appearance() {
-  -webkit-appearance: button;
      -moz-appearance: button;
       -ms-appearance: button;
        -o-appearance: button;
@@ -32,7 +31,6 @@ section[class=home] {
     background-size: cover;
     height: 100vh;
     position: relative;
-    font-size: 1rem;
 
     a {
       color: inherit;
@@ -129,14 +127,8 @@ section[class=home] {
     }
 }
 
-@media all and (max-width: 1400px), (max-height: 800px) { // width < 1400px || height < 800px
-  #home {
-    font-size: 1rem;
-  }
-}
-
 @media all and (max-width: 1100px), (max-height: 700px) { // width < 1100px || height < 700px
-  #home {
+  section[class=home] {
     font-size: 0.9rem;
 
     .home-title {
@@ -145,34 +137,30 @@ section[class=home] {
     }
   }
 }
-
 @media all and (max-width: 900px) {  // width < 900px
-  #home {
+  section[class=home] {
     .home-title {
       margin-left: 10%;
       margin-right: 10%;
     }
   }
 }
-
 @media all and (max-height: 700px) {  // height < 700px
-  #home {
+  section[class=home] {
     .home-title {
       margin-top: 15vh;
     }
   }
 }
-
 @media all and (max-height: 500px) {  // height < 500px
-  #home {
+  section[class=home] {
     .home-title {
       margin-top: 5vh;
     }
   }
 }
-
 @media all and (max-width: 600px), (max-height: 400px) {  // width < 400px
-  #home {
+  section[class=home] {
     font-size: 0.8rem;
 
     .home-title {
