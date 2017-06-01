@@ -118,6 +118,10 @@ $home-color: #eee;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+
+            .home-scroll-description {
+              margin-bottom: 0.5em;
+            }
         }
         &:hover {
             color: $akai-yellow;
