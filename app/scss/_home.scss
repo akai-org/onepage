@@ -20,54 +20,47 @@
           appearance: button;
 }
 
-$font-color: #eee;
-$font-color-hover: rgb(250,162,27);
-$border-color: #eee;
-$border-color-hover: rgb(250,162,27);
-$button-color: rgb(250,162,27);
-$button-color-hover: rgb(250,120,0);
+$home-color: #eee;
+$home-color-yellow: rgb(250,162,27);
 
-a {
-    color: $font-color;
-    text-decoration: none;
-}
-a.button {
-    padding: 0.7em 3em;
-    font-size: 0.9em;
-    font-weight: bold;
-    color: $font-color;
-    background-color: $button-color;
-    border-style: none;
-    border-width: 0;
-    @include appearance();
-    @include border-radius(2em);
-    @include transition(all, 0.4s, ease-out);
-
-    &:hover {
-        background-color: $button-color-hover;
-    }
-}
-a.button-alt {
-  background-color: transparent;
-  border-style: solid;
-  border-width: thin;
-
-  &:hover {
-    background-color: $button-color-hover;
-    border-color: $button-color-hover;
-  }
-}
-
-#home {
+section[class=home] {
     background-image: url(../img/background.png);
-    color: $font-color;
+    color: $home-color;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
     position: relative;
-    font-size: 1.2em;
+    font-size: 1rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &.button {
+        padding: 0.7em 3em;
+        font-size: 0.9em;
+        font-weight: bold;
+        color: $home-color;
+        background-color: $akai-yellow;
+        border-style: solid;
+        border-width: thin;
+        border-color: $akai-yellow;
+        @include appearance();
+        @include border-radius(2em);
+        @include transition(all, 0.4s, ease-out);
+
+        &:hover {
+            background-color: $akai-yellow-darkened;
+            border-color: $akai-yellow-darkened;
+        }
+      }
+      &.button-alt {
+        background-color: transparent;
+        border-color: $home-color;
+      }
+    }
 
     .home-topbar {
         margin: 0 10%;
@@ -76,7 +69,7 @@ a.button-alt {
         align-items: center;
 
         .home-logo {
-          height: 4em;
+          height: 3.5em;
         }
         .home-logo, .button {
           margin-top: 5vh;
@@ -98,7 +91,7 @@ a.button-alt {
         }
         .divider {
           width: 3em;
-          border-top: medium solid $button-color;
+          border-top: medium solid $akai-yellow;
           margin: 1vh 50% 2vh 50%;
           transform: translateX(-50%);
         }
@@ -131,8 +124,7 @@ a.button-alt {
             }
         }
         &:hover {
-            color: $font-color-hover;
-            border-color: $border-color-hover;
+            color: $akai-yellow;
         }
     }
 }
