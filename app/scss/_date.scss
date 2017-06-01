@@ -1,13 +1,14 @@
 section[class="date"] {
   padding: 10vh 0;
-  margin: 0 30%;
   color: $text-color;
+  background-color: $bg-color;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
 
   .date-column {
-    width: 40%;
+    width: 12em;
+    margin: 0 4em;
 
     img {
       width: 6em;
@@ -34,6 +35,21 @@ section[class="date"] {
         font-size: 1em;
         margin: 18px 0 5px;
       }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  section[class="date"] {
+    .date-column {
+      margin: 0 2em;
+    }
+  }
+}
+@media all and (max-width: 350px) {
+  section[class="date"] {
+    .date-column {
+      margin: 0;
     }
   }
 }
