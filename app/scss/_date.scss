@@ -1,23 +1,7 @@
-@mixin filter($angle) {
-  -webkit-filter: hue-rotate($angle);
-          filter: hue-rotate($angle);
-}
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
-* {
-  font-family: 'Quicksand', sans-serif;
-}
-
-$font-color: #222;
-$font-color-hover: rgb(250,162,27);
-$border-color: #222;
-$border-color-hover: rgb(250,162,27);
-$button-color: rgb(250,162,27);
-$button-color-hover: rgb(250,120,0);
-
-#date {
-  margin: 10vh 30%;
-  color: $font-color;
+section[class="date"] {
+  padding: 10vh 0;
+  margin: 0 30%;
+  color: $text-color;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -27,14 +11,29 @@ $button-color-hover: rgb(250,120,0);
 
     img {
       width: 6em;
-      @include filter(90deg);
     }
     h1 {
-
+      color: $heading-color;
+      margin: 0;
     }
     h2 {
-      color: #555;
       font-size: 1em;
+      // font-weight: normal;
+      margin: 0;
+    }
+
+    &:first-child {
+      h1 {
+        font-size: 3em;
+        line-height: 1.1em;
+        margin-top: 10px;
+      }
+    }
+    &:last-child {
+      h1 {
+        font-size: 1em;
+        margin: 18px 0 5px;
+      }
     }
   }
 }
