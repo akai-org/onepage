@@ -1,5 +1,7 @@
 function formValidation() {
-  $(':required').one('blur keydown', function() {
-    $(this).addClass('.disable');
+  $(':required').on('blur keydown', function() {
+    $(this).addClass('disable');
   });
 }
+
+formValidation();

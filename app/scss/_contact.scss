@@ -17,46 +17,46 @@
   color: $heading-color;
   width: 100%;
   background: $bg-color;
-  padding: 5rem 0;
+  padding: 3.1rem 0 4rem;
 
   .contact-box {
     margin: 0 auto;
-    max-width: 65rem;
+    max-width: 42rem;
     width: 80%;
     text-align: center;
 
     .contact-heading {
-      font-size: 2.6rem;
+      font-size: 1.6rem;
 
       &::after {
         content: '';
         background: $akai-yellow;
-        width: 4.5rem;
-        height: .3rem;
-        margin: 2.5rem auto;
+        width: 2.8rem;
+        height: .18rem;
+        margin: 1.6rem auto;
         display: block;
       }
     }
 
     .contact-info {
-      margin: 1.5rem 3rem 4rem;
+      margin: .9rem 1.9rem 3rem;
       color: $text-color;
-      line-height: 2.6rem;
-      font-size: 1.5rem;
+      line-height: 1.6rem;
+      font-size: 1rem;
     }
 
     .contact-form {
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 1.6rem;
       display: block;
-      max-width: 35rem;
+      max-width: 29rem;
 
       .email, .message {
         box-sizing: border-box;
         font-family: inherit;
-        font-size: 1.5rem;
+        font-size: .9rem;
         border: none;
         width: 100%;
-        padding: 1.5rem;
+        padding: .9rem;
         border-bottom: $border;
         background: transparent;
         opacity: .8;
@@ -67,23 +67,23 @@
         }
 
         &.disable:invalid {
-          border-color: $borderInvalid;
+          border-bottom: $borderInvalid;
         }
       }
 
       .message {
-        margin: 1.8rem 0;
+        margin: 1.1rem 0;
         resize: none;
       }
 
       .send-btn {
         font-family: inherit;
-        font-size: 1.4rem;
+        font-size: 1rem;
         font-weight: bold;
         color: #fff;
-        width: 22rem;
-        padding: 1.2rem 1rem;
-        margin-top: 1.5rem;
+        width: 16rem;
+        padding: .9rem .2rem;
+        margin-top: .9rem;
         background: $akai-yellow;
         border: none;
         @include border-radius(25px);
@@ -99,5 +99,11 @@
 
     }
 
+  }
+}
+
+@media screen and (max-width: 420px) {
+  html, body {
+    font-size: 14px !important;
   }
 }
