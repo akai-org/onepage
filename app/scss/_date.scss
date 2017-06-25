@@ -3,9 +3,29 @@ section[class="date"] {
   color: $text-color;
   background-color: $bg-color;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 
+  a {
+    color: $akai-yellow;
+    text-decoration: none;
+    @include transition(all, 0.4s, ease-out);
+
+    &:hover {
+      color: $akai-yellow-darkened;
+    }
+  }
+
+  .date-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
   .date-column {
     width: 12em;
     margin: 0 4em;
@@ -22,7 +42,7 @@ section[class="date"] {
       // font-weight: normal;
       margin: 0;
     }
-
+// REGULOWANIE WIELKOŚCI CZCIONKI POD IKONAMI
     &:first-child {
       h1 {
         font-size: 3em;
@@ -37,17 +57,26 @@ section[class="date"] {
       }
     }
   }
-}
+  .date-add {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .date-calendar {
+    margin-right: 2em;
+    font-size: 1.1em;
+    font-weight: bold;
 
-@media all and (max-width: 800px) {
-  section[class="date"] {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media all and (max-width: 800px) {
     .date-column {
       margin: 0 2em;
     }
   }
-}
-@media all and (max-width: 350px) {
-  section[class="date"] {
+  @media all and (max-width: 350px) {
     .date-column {
       margin: 0;
     }
