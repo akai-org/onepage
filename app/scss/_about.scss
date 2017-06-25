@@ -1,28 +1,31 @@
-#about {
-  color: #222;
-  margin-top: 10vh;
+section[class="about"] {
+  color: $text-color;
+  padding: 10vh 0;
 
   .about-header {
-    margin-left: 10%;
+    margin-left: 20%;
     width: 40%;
 
     h2 {
-      color: $button-color;
+      color: $akai-yellow;
       font-size: 1em;
+    }
+    h1 {
+      color: $heading-color;
     }
     .divider {
       width: 3em;
-      border-top: medium solid $button-color;
+      border-top: medium solid $akai-yellow;
     }
   }
 
   .about-columns {
     display: flex;
     align-items: flex-end;
+    margin: 0 20%;
 
     .about-left {
-      margin-left: 10%;
-      width: 40%;
+      width: 50%;
 
       p:first-child {
         margin-top: 3em;
@@ -32,8 +35,7 @@
       }
     }
     .about-right {
-      margin-right: 10%;
-      width: 40%;
+      width: 50%;
 
       img {
         width: 100%;
@@ -42,8 +44,22 @@
   }
 }
 
-@media all and (max-width: 1000px) {
-  #about {
+@media all and (max-width: 1700px) {
+  section[class="about"] {
+    .about-header, .about-columns {
+      margin: 0 15%;
+    }
+  }
+}
+@media all and (max-width: 1300px) {
+  section[class="about"] {
+    .about-header, .about-columns {
+      margin: 0 5%;
+    }
+  }
+}
+@media all and (max-width: 1000px) {  // one column layout
+  section[class="about"] {
     .about-header, .about-columns {
       margin-left: 15%;
       width: 70%;
@@ -53,7 +69,6 @@
       align-items: center;
 
       .about-right, .about-left {
-        margin: 0;
         width: 100%;
 
         p:first-child {
@@ -68,7 +83,7 @@
 }
 
 @media all and (max-width: 600px) {
-  #about {
+  section[class="about"] {
     .about-header, .about-columns {
       margin-left: 10%;
       width: 80%;
