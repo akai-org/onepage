@@ -23,4 +23,13 @@ or
 gulp
 ```
 
+3. Build project
+```
+npm run build
+```
+or
+```
+gulp build
+```
+
 Server will run at localhost:3000.
