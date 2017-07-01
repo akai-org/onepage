@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node_modules/gulp/bin/gulp.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akai-org/onepage.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/akai-org/onepage.git",
+  "author": "AKAI",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/akai-org/onepage/issues"
