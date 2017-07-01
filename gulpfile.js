@@ -20,7 +20,7 @@ gulp.task('serve', ['build'], function() {
 });
 
 // Build project
-gulp.task('build', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery']);
+gulp.task('build', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery', 'json']);
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
@@ -37,6 +37,11 @@ gulp.task('html', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest("public/"));
+});
+
+gulp.task('json', function() {
+  return gulp.src("app/json/*.json")
+    .pipe(gulp.dest("public/json/"));
 });
 
 // merge & copy JS files
