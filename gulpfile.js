@@ -3,8 +3,10 @@ var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
 var fileinclude = require('gulp-file-include');
 
+
 // Static Server + watching scss/html files
-gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery'], function() {
+gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery',
+ 'copyphotos', 'copylightboxjs', 'copylightboxcss', 'copylightboximgs'], function() {
 
     browserSync.init({
         server: "./public"
@@ -53,6 +55,13 @@ gulp.task('copy', function() {
         .pipe(browserSync.stream());
 });
 
+// copy photos for gallery
+gulp.task('copyphotos', function() {
+    return gulp.src("app/img/photos/*")
+        .pipe(gulp.dest("public/img/photos"))
+        .pipe(browserSync.stream());
+});
+
 // copy jQuery file
 gulp.task('copyjquery', function() {
   return gulp.src('node_modules/jquery/dist/jquery.min.js')
@@ -70,5 +79,24 @@ gulp.task('copyfacss', function() {
    return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
     .pipe(gulp.dest('public/css'));
 });
+
+//copy Lightbox js
+gulp.task('copylightboxjs', function() {
+   return gulp.src('node_modules/lightbox2/dist/js/lightbox.min.js')
+    .pipe(gulp.dest('public/lightbox/js'));
+});
+
+//copy Lightbox css
+gulp.task('copylightboxcss', function(){
+  return gulp.src('node_modules/lightbox2/dist/css/lightbox.min.css')
+  .pipe(gulp.dest('public/lightbox/css'));
+});
+
+//copy Lightbox images
+gulp.task('copylightboximgs', function(){
+  return gulp.src('node_modules/lightbox2/dist/images/*')
+  .pipe(gulp.dest('public/lightbox/images'));
+});
+
 
 gulp.task('default', ['serve']);

@@ -4,5 +4,6 @@ $( document ).ready(function() {
   @@include('./date.js')
   @@include('./eventsDetails.js')
   @@include('./formValidation.js')
+  @@include('./gallery.js')
 
 });
