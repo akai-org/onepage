@@ -20,3 +20,15 @@ input, textarea {
   border: none;
   box-shadow: none;
 }
+
+
+@media all and (max-width: 1700px) {
+  .container {
+    margin: 0 15%;
+  }
+}
+@media all and (max-width: 1300px) {
+  .container {
+    margin: 0 5%;
+  }
+}

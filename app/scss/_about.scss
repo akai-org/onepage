@@ -44,20 +44,20 @@ section[class="about"] {
   }
 }
 
-@media all and (max-width: 1700px) {
-  section[class="about"] {
-    .about-header, .about-columns {
-      margin: 0 15%;
-    }
-  }
-}
-@media all and (max-width: 1300px) {
-  section[class="about"] {
-    .about-header, .about-columns {
-      margin: 0 5%;
-    }
-  }
-}
+// @media all and (max-width: 1700px) {
+//   section[class="about"] {
+//     .about-header, .about-columns {
+//       margin: 0 15%;
+//     }
+//   }
+// }
+// @media all and (max-width: 1300px) {
+//   section[class="about"] {
+//     .about-header, .about-columns {
+//       margin: 0 5%;
+//     }
+//   }
+// }
 @media all and (max-width: 1000px) {  // one column layout
   section[class="about"] {
     .about-header, .about-columns {

@@ -3,12 +3,13 @@ section[class=footer]{
 	padding: 20px 0 40px 0;
 	width: auto;
 	height: auto;
-	margin: 0 15%;
-  display: flex;
-  justify-content: space-around;
   font-size: 1rem;
 	color: $heading-color;
 
+	.container {
+		display: flex;
+		justify-content: space-around;
+	}
 
 	.footer-left{
     &--akai{
