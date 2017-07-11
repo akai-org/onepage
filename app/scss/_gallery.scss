@@ -8,8 +8,18 @@ $imgWidthSmall: 300px;
 $imgHeightSmall: $imgWidthSmall/1.5;
 
 .gallery{
-  h1{
+  .gallery-heading{
+    font-size: 2rem;
     text-align: center;
+
+    &::after {
+      content: '';
+      background: $akai-yellow;
+      width: 4.5rem;
+      height: .3rem;
+      margin: 2rem auto;
+      display: block;
+    }
   }
 }
 
