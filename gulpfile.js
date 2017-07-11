@@ -4,7 +4,7 @@ var sass        = require('gulp-sass');
 var fileinclude = require('gulp-file-include');
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery'], function() {
+gulp.task('serve', ['build'], function() {
 
     browserSync.init({
         server: "./public"
@@ -18,6 +18,9 @@ gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjq
     gulp.watch("app/*.html").on('change', browserSync.reload);
 
 });
+
+// Build project
+gulp.task('build', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery', 'json']);
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
@@ -34,6 +37,11 @@ gulp.task('html', function() {
       basepath: '@file'
     }))
     .pipe(gulp.dest("public/"));
+});
+
+gulp.task('json', function() {
+  return gulp.src("app/json/*.json")
+    .pipe(gulp.dest("public/json/"));
 });
 
 // merge & copy JS files
