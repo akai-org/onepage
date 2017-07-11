@@ -3,6 +3,18 @@ var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
 var fileinclude = require('gulp-file-include');
 
+//read photos names
+var fs = require('fs');
+var files = fs.readdirSync('public/img/photos');
+
+//create json file with photo's names in array
+var jsonfile = require('jsonfile')
+var file = 'public/photos.json'
+var obj = {photos: files}
+
+jsonfile.writeFile(file, obj, function (err) {
+  console.error(err)
+})
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['html', 'copyfa', 'copyfacss', 'js', 'sass', 'copy', 'copyjquery',
