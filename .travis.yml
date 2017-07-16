@@ -7,6 +7,9 @@ node_js:
 cache:
   yarn: true
 
+before_install:
+  - npm install -g yarn
+
 install:
   - yarn install
 
