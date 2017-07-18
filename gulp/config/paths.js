@@ -19,6 +19,7 @@ const paths = {
 
   /* minified and optimized */
   publish: {
+    dir: './publish',
     fonts: './publish/assets',
     images: './publish/assets',
     markup: './publish',

@@ -42,7 +42,8 @@
     "require-dir": "^0.3.2",
     "stylelint": "^7.13.0",
     "stylelint-config-sass-guidelines": "^2.2.0",
-    "stylelint-processor-html": "^1.0.0"
+    "stylelint-processor-html": "^1.0.0",
+    "vinyl-ftp": "^0.6.0"
   },
   "devDependencies": {
     "eslint": "^4.2.0",
