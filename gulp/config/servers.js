@@ -7,14 +7,11 @@ const servers = {
       remotePath: 'public_html/'
   },
   ssh: {
-    type: "ssh",
-    options: {
-      host: process.env.SSH_HOST,
-      user: process.env.SSH_USER,
-      pass: process.env.SSH_PASS,
-      port: '22',
-      remotePath: ''
-    }
+    host: process.env.SSH_HOST,
+    user: process.env.SSH_USER,
+    privateKey: process.env.SSH_PRIVATE_KEY, // fs.readFileSync('/.ssh/id_rsa')
+    port: '22',
+    remotePath: '/home/project-name/'
   }
 };
 

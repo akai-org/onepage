@@ -1,6 +1,8 @@
 build/
 publish/
 
+.DS_Store
+
 # --- NODE PROJECT ---
 # Reference: https://github.com/github/gitignore/blob/master/Node.gitignore
 
