@@ -6,6 +6,7 @@ const servers = require('../config/servers');
 
 const gutil = require( 'gulp-util' );
 const ftp = require( 'vinyl-ftp' );
+const GulpSSH = require('gulp-ssh');
 
 gulp.task('deploy', ['deploy:sftp']);
 
