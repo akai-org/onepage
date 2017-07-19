@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 
 const paths = require('../config/paths');
 
-gulp.task('scripts', () => {
+gulp.task('scripts', ['libs'], () => {
   return gulp.src(paths.source.scripts)
     .pipe(eslint())
     .pipe(eslint.format())
@@ -20,7 +20,7 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest(paths.publish.scripts));
 });
 
-gulp.task('scripts:dev', () => {
+gulp.task('scripts:dev', ['libs:dev'], () => {
   return gulp.src(paths.source.scripts)
     .pipe(eslint())
     .pipe(eslint.format())
@@ -38,4 +38,28 @@ gulp.task('eslint', () => {
   gulp.src(paths.source.scripts)
     .pipe(eslint())
     .pipe(eslint.format())
+});
+
+gulp.task('libs', ['jquery', 'lodash']);
+
+gulp.task('jquery', function () {
+  return gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest(paths.publish.scripts));
+});
+
+gulp.task('lodash', function () {
+  return gulp.src('./node_modules/lodash/lodash.min.js')
+    .pipe(gulp.dest(paths.publish.scripts));
+});
+
+gulp.task('libs:dev', ['jquery:dev', 'lodash:dev']);
+
+gulp.task('jquery:dev', function () {
+  return gulp.src('./node_modules/jquery/dist/jquery.js')
+    .pipe(gulp.dest(paths.build.scripts));
+});
+
+gulp.task('lodash:dev', function () {
+  return gulp.src('./node_modules/lodash/lodash.js')
+    .pipe(gulp.dest(paths.build.scripts));
 });
