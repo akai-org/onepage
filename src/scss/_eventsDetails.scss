@@ -1,16 +1,11 @@
-﻿
-
-section[class=event-detail-container]{
-  width: 100%;
-  background-color: white;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  padding-left: 0;
-  padding-right: 0;
+﻿[class='event-detail-container']{
+  background-color: $akai-white;
   margin: 0;
+  padding: 100px 0;
+  width: 100%;
 }
 
-.event-detail{
+.event-detail {
   margin-left: auto;
   margin-right: auto;
   max-width: 940px;
@@ -20,7 +15,7 @@ section[class=event-detail-container]{
   margin-top: 50px;
   margin-bottom: 50px;
 
-  &--time{
+  &--time {
     width: 10%;
     margin: 0;
     box-sizing: border-box;
@@ -29,10 +24,11 @@ section[class=event-detail-container]{
     z-index: 20;
     position: relative;
   }
-  &--separator{
+  &--separator {
     width: 10%;
     z-index: 20;
-    div{
+
+    div {
       margin-top: 15px;
       margin-left: 25%;
       margin-right: 25%;
@@ -41,33 +37,34 @@ section[class=event-detail-container]{
     }
   }
 
-  &--description{
+  &--description {
     width: 65%;
     margin: 0;
     box-sizing: border-box;
     text-align: left;
   }
-  &--title{
+
+  &--title {
     font-weight: 800;
     font-size: 1.5rem;
     margin-right: 50px;
   }
-  &--author{
+  &--author {
     color: gray;
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 1rem;
   }
-  &--toggle{
+  &--toggle {
     color: gray;
     text-decoration: underline;
     font-size: 0.8rem;
 
   }
-  &--toggle:hover{
+  &--toggle:hover {
     cursor: pointer;
   }
-  &--more{
+  &--more {
     position: relative;
     text-align: justify;
     display: flex;
@@ -75,28 +72,32 @@ section[class=event-detail-container]{
     overflow: hidden;
     color: gray;
     font-size: 0.9rem;
-    strong{
+
+    strong {
       color: black;
     }
   }
 
-  &--about{
+  &--about {
     padding: 10px;
     width: 50%;
   }
-  &--learn{
+  &--learn {
     padding: 10px;
     width: 50%;
     text-align: left;
-    ul{
+
+    ul {
       list-style-type: none;
     }
-    li{
+
+    li {
       position: relative;
       margin-bottom: 10px;
     }
-    li::before{
-      content: "+";
+
+    li::before {
+      content: '+';
       display: inline-block;
       position: absolute;
       left: -25px;
@@ -107,7 +108,8 @@ section[class=event-detail-container]{
       font-weight: 700;
     }
   }
-  &--photo{
+
+  &--photo {
     padding: 5px;
     width: 15%;
     margin: 0;
@@ -115,7 +117,7 @@ section[class=event-detail-container]{
     position: relative;
     z-index: 10;
 
-    img{
+    img {
       position: relative;
       width: 100%;
       height: auto;
@@ -126,7 +128,7 @@ section[class=event-detail-container]{
       z-index: 20;
     }
   }
-  &--photo::before{
+  &--photo::before {
       position: absolute;
       height: auto;
       width: auto;
@@ -141,29 +143,31 @@ section[class=event-detail-container]{
 
 
 @media screen and (max-width: 960px) {
-  .event-detail{
-    &--time{
-      width: auto;
+  .event-detail {
+    &--time {
+      display: flex;
       margin-left: 10px;
-      display: flex;
-      //align-items: center;
+      width: auto;
     }
-    &--separator{
+
+    &--separator {
+      align-items: center;
+      display: flex;
       width: 50px;
-      display: flex;
-      align-items: center;
     }
+
     &--photo {
-      width: 150px !important;
-      height: 150px !important;
-      position: relative;
-      margin-right: 10px;
-      display: flex;
       align-items: center;
+      display: flex;
+      height: 150px !important;
+      margin-right: 10px;
+      position: relative;
+      width: 150px !important;
     }
+
     &--photo::before {
-      left: -60px;
       font-size: 10em;
+      left: -60px;
       top: -15px;
     }
   }
@@ -171,73 +175,73 @@ section[class=event-detail-container]{
 
 
 @media screen and (max-width: 760px){
-  .event-detail{
+  .event-detail {
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 200px;
     justify-content: center;
+    margin-bottom: 200px;
 
-    &--time{
-      order: -3;
-      width: auto;
+    &--time {
+      align-items: center;
+      font-size: 3rem;
       margin-left: 10px;
       margin-right: 10px;
       text-align: center !important;
-      font-size: 3rem;
-      align-items: center;
+      order: -3;
+      width: auto;
     }
-    &--separator{
+
+    &--separator {
       order: -2;
     }
 
-    &--description{
+    &--description {
       display: block;
       float: none;
-      position: relative;
-      width: 100%;
       padding: 10px;
       padding-left: 30px;
-      //border-top: solid $akai-yellow 3px;
+      position: relative;
+      width: 100%;
     }
 
-    &--more{
+    &--more {
       display: block;
     }
-    &--learn, &--about{
-      width: auto;
+
+    &--learn,
+    &--about {
       padding: 20px;
+      width: auto;
     }
-    &--photo{
+
+    &--photo {
       order: -1;
     }
   }
 }
 
-
-
 $number-of-events: 4;
 @for $i from 1 to ($number-of-events+1) {
   .event-detail:nth-child(#{$i}) > .event-detail--photo::before {
-        content: unquote('"' + $i + '"');
+    content: unquote('"' + $i + '"');
   }
 }
 
-
-
 @media screen and (max-width: 420px){
-  .event-detail{
-    &--separator{
+  .event-detail {
+    &--separator {
       display: none;
     }
   }
 }
 
 @media screen and (max-width: 360px){
-  .event-detail{
-    &--time{
+  .event-detail {
+    &--time {
       font-size: 2rem;
     }
-    &--photo{
+
+    &--photo {
       margin-right: 0;
     }
   }
