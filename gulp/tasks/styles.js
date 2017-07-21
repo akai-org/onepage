@@ -22,7 +22,7 @@ gulp.task('styles', function () {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(postcss(postCssPlugins))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.public.styles));
+    .pipe(gulp.dest(paths.publish.styles));
 });
 
 gulp.task('styles:dev', function () {
@@ -43,14 +43,4 @@ gulp.task('styles:watch', function () {
 gulp.task('stylelint', function() {
   return gulp.src([paths.source.styles, paths.source.markup])
     .pipe(gulpStylelint({failAfterError: false, reporters: [{formatter: 'string', console: true}], debug: true}));
-});
-
-const jasmineBrowser = require('gulp-jasmine-browser');
-const watch = require('gulp-watch');
-gulp.task('jasmine', function() {
-  const filesForTest = [paths.source.scripts, paths.source.specs];
-  return gulp.src(filesForTest)
-    .pipe(watch(filesForTest))
-    .pipe(jasmineBrowser.specRunner())
-    .pipe(jasmineBrowser.server({port: 8888}));
 });
