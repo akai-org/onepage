@@ -2,7 +2,7 @@
   "extends": "stylelint-config-sass-guidelines",
   "processors": ["stylelint-processor-html"],
   "rules": {
-    "max-nesting-depth": 3,
+    "max-nesting-depth": 4,
     "selector-max-compound-selectors": 4
   }
 }
