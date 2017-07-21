@@ -44,3 +44,13 @@ gulp.task('stylelint', function() {
   return gulp.src([paths.source.styles, paths.source.markup])
     .pipe(gulpStylelint({failAfterError: false, reporters: [{formatter: 'string', console: true}], debug: true}));
 });
+
+const jasmineBrowser = require('gulp-jasmine-browser');
+const watch = require('gulp-watch');
+gulp.task('jasmine', function() {
+  const filesForTest = [paths.source.scripts, paths.source.specs];
+  return gulp.src(filesForTest)
+    .pipe(watch(filesForTest))
+    .pipe(jasmineBrowser.specRunner())
+    .pipe(jasmineBrowser.server({port: 8888}));
+});

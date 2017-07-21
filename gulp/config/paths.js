@@ -1,15 +1,18 @@
 const paths = {
   /* source code */
   source: {
+    dir: './source',
     fonts: './src/fonts/**/*',
     images: './src/img/**/*',
     markup: './src/**/*.html',
     styles: './src/scss/**/*.scss',
-    scripts: './src/js/**/*.js'
+    scripts: './src/js/**/*.js',
+    specs: './spec/**/*[sS]pec.js'
   },
 
   /* build */
   build: {
+    dir: './build',
     fonts: './build/assets',
     images: './build/assets',
     markup: './build',
