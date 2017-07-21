@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const inject = require('gulp-inject');
+const injectfile = require('gulp-inject-file');
 const htmlmin = require('gulp-htmlmin');
 const htmlhint = require('gulp-htmlhint');
 const strip = require('gulp-strip-comments');
@@ -11,6 +12,7 @@ gulp.task('markup', function () {
     .pipe(htmlhint())
     .pipe(htmlhint.failReporter())
     .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'public', addRootSlash: false}))
+    .pipe(injectfile())
     .pipe(strip())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.publish.markup));
@@ -21,6 +23,7 @@ gulp.task('markup:dev', function () {
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
     .pipe(inject(gulp.src([paths.build.styles+"/**/*.css", paths.build.scripts+"/**/*.js"], {read: false}), {ignorePath: 'build', addRootSlash: false}))
+    .pipe(injectfile())
     .pipe(gulp.dest(paths.build.markup));
 });
 

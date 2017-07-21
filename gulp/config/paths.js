@@ -3,7 +3,7 @@ const paths = {
   source: {
     fonts: './src/fonts/**/*',
     images: './src/img/**/*',
-    markup: './src/**/*.html',
+    markup: './src/**/index.html',
     styles: './src/scss/**/*.scss',
     scripts: './src/js/**/*.js'
   },
