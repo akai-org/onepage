@@ -5,11 +5,13 @@ const concat = require('gulp-concat');
 const eslint = require('gulp-eslint');
 const uglify = require('gulp-uglify');
 const rename = require('gulp-rename');
+const injectfile = require('gulp-inject-file');
 
 const paths = require('../config/paths');
 
 gulp.task('scripts', ['libs'], () => {
   return gulp.src(paths.source.scripts)
+    .pipe(injectfile())
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError())
@@ -22,6 +24,7 @@ gulp.task('scripts', ['libs'], () => {
 
 gulp.task('scripts:dev', ['libs:dev'], () => {
   return gulp.src(paths.source.scripts)
+    .pipe(injectfile())
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(sourcemaps.init())
@@ -36,6 +39,7 @@ gulp.task('scripts:watch', () => {
 
 gulp.task('eslint', () => {
   gulp.src(paths.source.scripts)
+    .pipe(injectfile())
     .pipe(eslint())
     .pipe(eslint.format())
 });

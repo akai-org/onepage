@@ -83,11 +83,11 @@ requireDir('./gulp/tasks');
 
 gulp.task('default', ['serve:dev']);
 
-gulp.task('build', gulpsync.sync(['styles', 'scripts', 'markup']));
+gulp.task('build', gulpsync.sync(['styles', 'scripts', 'markup', 'images']));
 
-gulp.task('build:dev', gulpsync.sync(['styles:dev', 'scripts:dev', 'markup:dev']));
+gulp.task('build:dev', gulpsync.sync(['styles:dev', 'scripts:dev', 'markup:dev', 'images:dev']));
 
-gulp.task('watch', ['styles:watch', 'scripts:watch', 'markup:watch']);
+gulp.task('watch', ['styles:watch', 'scripts:watch', 'markup:watch', 'images:watch']);
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({

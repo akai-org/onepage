@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Onepage project
 ===============
 
@@ -18,7 +19,6 @@ gulp
 Server will run at localhost:3000.
 
 ## Update project base
-
 ```
 git pull base master
 ```
