@@ -1,0 +1,22 @@
+language: node_js
+
+node_js:
+  - 6.11.0
+  - 8.1.3
+
+cache:
+  yarn: true
+
+before_install:
+  - npm install -g yarn
+
+install:
+  - yarn install
+
+before_script:
+  - gulp eslint
+  - gulp stylelint
+
+script:
+  - gulp build:dev
+  - gulp build
