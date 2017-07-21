@@ -91,10 +91,10 @@ gulp.task('watch', ['styles:watch', 'scripts:watch', 'markup:watch']);
 
 gulp.task('serve', ['build'], () => {
   browserSync.init({
-    server: "./publish"
+    server: "./public"
   });
 
-  gulp.watch( ['./publish/**/*.html', './publish/**/*.js'] ).on("change", browserSync.reload);
+  gulp.watch( ['./public/**/*.html', './public/**/*.js'] ).on("change", browserSync.reload);
 });
 
 

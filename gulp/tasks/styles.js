@@ -22,7 +22,7 @@ gulp.task('styles', function () {
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(postcss(postCssPlugins))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(paths.publish.styles));
+    .pipe(gulp.dest(paths.public.styles));
 });
 
 gulp.task('styles:dev', function () {

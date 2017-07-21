@@ -19,12 +19,12 @@ const paths = {
 
   /* minified and optimized */
   publish: {
-    dir: './publish',
-    fonts: './publish/assets',
-    images: './publish/assets',
-    markup: './publish',
-    styles: './publish/assets',
-    scripts: './publish/assets'
+    dir: './public',
+    fonts: './public/assets',
+    images: './public/assets',
+    markup: './public',
+    styles: './public/assets',
+    scripts: './public/assets'
   }
 };
 

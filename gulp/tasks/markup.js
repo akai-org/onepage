@@ -10,7 +10,7 @@ gulp.task('markup', function () {
   return gulp.src(paths.source.markup)
     .pipe(htmlhint())
     .pipe(htmlhint.failReporter())
-    .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'publish', addRootSlash: false}))
+    .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'public', addRootSlash: false}))
     .pipe(strip())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.publish.markup));
