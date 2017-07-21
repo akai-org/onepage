@@ -9,11 +9,10 @@ const paths = require('../config/paths');
 
 gulp.task('markup', function () {
   return gulp.src(paths.source.markup)
+    .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'public', addRootSlash: false}))
     .pipe(injectfile())
     .pipe(htmlhint())
     .pipe(htmlhint.failReporter())
-    .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'public', addRootSlash: false}))
-    .pipe(injectfile())
     .pipe(strip())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.publish.markup));
@@ -21,11 +20,10 @@ gulp.task('markup', function () {
 
 gulp.task('markup:dev', function () {
   return gulp.src(paths.source.markup)
+    .pipe(inject(gulp.src([paths.build.styles+"/**/*.css", paths.build.scripts+"/**/*.js"], {read: false}), {ignorePath: 'build', addRootSlash: false}))
     .pipe(injectfile())
     .pipe(htmlhint())
     .pipe(htmlhint.reporter())
-    .pipe(inject(gulp.src([paths.build.styles+"/**/*.css", paths.build.scripts+"/**/*.js"], {read: false}), {ignorePath: 'build', addRootSlash: false}))
-    .pipe(injectfile())
     .pipe(gulp.dest(paths.build.markup));
 });
 

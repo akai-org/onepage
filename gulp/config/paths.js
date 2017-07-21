@@ -14,7 +14,7 @@ const paths = {
   build: {
     dir: './build',
     fonts: './build/assets',
-    images: './build/assets',
+    images: './build/img',
     markup: './build',
     styles: './build/assets',
     scripts: './build/assets'
@@ -24,7 +24,7 @@ const paths = {
   publish: {
     dir: './public',
     fonts: './public/assets',
-    images: './public/assets',
+    images: './public/img',
     markup: './public',
     styles: './public/assets',
     scripts: './public/assets'
