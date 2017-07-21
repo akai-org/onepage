@@ -27,6 +27,7 @@
     "gulp-htmlhint": "^0.3.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-inject": "^4.2.0",
+    "gulp-inject-file": "^0.0.18",
     "gulp-jasmine-browser": "^1.9.0",
     "gulp-minify": "^1.0.0",
     "gulp-postcss": "^7.0.0",
