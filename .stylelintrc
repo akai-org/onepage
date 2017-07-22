@@ -3,6 +3,7 @@
   "processors": ["stylelint-processor-html"],
   "rules": {
     "max-nesting-depth": 4,
-    "selector-max-compound-selectors": 4
+    "selector-max-compound-selectors": 4,
+    "selector-no-qualifying-type": null
   }
 }

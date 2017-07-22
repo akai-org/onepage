@@ -1,105 +1,105 @@
-section[class=footer]{
-
-	padding: 20px 0 40px 0;
-	width: auto;
-	height: auto;
+[class=footer] {
+  color: $heading-color;
   font-size: 1rem;
-	color: $heading-color;
+  height: auto;
+  padding: 20px 0 40px;
+  width: auto;
 
-	.container {
-		display: flex;
-		justify-content: space-around;
-	}
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
 
-	.footer-left{
-    &--akai{
+  .footer-left {
+    &--akai {
+      color: $text-color;
       font-size: 0.8rem;
       transform: translateY(4px);
-			color: $text-color;
     }
-	}
+  }
 
-  .footer-contact{
-
-    &--mailto{
+  .footer-contact {
+    &--mailto {
+      color: $text-color;
       font-size: 0.8rem;
-			color: $text-color;
-      &:hover{
+
+      &:hover {
+        filter: brightness(50%);
+      }
+    }
+  }
+
+  .footer-socials {
+    &--icon {
+      border: 1px solid $text-color;
+      border-radius: 100%;
+      color: $text-color;
+      float: left;
+      height: 40px;
+      margin-right: 7px;
+      text-align: center;
+      width: 40px;
+
+      i {
+        font-size: 25px;
+        line-height: 43px;
+      }
+
+      &:hover {
         filter: brightness(50%);
       }
     }
 
+    &::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    &--logo {
+      img {
+        border: 1px solid $text-color;
+        border-radius: 50%;
+        height: 30px;
+        margin-right: 7px;
+        padding: 5px;
+        width: 30px;
+
+        &:hover {
+          filter: brightness(50%);
+        }
+      }
+    }
   }
 
-	.footer-socials {
-		&--icon{
-
-			text-align: center;
-			float: left;
-			width: 40px;
-			height: 40px;
-			border: 1px solid $text-color;
-			border-radius: 100%;
-			margin-right: 7px;
-
-			color: $text-color;
-			i{
-				font-size: 25px;
-				line-height: 43px;
-			}
-			&:hover{
-				filter: brightness(50%);
-			}
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
-    &--logo{
-      img{
-				width: 30px;
-				height: 30px;
-				border: 1px solid $text-color;
-				border-radius: 50%;
-				margin-right: 7px;
-				padding: 5px;
-  			&:hover{
-					filter: brightness(50%);
-			    }
-        }
-
-		}
-	}
-
-	@media screen and (max-width: 960px) {
-		display: block;
+  @media screen and (max-width: 960px) {
+    display: block;
     text-align: center;
 
-		h4{
-			margin-bottom: 10px;
-		}
-		p{
-			margin-top: 5px;
-		}
+    h4 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-top: 5px;
+    }
+
     .footer-socials {
-      width: 150px;
       display: inline-block;
+      width: 150px;
 
       &--heading {
-        margin-top: 10px;  
+        margin-top: 10px;
       }
 
       &--icon {
         float: left;
         margin: 0 4px;
       }
+
       &--logo {
         margin: 0 4px;
       }
     }
-	}
-
+  }
 }

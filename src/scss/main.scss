@@ -1,32 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,600,700');
 
-@import "_settings";
-@import "_home";
-@import "_about";
-@import "_date";
-@import "_eventsDetails";
-@import "_contact";
-@import "_footer";
+@import 'settings';
+@import 'home';
+@import 'about';
+@import 'date';
+@import 'eventsDetails';
+@import 'contact';
+@import 'footer';
 
-html, body {
+html,
+body {
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
   margin: 0;
 }
 
-input, textarea {
+input,
+textarea {
   background: none;
-  outline: none;
-  border: none;
+  border: 0;
   box-shadow: none;
+  outline: none;
 }
-
 
 @media all and (max-width: 1700px) {
   .container {
     margin: 0 15%;
   }
 }
+
 @media all and (max-width: 1300px) {
   .container {
     margin: 0 5%;
