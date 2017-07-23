@@ -1,31 +1,32 @@
 const gulp = require('gulp');
-const gulpsync = require('gulp-sync')(gulp);
-browserSync = require("browser-sync").create();
-const requireDir = require('require-dir');
+const inject = require('gulp-inject');
+const injectfile = require('gulp-inject-file');
+const htmlmin = require('gulp-htmlmin');
+const htmlhint = require('gulp-htmlhint');
+const strip = require('gulp-strip-comments');
 
-requireDir('./gulp/tasks');
+const paths = require('../config/paths');
 
-gulp.task('default', ['serve:dev']);
-
-gulp.task('build', gulpsync.sync(['styles', 'scripts', 'markup', 'images']));
-
-gulp.task('build:dev', gulpsync.sync(['styles:dev', 'scripts:dev', 'markup:dev', 'images:dev']));
-
-gulp.task('watch', ['styles:watch', 'scripts:watch', 'markup:watch', 'images:watch']);
-
-gulp.task('serve', ['build'], () => {
-  browserSync.init({
-    server: "./public"
-  });
-
-  gulp.watch( ['./public/**/*.html', './public/**/*.js'] ).on("change", browserSync.reload);
+gulp.task('markup', function () {
+  return gulp.src(paths.source.markup)
+    .pipe(inject(gulp.src([paths.publish.styles+"/**/*.css", paths.publish.scripts+"/**/*.js"], {read: false}), {ignorePath: 'public', addRootSlash: false}))
+    .pipe(injectfile())
+    .pipe(htmlhint())
+    .pipe(htmlhint.failReporter())
+    .pipe(strip())
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest(paths.publish.markup));
 });
 
+gulp.task('markup:dev', function () {
+  return gulp.src(paths.source.markup)
+    .pipe(inject(gulp.src([paths.build.styles+"/**/*.css", paths.build.scripts+"/**/*.js"], {read: false}), {ignorePath: 'build', addRootSlash: false}))
+    .pipe(injectfile())
+    .pipe(htmlhint())
+    .pipe(htmlhint.reporter())
+    .pipe(gulp.dest(paths.build.markup));
+});
 
-gulp.task('serve:dev', ['build:dev', 'watch'], () => {
-  browserSync.init({
-    server: "./build"
-  });
-
-  gulp.watch( ['./build/**/*.html', './build/**/*.js'] ).on("change", browserSync.reload);
+gulp.task('markup:watch', function () {
+  gulp.watch(paths.source.markup, ['markup:dev']);
 });

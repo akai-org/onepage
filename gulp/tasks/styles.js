@@ -18,9 +18,9 @@ const paths = require('../config/paths');
 gulp.task('styles', function () {
   return gulp.src(paths.source.styles)
     .pipe(gulpStylelint({failAfterError: true, reporters: [{formatter: 'verbose', console: true}], debug: false}))
-    .pipe(concat('all.scss'))
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(postcss(postCssPlugins))
+    .pipe(concat('all.scss'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.publish.styles));
 });
