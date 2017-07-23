@@ -1,20 +1,15 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
+const plugins = require('gulp-load-plugins')();
 
 const paths = require('../config/paths');
 
 gulp.task('images', () =>
   gulp.src(paths.source.images)
-    .pipe(imagemin())
-    .pipe(gulp.dest(paths.publish.images))
-);
-
-gulp.task('images:dev', () =>
-  gulp.src(paths.source.images)
-    .pipe(imagemin())
-    .pipe(gulp.dest(paths.build.images))
+    .pipe(plugins.cache(plugins.imagemin({ progressive: true, interlaced: true })))
+    .pipe(gulp.dest(paths.dist.images))
+    .pipe(plugins.size({title: 'images'}))
 );
 
 gulp.task('images:watch', () => {
-  gulp.watch(paths.source.images, ['images:dev']);
+  gulp.watch(paths.source.images, ['images']);
 });
