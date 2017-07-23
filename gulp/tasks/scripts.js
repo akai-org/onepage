@@ -44,26 +44,16 @@ gulp.task('eslint', () => {
     .pipe(eslint.format())
 });
 
-gulp.task('libs', ['jquery', 'lodash']);
+gulp.task('libs', ['jquery']);
 
 gulp.task('jquery', function () {
   return gulp.src('./node_modules/jquery/dist/jquery.min.js')
     .pipe(gulp.dest(paths.publish.scripts));
 });
 
-gulp.task('lodash', function () {
-  return gulp.src('./node_modules/lodash/lodash.min.js')
-    .pipe(gulp.dest(paths.publish.scripts));
-});
-
-gulp.task('libs:dev', ['jquery:dev', 'lodash:dev']);
+gulp.task('libs:dev', ['jquery:dev']);
 
 gulp.task('jquery:dev', function () {
   return gulp.src('./node_modules/jquery/dist/jquery.js')
-    .pipe(gulp.dest(paths.build.scripts));
-});
-
-gulp.task('lodash:dev', function () {
-  return gulp.src('./node_modules/lodash/lodash.js')
     .pipe(gulp.dest(paths.build.scripts));
 });
