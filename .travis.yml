@@ -19,5 +19,5 @@ before_script:
   - npm test
 
 script:
-  - gulp build:dev
   - gulp build
+  - gulp build --production
