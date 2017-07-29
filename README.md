@@ -16,3 +16,13 @@ gulp
 ```
 
 Server will run at localhost:3000.
+
+## Update project base
+Add new remote
+```
+git remote add base https://github.com/rrudol/gulp-starter.git
+```
+merge with master
+```
+git pull base master
+```

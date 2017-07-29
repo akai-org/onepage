@@ -1,0 +1,87 @@
+.contact {
+  background: $bg-color;
+  color: $heading-color;
+  padding: 5rem 0;
+  width: 100%;
+
+  .contact-box {
+    margin: 0 auto;
+    max-width: 65rem;
+    text-align: center;
+    width: 80%;
+
+    .contact-heading {
+      font-size: 2.6rem;
+
+      &::after {
+        background: $akai-yellow;
+        content: '';
+        display: block;
+        height: 0.3rem;
+        margin: 2.5rem auto;
+        width: 4.5rem;
+      }
+    }
+
+    .contact-info {
+      color: $text-color;
+      font-size: 1.5rem;
+      line-height: 2.6rem;
+      margin: 1.5rem 3rem 4rem;
+    }
+
+    .contact-form {
+      display: block;
+      margin: 0 auto 2.5rem;
+      max-width: 35rem;
+
+      .email,
+      .message {
+        background: transparent;
+        border: 0;
+        border-bottom: $border;
+        box-sizing: border-box;
+        color: $text-color;
+        font-family: inherit;
+        font-size: 1.5rem;
+        opacity: 0.8;
+        padding: 1.5rem;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+        }
+
+        &.disable:invalid {
+          border-color: $border-invalid;
+        }
+      }
+
+      .message {
+        margin: 1.8rem 0;
+        resize: none;
+      }
+
+      .send-btn {
+        background: $akai-yellow;
+        border: 0;
+        border-radius: 25px;
+        box-shadow: 0 5px 30px -5px #aaa;
+        color: #fff;
+        font-family: inherit;
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-top: 1.5rem;
+        padding: 1.2rem 1rem;
+        transition: all, 0.4s, ease-out;
+        width: 22rem;
+
+        &:hover {
+          background: darken($akai-yellow, 6%);
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}

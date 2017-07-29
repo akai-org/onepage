@@ -1,16 +1,16 @@
-section[class="date"] {
-  padding: 10vh 0;
-  color: $text-color;
+[class='date'] {
   background-color: $bg-color;
+  color: $text-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 10vh 0;
   text-align: center;
 
   a {
     color: $akai-yellow;
     text-decoration: none;
-    @include transition(all, 0.4s, ease-out);
+    transition: all, 0.4s, ease-out;
 
     &:hover {
       color: $akai-yellow-darkened;
@@ -26,23 +26,26 @@ section[class="date"] {
       margin-top: 0;
     }
   }
+
   .date-column {
-    width: 12em;
     margin: 0 4em;
+    width: 12em;
 
     img {
       width: 6em;
     }
+
     h1 {
       color: $heading-color;
       margin: 0;
     }
+
     h2 {
       font-size: 1em;
-      // font-weight: normal;
       margin: 0;
     }
-// REGULOWANIE WIELKOŚCI CZCIONKI POD IKONAMI
+
+    // REGULOWANIE WIELKOŚCI CZCIONKI POD IKONAMI
     &:first-child {
       h1 {
         font-size: 3em;
@@ -50,6 +53,7 @@ section[class="date"] {
         margin-top: 10px;
       }
     }
+
     &:last-child {
       h1 {
         font-size: 1em;
@@ -57,14 +61,16 @@ section[class="date"] {
       }
     }
   }
+
   .date-add {
     font-size: 1.1em;
     font-weight: bold;
   }
+
   .date-calendar {
-    margin-right: 2em;
     font-size: 1.1em;
     font-weight: bold;
+    margin-right: 2em;
 
     &:last-child {
       margin-right: 0;
@@ -76,6 +82,7 @@ section[class="date"] {
       margin: 0 2em;
     }
   }
+
   @media all and (max-width: 350px) {
     .date-column {
       margin: 0;

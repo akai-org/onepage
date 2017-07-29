@@ -1,4 +1,4 @@
-section[class="about"] {
+[class='about'] {
   color: $text-color;
   padding: 10vh 0;
 
@@ -10,18 +10,20 @@ section[class="about"] {
       color: $akai-yellow;
       font-size: 1em;
     }
+
     h1 {
       color: $heading-color;
     }
+
     .divider {
-      width: 3em;
       border-top: medium solid $akai-yellow;
+      width: 3em;
     }
   }
 
   .about-columns {
-    display: flex;
     align-items: flex-end;
+    display: flex;
     margin: 0 20%;
 
     .about-left {
@@ -30,10 +32,12 @@ section[class="about"] {
       p:first-child {
         margin-top: 3em;
       }
+
       p:last-child {
         margin-bottom: 5vh;
       }
     }
+
     .about-right {
       width: 50%;
 
@@ -44,36 +48,26 @@ section[class="about"] {
   }
 }
 
-// @media all and (max-width: 1700px) {
-//   section[class="about"] {
-//     .about-header, .about-columns {
-//       margin: 0 15%;
-//     }
-//   }
-// }
-// @media all and (max-width: 1300px) {
-//   section[class="about"] {
-//     .about-header, .about-columns {
-//       margin: 0 5%;
-//     }
-//   }
-// }
 @media all and (max-width: 1000px) {  // one column layout
-  section[class="about"] {
-    .about-header, .about-columns {
+  [class='about'] {
+    .about-header,
+    .about-columns {
       margin-left: 15%;
       width: 70%;
     }
-    .about-columns {
-      flex-direction: column-reverse;
-      align-items: center;
 
-      .about-right, .about-left {
+    .about-columns {
+      align-items: center;
+      flex-direction: column-reverse;
+
+      .about-right,
+      .about-left {
         width: 100%;
 
         p:first-child {
           margin-top: 0;
         }
+
         img {
           margin-top: 3em;
         }
@@ -83,8 +77,9 @@ section[class="about"] {
 }
 
 @media all and (max-width: 600px) {
-  section[class="about"] {
-    .about-header, .about-columns {
+  [class='about'] {
+    .about-header,
+    .about-columns {
       margin-left: 10%;
       width: 80%;
     }
