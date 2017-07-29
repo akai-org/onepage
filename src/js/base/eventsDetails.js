@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $( document ).ready(function() {
   var eventsMore = $('.event-detail--more');
   var toggle = $('.event-detail--toggle');

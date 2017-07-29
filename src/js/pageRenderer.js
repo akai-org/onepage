@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 const Header = require('./components/header');
 const About = require('./components/about');
 const DateAndVenue = require('./components/dateAndVenue');

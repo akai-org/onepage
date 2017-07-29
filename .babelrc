@@ -1,7 +1,6 @@
 {
   "plugins": ["lodash"],
   "presets": [
-    "node6",
     ["env", {
       "targets": {
         "browsers": ["last 2 versions", "safari >= 7"]
