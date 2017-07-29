@@ -2,7 +2,6 @@ const paths = {
   /* source code */
   source: {
     dir: './source',
-    fonts: './src/fonts/**/*',
     images: './src/img/**/*',
     markup: './src/**/index.html',
     styles: './src/scss/**/*.scss',
@@ -13,7 +12,6 @@ const paths = {
   /* build */
   build: {
     dir: './build',
-    fonts: './build/assets',
     images: './build/img',
     markup: './build',
     styles: './build/assets',
@@ -23,7 +21,6 @@ const paths = {
   /* minified and optimized */
   publish: {
     dir: './public',
-    fonts: './public/assets',
     images: './public/img',
     markup: './public',
     styles: './public/assets',
@@ -31,4 +28,7 @@ const paths = {
   }
 };
 
-module.exports = paths
+const gulp = require('gulp');
+paths.dist = gulp.env.production ? paths.publish : paths.build;
+
+module.exports = paths;
