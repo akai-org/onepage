@@ -1,0 +1,27 @@
+{
+  "title": "Onepage",
+	"components": [
+  	{
+    	"name": "header",
+      "data": {}
+    },
+    {
+    	"name": "about",
+      "data": {
+      	"title": "O wydarzeniu"
+      }
+    },
+  	{
+    	"name": "date",
+      "data": {}
+    },
+  	{
+    	"name": "contact",
+      "data": {}
+    },
+  	{
+    	"name": "contact",
+      "data": {}
+    }
+  ]
+}
