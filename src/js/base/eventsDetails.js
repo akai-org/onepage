@@ -1,4 +1,4 @@
-import $ from 'jquery';
+var $ = require("jquery");
 
 $( document ).ready(function() {
   var eventsMore = $('.event-detail--more');

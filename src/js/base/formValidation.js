@@ -1,4 +1,4 @@
-import $ from 'jquery';
+var $ = require("jquery");
 
 const formValidation = () => {
   $(':required').on('blur keydown', function() {

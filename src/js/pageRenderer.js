@@ -1,4 +1,4 @@
-import $ from 'jquery';
+var $ = require("jquery");
 
 const Header = require('./components/header');
 const About = require('./components/about');
@@ -8,12 +8,12 @@ const Contact = require('./components/contact');
 const Footer = require('./components/footer');
 
 (() => {
-  const compiledHeader = Header();
-  const compiledAbout = About();
-  const compiledDateAndVenue = DateAndVenue();
-  const compiledEventDetails = EventDetails();
-  const compiledContact = Contact();
-  const compiledFooter = Footer();
+  const compiledHeader = Header.compile();
+  const compiledAbout = About.compile();
+  const compiledDateAndVenue = DateAndVenue.compile();
+  const compiledEventDetails = EventDetails.compile();
+  const compiledContact = Contact.compile();
+  const compiledFooter = Footer.compile();
 
   const compiledPage =
     compiledHeader +
@@ -24,4 +24,16 @@ const Footer = require('./components/footer');
     compiledFooter;
 
   $("#content").append(compiledPage);
+  registerComponents();
 })();
+
+const registerComponents = () => {
+  $(() => {
+    Header.api.componentReady();
+    About.api.componentReady();
+    DateAndVenue.api.componentReady();
+    EventDetails.api.componentReady();
+    Contact.api.componentReady();
+    Footer.api.componentReady();
+  });
+};
