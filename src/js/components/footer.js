@@ -1,4 +1,4 @@
-export default Footer = (data) => {
+const Footer = (data) => {
   data;
   return `
     <section class="footer">
@@ -27,3 +27,5 @@ export default Footer = (data) => {
     </section>
   `;
 };
+
+module.exports = Footer;

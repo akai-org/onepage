@@ -1,4 +1,4 @@
-export default EventDetails = (data) => {
+const EventDetails = (data) => {
   data;
   return `
     <section class="event-detail-container">
@@ -155,3 +155,5 @@ export default EventDetails = (data) => {
     </section>
   `;
 }
+
+module.exports = EventDetails;

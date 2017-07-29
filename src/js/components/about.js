@@ -1,4 +1,4 @@
-export default About = (data) => {
+const About = (data) => {
   data;
   return `
     <section class="about" id="about">
@@ -21,3 +21,5 @@ export default About = (data) => {
     </section>
   `;
 };
+
+module.exports = About;

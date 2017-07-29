@@ -1,4 +1,4 @@
-export default Header = (data) => {
+const Header = (data) => {
   data;
   return `
     <section class="home">
@@ -24,3 +24,5 @@ export default Header = (data) => {
     </section>
   `;
 };
+
+module.exports = Header;

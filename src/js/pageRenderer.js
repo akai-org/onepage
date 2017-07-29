@@ -1,9 +1,9 @@
-import Header from "header";
-import About from "about";
-import DateAndVenue from "dateAndVenue";
-import EventDetails from "eventDetails";
-import Contact from "contact";
-import Footer from "footer";
+const Header = require('./components/header');
+const About = require('./components/about');
+const DateAndVenue = require('./components/dateAndVenue');
+const EventDetails = require('./components/eventDetails');
+const Contact = require('./components/contact');
+const Footer = require('./components/footer');
 
 (() => {
   const compiledHeader = Header();

@@ -1,4 +1,4 @@
-export default Contact = (data) => {
+const Contact = (data) => {
   data;
   return `
     <section id="contact" class="contact">
@@ -16,3 +16,5 @@ export default Contact = (data) => {
     </section>
   `;
 };
+
+module.exports = Contact;

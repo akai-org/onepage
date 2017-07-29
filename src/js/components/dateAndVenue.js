@@ -1,4 +1,4 @@
-export default DateAndVenue = (data) => {
+const DateAndVenue = (data) => {
   data;
   return `
     <section class="date" id="date">
@@ -32,3 +32,5 @@ export default DateAndVenue = (data) => {
     </section>
   `;
 };
+
+module.exports = DateAndVenue;
