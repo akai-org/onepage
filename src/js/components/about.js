@@ -1,6 +1,8 @@
 const About = (() => {
 
-  const compile = (data) => {
+  const api = {};
+
+  api.compile = (data) => {
     var {title, text, image} = data;
     return `
       <section class="about" id="about">
@@ -23,17 +25,15 @@ const About = (() => {
     `;
   }
 
-  const api = {};
-  
   api.componentReady = () => {
-
+    // console.log("About ready");
   };
 
   return {
-    compile: compile,
+    name: "About",
     api: api,
     selector: "#about"
-  }
+  };
 })();
 
 module.exports = About;

@@ -2,7 +2,7 @@ const Contact = (() => {
 
   const api = {};
 
-  const compile = (data) => {
+  api.compile = (data) => {
     var {title, text, buttonText} = data;
     return `
       <section id="contact" class="contact">
@@ -19,13 +19,17 @@ const Contact = (() => {
         </div>
       </section>
     `;
-  }
+  };
+
+  api.componentReady = () => {
+    // console.log("Contact ready");
+  };
 
   return {
-    compile: compile,
+    name: "Contact",
     api: api,
     selector: "#contact"
-  }
+  };
 })();
 
 module.exports = Contact;

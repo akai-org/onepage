@@ -1,28 +1,44 @@
-const Header = (data) => {
-  data;
-  return `
-    <section class="home">
-      <div class="container">
-        <div class="home-topbar">
-          <img src="img/logo.svg" alt="Logo" class="home-logo">
-          <a href="#eventsDetails" class="button button-alt">Kontakt</a>
-        </div>
-        <div class="home-title">
-          <h2 class="page-subtitle">AKAI</h2>
-          <h1 class="page-title">Webstarter 2017</h1>
-          <div class="divider"></div>
-          <p class="page-description">Zbiór prelekcji wprowadzających w świat webdevelopmentu przygotowanych przez firmy IT we współpracy z Akademickim Kołem Aplikacji Internetowych.</p>
-          <a href="#contact" class="button">Zarezerwuj miejsce</a>
-        </div>
-        <a class="home-scroll" href="#about">
-          <div class="home-icon-container">
-            <div class="home-scroll-description">Dowiedz się więcej</div>
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+const Header = (() => {
+
+  const api = {};
+
+  api.compile = (data) => {
+    var {title, subtitle, description, primaryButton, seconadryButton, scrollButton} = data;
+
+    return `
+      <section class="home" id="header">
+        <div class="container">
+          <div class="home-topbar">
+            <img src="img/logo.svg" alt="Logo" class="home-logo">
+            <a href="${seconadryButton.link}" class="button button-alt">${seconadryButton.text}</a>
           </div>
-        </a>
-      </div>
-    </section>
-  `;
-};
+          <div class="home-title">
+            <h2 class="page-subtitle">${subtitle}</h2>
+            <h1 class="page-title">${title}</h1>
+            <div class="divider"></div>
+            <p class="page-description">${description}</p>
+            <a href="${primaryButton.link}" class="button">${primaryButton.text}</a>
+          </div>
+          <a class="home-scroll" href="${scrollButton.link}">
+            <div class="home-icon-container">
+              <div class="home-scroll-description">${scrollButton.text}</div>
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+          </a>
+        </div>
+      </section>
+    `;
+  }
+
+  api.componentReady = () => {
+    // console.log("Header ready");
+  };
+
+  return {
+    name: "Header",
+    api: api,
+    selector: "#header"
+  };
+})();
 
 module.exports = Header;
