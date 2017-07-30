@@ -7,49 +7,37 @@ const Events = require('./components/events');
 const Contact = require('./components/contact');
 const Footer = require('./components/footer');
 
-const allComponents = [Header, About, DateAndVenue, Events, Contact, Footer];
-
 (() => {
-  $.getJSON("../config.json", config => {
+  const allComponents = [
+    Header, About, DateAndVenue, Events, Contact, Footer
+  ];
+  var pageComponents = [];
+  var compiledPageComponents = [];
+  
+  $.getJSON("./../config.json", config => {
     var {title, components} = config;
     $(document).prop("title", title);
-    components.forEach(component => {
-      component;
+    compiledPageComponents = components.map(componentData => {
+      var {name, data} = componentData;
+      var component = allComponents.find(componentData => componentData.name === name);
+      pageComponents.push(component);
+      return component.api.compile(data);
     });
+  })
+  .done(() => {
+    var compiled = compiledPageComponents.join("\n");
+    $("#content").append(compiled);
+    registerComponents(pageComponents);
+  })
+  .fail(() => {
+    alert("error");
   });
-
-  allComponents;
-
-  /*
-  const compiledHeader = Header.api.compile({});
-  const compiledAbout = About.api.compile({});
-  const compiledDateAndVenue = DateAndVenue.api.compile({});
-  const compiledEvents = Events.api.compile({});
-  const compiledContact = Contact.api.compile({});
-  const compiledFooter = Footer.api.compile({});
-
-  const compiledPage =
-    compiledHeader +
-    compiledAbout +
-    compiledDateAndVenue +
-    compiledEvents +
-    compiledContact +
-    compiledFooter;
-
-  $("#content").append(compiledPage);
-  registerComponents();
-  */
 })();
 
-/*
-const registerComponents = () => {
+const registerComponents = (components) => {
   $(() => {
-    Header.api.componentReady();
-    About.api.componentReady();
-    DateAndVenue.api.componentReady();
-    Events.api.componentReady();
-    Contact.api.componentReady();
-    Footer.api.componentReady();
+    components.forEach(component => {
+      component.api.componentReady();
+    });
   });
 };
-*/

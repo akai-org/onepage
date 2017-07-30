@@ -1,4 +1,4 @@
-const EventDetails = (() => {
+const Events = (() => {
 
   const api = {};
 
@@ -65,4 +65,4 @@ const EventDetails = (() => {
   };
 })();
 
-module.exports = EventDetails;
+module.exports = Events;
