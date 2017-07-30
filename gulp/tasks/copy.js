@@ -6,6 +6,7 @@ const paths = require('../config/paths');
 gulp.task('copy', () =>
   gulp.src([
     paths.source.dir,
+    paths.source.config,
     '!'+paths.source.scripts,
     '!'+paths.source.markup,
     '!'+paths.source.styles,
@@ -19,6 +20,7 @@ gulp.task('copy', () =>
 gulp.task('copy:watch', function () {
   gulp.watch([
     paths.source.dir,
+    paths.source.config,
     '!'+paths.source.scripts,
     '!'+paths.source.markup,
     '!'+paths.source.styles,

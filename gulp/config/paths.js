@@ -2,6 +2,7 @@ const paths = {
   /* source code */
   source: {
     dir: './source',
+    config: './src/**/*.json',
     images: './src/img/**/*',
     markup: './src/**/index.html',
     styles: './src/scss/**/*.scss',
