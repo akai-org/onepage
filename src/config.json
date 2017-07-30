@@ -2,26 +2,136 @@
   "title": "Onepage",
 	"components": [
   	{
-    	"name": "header",
-      "data": {}
+    	"name": "Header",
+      "data": {
+        "title": "Webstarter 2017",
+        "subtitle": "Akai",
+        "description": "Zbiór prelekcji wprowadzających w świat webdevelopmentu przygotowanych przez firmy IT we współpracy z Akademickim Kołem Aplikacji Internetowych.",
+        "primaryButton": {
+          "text": "Zarezerwuj miejsce",
+          "link": "#"
+        },
+        "seconadryButton": {
+          "text": "Kontakt",
+          "link": "#"
+        },
+        "scrollButton": {
+          "text": "Dowiedz się więcej",
+          "link": "#"
+        }
+      }
     },
     {
-    	"name": "about",
+    	"name": "About",
       "data": {
-      	"title": "O wydarzeniu"
+      	"title": "O wydarzeniu",
+        "text": [
+          "paragraph 1",
+          "paragraph 2"
+        ]
       }
     },
   	{
-    	"name": "date",
-      "data": {}
+    	"name": "DateAndVenue",
+      "data": {
+        "date": "30.03",
+        "time": "18:00",
+        "venue": "Centrum wykładowe Politechniki Poznańskiej",
+        "venueDetails": "Sala 8"
+      }
+    },
+    {
+    	"name": "events",
+      "data": {
+        "events": [
+          {
+            "title": "Web Development, based on Paymentwall experience and business perspective",
+            "time": "17:30",
+            "author": "Ivan Kovalyov, Paymentwall",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": [
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce"
+            ],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          },
+          {
+            "title": "Web Development, based on Paymentwall experience and business perspective",
+            "time": "17:30",
+            "author": "Ivan Kovalyov, Paymentwall",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": [
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce"
+            ],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          },
+          {
+            "title": "Web Development, based on Paymentwall experience and business perspective",
+            "time": "17:30",
+            "author": "Ivan Kovalyov, Paymentwall",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": [
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce"
+            ],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          },
+          {
+            "title": "Web Development, based on Paymentwall experience and business perspective",
+            "time": "17:30",
+            "author": "Ivan Kovalyov, Paymentwall",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": [
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce",
+              "Jak szybko dostarczać informacje w każdym miejscu w Polsce"
+            ],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          }
+        ]
+      }
     },
   	{
     	"name": "contact",
-      "data": {}
+      "data": {
+        "title": "Zainteresowany współpracą?",
+        "text": "Jeśli chcesz promować swoją firmę, przedstawić trudne lub ciekawe zagadnienie, zostaw swoją propozycję, na pewno odpiszemy!",
+        "buttonText": "Zostaw wiadomość"
+      }
     },
   	{
-    	"name": "contact",
-      "data": {}
+    	"name": "footer",
+      "data": {
+        "title": "AKAI webstarter",
+        "copy": "&copy; 2017 Akademickie Koło Aplikacji Internetowych",
+        "email": "webstarter@akai.org.pl",
+        "socials": [
+          {
+            "icon": "fa-facebook",
+            "link": "https://www.facebook.com/akai.pp"
+          },
+          {
+            "icon": "fa-twitter",
+            "link": "https://twitter.com/akai.pp"
+          },
+        ]
+      }
     }
   ]
 }
