@@ -28,7 +28,11 @@
         "text": [
           "paragraph 1",
           "paragraph 2"
-        ]
+        ],
+        "image": {
+          "src": "http://placehold.it/350x350",
+          "alt": "Photo"
+        }
       }
     },
   	{
@@ -129,7 +133,7 @@
           {
             "icon": "fa-twitter",
             "link": "https://twitter.com/akai.pp"
-          },
+          }
         ]
       }
     }
