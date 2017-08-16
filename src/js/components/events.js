@@ -59,7 +59,7 @@ const Events = (() => {
   };
 
   return {
-    name: "Events",
+    name: "events",
     api: api,
     selector: "#events"
   };

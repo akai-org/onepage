@@ -41,7 +41,7 @@ const Footer = (() => {
   };
 
   return {
-    name: "Footer",
+    name: "footer",
     api: api,
     selector: "#footer"
   };

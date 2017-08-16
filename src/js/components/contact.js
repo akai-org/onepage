@@ -26,7 +26,7 @@ const Contact = (() => {
   };
 
   return {
-    name: "Contact",
+    name: "contact",
     api: api,
     selector: "#contact"
   };

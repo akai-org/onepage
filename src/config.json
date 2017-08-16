@@ -2,7 +2,7 @@
   "title": "Onepage",
 	"components": [
   	{
-    	"name": "Header",
+    	"name": "header",
       "data": {
         "title": "Webstarter 2017",
         "subtitle": "Akai",
@@ -22,7 +22,7 @@
       }
     },
     {
-    	"name": "About",
+    	"name": "about",
       "data": {
       	"title": "O wydarzeniu",
         "text": [
@@ -36,7 +36,7 @@
       }
     },
   	{
-    	"name": "DateAndVenue",
+    	"name": "dateAndVenue",
       "data": {
         "date": "30.03",
         "time": "18:00",

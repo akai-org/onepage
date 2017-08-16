@@ -42,7 +42,7 @@ const DateAndVenue = (() => {
   };
 
   return {
-    name: "DateAndVenue",
+    name: "dateAndVenue",
     api: api,
     selector: "#date"
   };

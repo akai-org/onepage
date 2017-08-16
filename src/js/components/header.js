@@ -35,7 +35,7 @@ const Header = (() => {
   };
 
   return {
-    name: "Header",
+    name: "header",
     api: api,
     selector: "#header"
   };

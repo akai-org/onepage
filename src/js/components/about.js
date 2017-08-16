@@ -30,7 +30,7 @@ const About = (() => {
   };
 
   return {
-    name: "About",
+    name: "about",
     api: api,
     selector: "#about"
   };
