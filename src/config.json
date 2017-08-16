@@ -24,10 +24,11 @@
     {
     	"name": "about",
       "data": {
-      	"title": "O wydarzeniu",
+      	"title": "Z roku na rok rozwój technologiczny nabiera rozpędu",
+        "subtitle": "O wydarzeniu",
         "text": [
-          "paragraph 1",
-          "paragraph 2"
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lectus massa, maximus in diam in, egestas commodo sapien. Etiam molestie ex eget est faucibus ornare. Aenean hendrerit gravida lorem vel commodo. Maecenas varius orci dui, a pellentesque justo rhoncus ut. Nullam eu velit ex. Donec vitae magna vel purus blandit fringilla non et mauris. Vestibulum placerat nulla quis blandit euismod. Phasellus ac neque blandit, molestie lectus sit amet, luctus enim.",
+          "Curabitur dictum, metus eget auctor laoreet, tortor velit egestas mauris, ut tincidunt enim lorem a nibh. Vivamus et lacinia elit. Sed suscipit rutrum dolor a ultrices. Suspendisse id vestibulum felis, lacinia lacinia ante."
         ],
         "image": {
           "src": "http://placehold.it/350x350",
