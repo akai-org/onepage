@@ -1,4 +1,4 @@
-var $ = require("jquery");
+const $ = require("jquery");
 
 const Header = require('./components/header');
 const About = require('./components/about');

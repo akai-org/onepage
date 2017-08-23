@@ -1,3 +1,5 @@
+const $ = require("jquery");
+
 const DateAndVenue = (() => {
 
   const api = {};
@@ -7,30 +9,30 @@ const DateAndVenue = (() => {
     return `
       <section class="date" id="date">
         <div class="container">
-          <div class="date-row">
-            <div class="date-column">
+          <div class="row">
+            <div class="column">
               <img src="img/time.png" alt="Data i godzina">
-              <h1>${date}</h1>
-              <h2>Godzina ${time}</h2>
+              <span class="date-value">${date}</span>
+              <span class="time-value">Godzina ${time}</span>
             </div>
-            <div class="date-column">
+            <div class="column">
               <img src="img/venue.png" alt="Miejsce">
-              <h1>${venue}</h1>
-              <h2>${venueDetails}</h2>
+              <span class="venue">${venue}</span>
+              <span class="venue-details">${venueDetails}</span>
             </div>
           </div>
-          <div class="date-row">
-              <a class="date-add" href="#">Dodaj do kalendarza</a>
-          </div>
-          <div class="date-row">
-            <a class="date-calendar" href="#">
-              <i class="fa fa-google" aria-hidden="true"></i>
-              Google Calendar
-            </a>
-            <a class="date-calendar" href="#">
-              <i class="fa fa-apple" aria-hidden="true"></i>
-              Apple iCal
-            </a>
+          <div class="calendar">
+            <a class="calendar-add" href="#">Dodaj do kalendarza</a>
+            <div class="calendar-options">
+              <a class="calendar-type" href="#">
+                <i class="fa fa-google" aria-hidden="true"></i>
+                Google Calendar
+              </a>
+              <a class="calendar-type" href="#">
+                <i class="fa fa-apple" aria-hidden="true"></i>
+                Apple iCal
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -38,7 +40,14 @@ const DateAndVenue = (() => {
   };
 
   api.componentReady = () => {
-    // console.log("DateAndVenue ready");
+    $('.calendar-add').on('click', (e) => {
+      const $this = $(e.currentTarget);
+
+      e.preventDefault();
+      $this.fadeOut(200, () => {
+        $('.calendar-options').show().fadeIn(200);
+      });
+    });
   };
 
   return {
