@@ -5,7 +5,7 @@ const DateAndVenue = (() => {
   const api = {};
 
   api.compile = (data) => {
-    var {date, time, venue, venueDetails} = data;
+    const {date, time, venue, venueDetails, calendar} = data;
     return `
       <section class="date" id="date">
         <div class="container">
@@ -24,11 +24,11 @@ const DateAndVenue = (() => {
           <div class="calendar">
             <a class="calendar-add" href="#">Dodaj do kalendarza</a>
             <div class="calendar-options">
-              <a class="calendar-type" href="#">
+              <a class="calendar-type" target="_blank" href="${calendar.google}">
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Google Calendar
               </a>
-              <a class="calendar-type" href="#">
+              <a class="calendar-type" target="_blank" href="${calendar.apple}>
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Apple iCal
               </a>
