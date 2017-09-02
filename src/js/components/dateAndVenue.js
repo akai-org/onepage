@@ -47,7 +47,7 @@ const DateAndVenue = (() => {
       $this.fadeOut(200, () => {
         console.log('callback');
         console.log($('.calendar-options'));
-        $('.calendar-options').show().fadeIn(200);
+        $('.calendar-options').fadeIn(200);
       });
     });
   };

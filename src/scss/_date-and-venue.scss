@@ -55,9 +55,8 @@
     }
   }
 
-  .calendar {
-    height: 20px;
-    position: relative;
+  .calendar-options {
+    display: none;
   }
 
   .calendar-add,
@@ -82,8 +81,12 @@
 
   @media all and (max-width: 480px) {
     .row {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
+    }
+
+    .calendar-type {
+      display: block;
     }
   }
 }
