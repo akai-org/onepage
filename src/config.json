@@ -2,7 +2,7 @@
   "title": "Onepage",
 	"components": [
   	{
-    	"name": "header",
+    	"name": "home",
       "data": {
         "title": "Webstarter 2017",
         "subtitle": "Akai",

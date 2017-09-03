@@ -9,7 +9,7 @@
   }
 
   .divider {
-    margin: 30px auto;
+    margin: 20px auto 30px;
   }
 
   .contact-info {
@@ -45,7 +45,7 @@
       }
 
       &.disable:invalid {
-        border-color: $border-invalid;
+        border-color: $invalid
       }
     }
 
@@ -61,7 +61,7 @@
       border: 0;
       border-radius: 25px;
       box-shadow: 0 5px 30px -5px $shadow;
-      color: $akai-white;
+      color: $white-text;
       cursor: pointer;
       font-family: inherit;
       font-weight: bold;
@@ -70,7 +70,7 @@
 
       &:hover {
         background-color: $akai-yellow-darkened;
-        color: $akai-white;
+        color: $white-text;
       }
     }
   }

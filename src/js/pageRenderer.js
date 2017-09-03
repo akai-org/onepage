@@ -1,6 +1,6 @@
 const $ = require("jquery");
 
-const Header = require('./components/header');
+const Home = require('./components/home');
 const About = require('./components/about');
 const DateAndVenue = require('./components/dateAndVenue');
 const Events = require('./components/events');
@@ -9,7 +9,7 @@ const Footer = require('./components/footer');
 
 const pageRenderer = (() => {
   const allComponents = [
-    Header, About, DateAndVenue, Events, Contact, Footer
+    Home, About, DateAndVenue, Events, Contact, Footer
   ];
 
   const registerComponents = (components) => {
