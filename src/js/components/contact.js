@@ -21,7 +21,9 @@ const Contact = (() => {
   };
 
   api.componentReady = () => {
-    // console.log("Contact ready");
+    $(':required').on('blur keydown', function() {
+      $(this).addClass('disable');
+    });
   };
 
   return {
