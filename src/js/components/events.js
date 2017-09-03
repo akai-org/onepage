@@ -46,7 +46,7 @@ const Events = (() => {
     }).join("\n");
 
     return `
-      <section class="event-detail-container" id="#events">
+      <section class="events" id="#events">
         <div class="container">
           ${compiledEvents}
         </div>

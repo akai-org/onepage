@@ -38,6 +38,7 @@
       font-family: inherit;
       opacity: 0.8;
       padding: 12px;
+      transition: all 0.3s ease-out;
       width: 100%;
 
       &:focus {
@@ -45,7 +46,7 @@
       }
 
       &.disable:invalid {
-        border-color: $invalid
+        border-color: $invalid;
       }
     }
 

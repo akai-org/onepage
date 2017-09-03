@@ -2,3 +2,11 @@
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}

@@ -76,6 +76,10 @@
 
   .calendar-type {
     margin: 0 30px;
+
+    i {
+      margin-right: 5px;
+    }
   }
 
   @media all and (max-width: 480px) {

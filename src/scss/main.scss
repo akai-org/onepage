@@ -10,7 +10,7 @@
 @import 'home';
 @import 'about';
 @import 'date-and-venue';
-@import 'eventsDetails';
+@import 'events';
 @import 'contact';
 @import 'footer';
 
@@ -42,7 +42,7 @@ section {
   }
 
   &:nth-child(2n+1) {
-    background-color: $bg-color; 
+    background-color: $bg-color;
   }
 }
 
