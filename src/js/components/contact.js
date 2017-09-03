@@ -7,15 +7,14 @@ const Contact = (() => {
     return `
       <section id="contact" class="contact">
         <div class="container">
-          <div class="contact-box">
-            <h2 class="contact-heading">${title}</h2>
-            <p class="contact-info">${text}</p>
-            <form class="contact-form">
-              <input type="email" class="email" placeholder="Adres e-mail" required>
-              <textarea class="message" placeholder="Twoja wiadomość..." rows="4"></textarea>
-              <button class="send-btn">${buttonText}</button>
-            </form>
-          </div>
+          <h2 class="contact-heading">${title}</h2>
+          <div class="divider"></div>
+          <p class="contact-info">${text}</p>
+          <form class="contact-form">
+            <input type="email" class="email" placeholder="Adres e-mail" required>
+            <textarea class="message" placeholder="Twoja wiadomość..." rows="4"></textarea>
+            <button class="send-btn">${buttonText}</button>
+          </form>
         </div>
       </section>
     `;
