@@ -1,4 +1,4 @@
-const Header = (() => {
+const Home = (() => {
 
   const api = {};
 
@@ -6,7 +6,7 @@ const Header = (() => {
     var {title, subtitle, description, primaryButton, seconadryButton, scrollButton} = data;
 
     return `
-      <section class="home" id="header">
+      <section class="home" id="home">
         <div class="container">
           <div class="home-topbar">
             <img src="img/logo.svg" alt="Logo" class="home-logo">
@@ -35,10 +35,10 @@ const Header = (() => {
   };
 
   return {
-    name: "header",
+    name: "home",
     api: api,
-    selector: "#header"
+    selector: "#home"
   };
 })();
 
-module.exports = Header;
+module.exports = Home;
