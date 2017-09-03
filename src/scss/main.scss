@@ -1,7 +1,11 @@
-@import 'utils/normalize';
-@import 'utils/mixins';
+/* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,600,700');
 
+/* Utilities */
+@import 'utils/normalize';
+@import 'utils/mixins';
+
+/* Section stylings */
 @import 'settings';
 @import 'home';
 @import 'about';
