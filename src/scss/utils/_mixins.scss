@@ -1,3 +1,26 @@
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$large-destkop: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == small-mobile {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @else if $media == mobile {
+    @media only screen and (max-width: $tablet) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $mobile) and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $desktop) and (max-width: $large-destkop - 1) { @content; }
+  }
+  @else if $media == large-desktop {
+    @media only screen and (min-width: $large-destkop) { @content; }
+  }
+}
+
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;

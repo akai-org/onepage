@@ -28,7 +28,7 @@ const DateAndVenue = (() => {
                 <i class="fa fa-google" aria-hidden="true"></i>
                 Google Calendar
               </a>
-              <a class="calendar-type" target="_blank" href="${calendar.apple}>
+              <a class="calendar-type" target="_blank" href="${calendar.apple}">
                 <i class="fa fa-apple" aria-hidden="true"></i>
                 Apple iCal
               </a>
