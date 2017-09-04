@@ -1,0 +1,100 @@
+.date {
+  color: $text-color;
+  padding: 60px 0;
+  text-align: center;
+
+  .row {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 640px;
+  }
+
+  .column {
+    align-content: space-between;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin: 0 40px 40px;
+    width: 50%;
+
+    img {
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 90px;
+    }
+
+    .date-value,
+    .venue {
+      color: $heading-color;
+      display: block;
+      line-height: 1;
+      margin: 0 0 10px;
+    }
+
+    .time-value,
+    .venue-details {
+      @include font-size(1.8);
+
+      display: block;
+      margin: 0;
+    }
+
+    .date-value {
+      @include font-size(5.2);
+
+      line-height: 0.9em;
+    }
+
+    .venue {
+      @include font-size(2);
+
+      font-weight: 600;
+      line-height: 1.1em;
+    }
+  }
+
+  .calendar-options {
+    display: none;
+  }
+
+  .calendar-add,
+  .calendar-type {
+    @include font-size(1.6);
+
+    color: $akai-yellow;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $akai-yellow-darkened;
+    }
+  }
+
+  .calendar-type {
+    margin: 0 30px;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  @include respond-to(small-mobile) {
+    .row {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .column {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .calendar-type {
+      display: block;
+    }
+  }
+}

@@ -16,7 +16,7 @@ gulp.task('scripts:prod', ['eslint'], () => {
     .pipe(plugins.babel())
     .pipe(plugins.concat('bundle.js'))
     .pipe(plugins.browserify())
-    .pipe(plugins.uglify())
+    // .pipe(plugins.uglify())
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.dist.scripts))
     .pipe(plugins.size({title: 'scripts'}));

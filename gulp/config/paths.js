@@ -2,6 +2,8 @@ const paths = {
   /* source code */
   source: {
     dir: './source',
+    config: './src/**/*.json',
+    libs: './src/libs/**',
     images: './src/img/**/*',
     markup: './src/**/index.html',
     styles: './src/scss/**/*.scss',
@@ -15,7 +17,8 @@ const paths = {
     images: './build/img',
     markup: './build',
     styles: './build/assets',
-    scripts: './build/assets'
+    scripts: './build/assets',
+    libs: './build/libs'
   },
 
   /* minified and optimized */
@@ -24,7 +27,8 @@ const paths = {
     images: './public/img',
     markup: './public',
     styles: './public/assets',
-    scripts: './public/assets'
+    scripts: './public/assets',
+    libs: './build/assets'
   }
 };
 
