@@ -51,7 +51,7 @@
     }
   }
 
-  @media all and (max-width: 768px) { // one column layout
+  @include respont-to(mobile) { // one column layout
     padding: 40px 0 60px;
 
     .about-header {
