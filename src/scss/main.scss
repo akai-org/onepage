@@ -60,7 +60,7 @@ section {
     max-width: 960px;
   }
 
-  @include respond-to(large-destkop) {
+  @include respond-to(large-desktop) {
     max-width: 1100px;
   }
 }
