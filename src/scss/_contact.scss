@@ -32,13 +32,13 @@
 
       background: transparent;
       border: 0;
-      border-bottom: $border;
+      border-bottom: 3px solid $border-color;
       box-sizing: border-box;
       color: $text-color;
       font-family: inherit;
       opacity: 0.8;
       padding: 12px;
-      transition: all 0.3s ease-out;
+      transition: border-color 0.3s ease-out;
       width: 100%;
 
       &:focus {
