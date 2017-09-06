@@ -16,9 +16,9 @@ const Footer = (() => {
     return `
       <section class="footer" id="footer">
         <div class="container">
-          <div class="footer-left">
-            <h4 class="footer-left--title">${title}</h4>
-            <p class="footer-left--akai">${copy}</p>
+          <div class="footer-copyright">
+            <h4 class="footer-copyright--title">${title}</h4>
+            <p class="footer-copyright--akai">${copy}</p>
           </div>
           <div class="footer-contact">
             <h4 class="footer-contact--heading">Kontakt</h4>
