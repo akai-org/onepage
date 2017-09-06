@@ -1,27 +1,33 @@
-[class=footer] {
+.footer {
   color: $heading-color;
-  font-size: 1rem;
   height: auto;
-  padding: 20px 0 40px;
+  padding: 30px 0 40px;
   width: auto;
 
   .container {
     display: flex;
-    justify-content: space-around;
+  }
+  
+  h4 {
+    @include font-size(1.6);
   }
 
-  .footer-left {
+  .footer-copyright {
+    flex: 1 1 55%;
+    
     &--akai {
       color: $text-color;
-      font-size: 0.8rem;
+      @include font-size(1.3);
       transform: translateY(4px);
     }
   }
 
   .footer-contact {
+    flex: 1 1 20%;
+    
     &--mailto {
       color: $text-color;
-      font-size: 0.8rem;
+      @include font-size(1.3);
 
       &:hover {
         filter: brightness(50%);
@@ -30,6 +36,8 @@
   }
 
   .footer-socials {
+    flex-basis: auto;
+    
     &--icon {
       border: 1px solid $text-color;
       border-radius: 100%;
@@ -61,7 +69,6 @@
         border: 1px solid $text-color;
         border-radius: 50%;
         height: 30px;
-        margin-right: 7px;
         padding: 5px;
         width: 30px;
 
@@ -72,34 +79,47 @@
     }
   }
 
-  @media screen and (max-width: 960px) {
-    display: block;
-    text-align: center;
-
-    h4 {
-      margin-bottom: 10px;
+  @include respond-to(mobile) {
+    .container {
+      text-align: center;
+      align-items: center;
+      flex-direction: column-reverse;
     }
-
-    p {
-      margin-top: 5px;
-    }
-
-    .footer-socials {
-      display: inline-block;
-      width: 150px;
-
-      &--heading {
+    
+    .footer-copyright {
+      &--title {
         margin-top: 10px;
       }
-
-      &--icon {
-        float: left;
-        margin: 0 4px;
-      }
-
-      &--logo {
-        margin: 0 4px;
-      }
     }
+    
+    .footer-socials, .footer-contact {
+      margin-bottom: 5px;
+    }
+  
+     h4 {
+       margin-bottom: 10px;
+     }
+
+     p {
+       margin-top: 5px;
+     }
+
+     .footer-socials {
+       display: inline-block;
+       width: 150px;
+  
+       &--heading {
+         margin: 10px 0 15px;
+       }
+  
+       &--icon {
+         float: left;
+         margin: 0 4px;
+       }
+  
+       &--logo {
+         margin: 0 4px;
+       }
+     }
   }
 }
