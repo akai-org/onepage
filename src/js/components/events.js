@@ -13,7 +13,7 @@ const Events = (() => {
           <div class="event-detail--time">
             ${time}
           </div>
-          <div class="event-detail--separator"><div></div></div>
+          <div class="divider"><div></div></div>
           <div class="event-detail--description">
             <div class="event-detail--title">
               ${title}
