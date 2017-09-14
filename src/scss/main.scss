@@ -36,6 +36,10 @@ textarea {
   outline: none;
 }
 
+p {
+  line-height: 1.8;
+}
+
 section {
   &:nth-child(2n) {
     background-color: $akai-white;
