@@ -8,7 +8,9 @@
     display: flex;
   }
 
-  h4 {
+  &-copyright--title,
+  &-contact--heading,
+  &-socials--heading {
     @include font-size(1.6);
   }
 
@@ -17,7 +19,6 @@
 
     &--akai {
       @include font-size(1.3);
-
       color: $text-color;
       transform: translateY(4px);
     }
@@ -28,7 +29,6 @@
 
     &--mailto {
       @include font-size(1.3);
-
       color: $text-color;
 
       &:hover {
@@ -92,8 +92,8 @@
       margin-top: 10px;
     }
 
-    .footer-socials,
-    .footer-contact {
+    .footer-contact,
+    .footer-socials {
       margin-bottom: 5px;
     }
 
