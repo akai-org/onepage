@@ -8,7 +8,8 @@ const paths = {
     markup: './src/**/index.html',
     styles: './src/scss/**/*.scss',
     scripts: './src/js/**/*.js',
-    specs: './spec/**/*[sS]pec.js'
+    specs: './spec/**/*[sS]pec.js',
+    ics: './src/*.ics'
   },
 
   /* build */

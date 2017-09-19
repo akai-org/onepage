@@ -84,9 +84,9 @@ const paths = require('./gulp/config/paths');
 
 gulp.task('default', ['serve']);
 
-gulp.task('build', gulpsync.sync(['styles', 'scripts', 'images', 'copy', 'markup', 'libs']));
+gulp.task('build', gulpsync.sync(['styles', 'scripts', 'images', 'copy', 'markup', 'libs', 'ics']));
 
-gulp.task('watch', ['styles:watch', 'scripts:watch', 'images:watch', 'copy:watch', 'markup:watch', 'libs:watch']);
+gulp.task('watch', ['styles:watch', 'scripts:watch', 'images:watch', 'copy:watch', 'markup:watch', 'libs:watch', 'ics:watch']);
 
 gulp.task('serve', ['build', 'watch'], () => {
   browserSync.init({server: paths.dist.dir});
