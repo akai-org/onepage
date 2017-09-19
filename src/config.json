@@ -124,6 +124,13 @@
         "buttonText": "Zostaw wiadomość"
       }
     },
+    {
+    	"name": "collaborationPricing",
+      "data": {
+        "title": "Chcesz promować swoją firmę?",
+        "text": "W grupie można osiągnąć więcej. Zapoznaj się z ofertą skierowaną do firm zajmujących się developmentem dla web oraz mobile."
+      }
+    },
   	{
     	"name": "footer",
       "data": {
