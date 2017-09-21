@@ -3,7 +3,28 @@ const CollaborationPricing = (() => {
   const api = {};
 
   api.compile = (data) => {
-    var {title, text} = data;
+    const {title, text, collaboration} = data;
+    const {benefits, plans} = collaboration;
+    const {name, categories} = benefits;
+    const compiledCategories = categories.map(category => `<li>${category}</li>`).join("\n");
+    const compiledPlans = plans.map((plan) => {
+      const {name, price, period, benefits} = plan;
+      const compiledPlanBenefits = benefits.map(benefit => `<li>${benefit}</li>`).join("\n");
+
+      return `
+      <div class="plan">
+        <div class="heading">
+          <p class="price">${name}</p>
+          <span class="price">${price}</span>
+          <span class="period">${period}</span>
+        </div>
+        <ul class="plan-content">
+          ${compiledPlanBenefits}
+        </ul>
+      </div>
+      `;
+    }).join("\n");
+
     return `
     <section id="collaboration" class="collaboration-pricing">
       <div class="container">
@@ -12,62 +33,15 @@ const CollaborationPricing = (() => {
         <p class="general-info">${text}</p>
         <div class="collaboration-plans">
           <div class="benefits">
-            <p class="heading">Co otrzymujesz?</p>
+            <p class="heading">${name}</p>
             <ul class="benefits-list">
-              <li>A</li>
-              <li>B</li>
-              <li>C</li>
-              <li>D</li>
-              <li>E</li>
-              <li>F</li>
+              ${compiledCategories}
             </ul>
           </div>
-          <div class="plan">
-            <div class="heading">
-              <span class="price">200 zł</span>
-              <span class="period">semestr</span>
-            </div>
-            <ul class="plan-content">
-              <li>A</li>
-              <li>B</li>
-              <li>C</li>
-              <li>D</li>
-              <li>E</li>
-              <li>F</li>
-            </ul>
-          </div>
-          <div class="plan">
-            <div class="heading">
-              <span class="price">200 zł</span>
-              <span class="period">semestr</span>
-            </div>
-            <ul class="plan-content">
-              <li>A</li>
-              <li>B</li>
-              <li>C</li>
-              <li>D</li>
-              <li>E</li>
-              <li>F</li>
-            </ul>
-          </div>
-          <div class="plan">
-            <div class="heading">
-              <span class="price">200 zł</span>
-              <span class="period">semestr</span>
-            </div>
-            <ul class="plan-content">
-              <li>A</li>
-              <li>B</li>
-              <li>C</li>
-              <li>D</li>
-              <li>E</li>
-              <li>F</li>
-            </ul>
-          </div>
+          ${compiledPlans}
         </div>
       </div>
     </section>
-
     `;
   };
 
