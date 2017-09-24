@@ -116,6 +116,17 @@
         ]
       }
     },
+    {
+      "name": "gallery",
+      "data": {
+        "title": "Zobacz jak było!",
+        "photos": [
+          "img/photos/backendCamp1.jpg",
+          "img/photos/backendCamp2.jpg",
+          "img/photos/backendCamp3.jpg"
+        ]
+      }
+    },
   	{
     	"name": "contact",
       "data": {
