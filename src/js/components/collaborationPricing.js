@@ -12,7 +12,13 @@ const CollaborationPricing = (() => {
     const compiledPlans = plans.map((plan) => {
       const {name, price, period, benefits} = plan;
       const compiledPlanBenefits = benefits.map((benefit) => {
-        return `<li><span class="${benefit ? 'tick' : 'cross'}"></span></li>`
+        if (typeof benefit === 'boolean' && benefit) {
+          return `<li class="tick">&#10003</li>`;
+        } else if (typeof benefit === 'boolean' && !benefit){
+          return `<li class="cross">&#10005</li>`;
+        } else {
+          return `<li>${benefit}</li>`;          
+        }
       }).join("\n");
 
       return `
