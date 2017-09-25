@@ -34,7 +34,7 @@
       @include font-size(1.6);
 
       font-weight: 600;
-      margin-left: 10px;
+      margin: 40px 0 20px 10px;
     }
   }
 
@@ -51,10 +51,29 @@
     &:last-of-type {
       margin-right: 0;
     }
+
+    .heading {
+      margin-bottom: 30px;
+
+      .name {
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      .price {
+        @include font-size(3);
+
+        display: block;
+      }
+
+      .period {
+        color: $text-color;
+      }
+    }
   }
 
-  .benefits .benefits-list,
-  .plan .plan-content {
+  .benefits-list,
+  .plan-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -62,7 +81,7 @@
     li {
       border-radius: 10px;
       margin: 10px 0;
-      padding: 10px 15px;;
+      padding: 10px 15px;
 
       &:nth-child(2n) {
         background-color: $akai-white;
@@ -70,6 +89,20 @@
 
       &:nth-child(2n+1) {
         background-color: $bg-color;
+      }
+    }
+  }
+
+  .plan-list {
+    li {
+      text-align: center;
+
+      &.tick {
+        content: 'TICK';
+      }
+
+      &.cross {
+        content: 'CROSS';
       }
     }
   }
