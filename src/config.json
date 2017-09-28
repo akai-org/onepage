@@ -182,6 +182,15 @@
               ]
             }
           ]
+        },
+        "additional": {
+          "title": "Nota",
+          "text": "Możesz także skorzystać z bezpłatnego pakietu Copper, w którym zapewniamy umieszczenie logo na stronie wydarzenia i na Fanpage w postach promujących wydarzenie, w którym sponsor bierze udział oraz Wspieranie darmowych niekomercyjnych eventów skierowanych do społeczności."
+        },
+        "cta": "Wybrałeś pakiet współpracy?",
+        "contactButton": {
+          "text": "Skontaktuj się z nami",
+          "link": "#"
         }
       }
     },

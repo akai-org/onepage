@@ -5,7 +5,7 @@ const CollaborationPricing = (() => {
   const api = {};
 
   api.compile = (data) => {
-    const {title, text, collaboration} = data;
+    const {title, text, collaboration, additional, cta, contactButton} = data;
     const {benefits, plans} = collaboration;
     const {name, categories} = benefits;
     const compiledCategories = categories.map(category => `<li>${category}</li>`).join("\n");
@@ -17,7 +17,7 @@ const CollaborationPricing = (() => {
         } else if (typeof benefit === 'boolean' && !benefit){
           return `<li class="cross">&#10005</li>`;
         } else {
-          return `<li>${benefit}</li>`;          
+          return `<li>${benefit}</li>`;
         }
       }).join("\n");
 
@@ -50,6 +50,9 @@ const CollaborationPricing = (() => {
             </div>
             ${compiledPlans}
           </div>
+          <p class="additional"><span class="title">${additional.title}</span>: ${additional.text}</p>
+          <p class="cta">${cta}</p>
+          <a href="${contactButton.link}" class="contact-btn">${contactButton.text}</a>
         </div>
       </section>
     `;
