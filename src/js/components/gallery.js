@@ -12,7 +12,6 @@ const Gallery = (() => {
       <section class="gallery" id="gallery">
         <div class="container">
           <h1 class="gallery-heading">${title}</h1>
-          <div id="gallery-slider" class="image-set">
 
           </div>
         </div>
@@ -22,29 +21,26 @@ const Gallery = (() => {
   };
 
   api.componentReady = () => {
-    //settings for slider
-    var fadingSpeed = 1000;
-    var pause = 4000;
+    const fadingSpeed = 1000;
+    const pause = 4000;
     var interval;
-    var $slider = $('.gallery .container .gallery-slider');
+    var $container = $('#gallery .container');
+    var $slider = $('<div class="gallery-slider" class="image-set">');
 
-    function createSlides(){
-      for (var index = 0; index < photosArray.length; ++index){
-        $slider.append(`<a href="${photosArray[index]}"
-          data-lightbox="image"><img src="${photosArray[index]}" /></a>`)
-      }
-    }
-    createSlides();
+    photosArray.forEach(photo => {
+      $slider.append(`<a href="${photo}" data-lightbox="image"><img src="${photo}" /></a>`)
+    });
+    $container.append($slider);
 
     function startSlider() {
-        interval = setInterval(function() {
+        interval = setInterval( () => {
           //insert first image after last
-          var $img = $('a', $slider);
-          $img.fadeOut(fadingSpeed, function(){
-          $img.first().insertAfter($img.last());
+          var $img = $('.gallery-slider a', $container);
+          $img.fadeOut(fadingSpeed, () => {
+            $img.first().insertAfter($img.last());
           });
 
-          $('a', $slider).fadeIn(fadingSpeed);
+          $img.fadeIn(fadingSpeed);
         }, pause);
     }
 
