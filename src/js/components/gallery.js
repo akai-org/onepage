@@ -3,7 +3,7 @@ const $ = require("jquery");
 const Gallery = (() => {
 
   const api = {};
-  var photosArray
+  let photosArray
 
   api.compile = (data) => {
     const {title, photos} = data;
@@ -23,9 +23,9 @@ const Gallery = (() => {
   api.componentReady = () => {
     const fadingSpeed = 1000;
     const pause = 4000;
-    var interval;
-    var $container = $('#gallery .container');
-    var $slider = $('<div class="gallery-slider" class="image-set">');
+    let interval;
+    let $container = $('#gallery .container');
+    let $slider = $('<div class="gallery-slider" class="image-set">');
 
     photosArray.forEach(photo => {
       $slider.append(`<a href="${photo}" data-lightbox="image"><img src="${photo}" /></a>`)
@@ -35,7 +35,7 @@ const Gallery = (() => {
     function startSlider() {
         interval = setInterval( () => {
           //insert first image after last
-          var $img = $('.gallery-slider a', $container);
+          let $img = $('.gallery-slider a', $container);
           $img.fadeOut(fadingSpeed, () => {
             $img.first().insertAfter($img.last());
           });
