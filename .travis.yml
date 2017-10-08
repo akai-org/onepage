@@ -14,11 +14,8 @@ install:
   - yarn install
 
 before_script:
-  - gulp eslint
-  - gulp stylelint
   - npm test
 
 script:
-  - gulp build
-  - gulp build --production
+  - npm build
   
