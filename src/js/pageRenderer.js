@@ -25,9 +25,8 @@ const pageRenderer = (() => {
     let pageComponents = [];
     let compiledPageComponents = [];
 
-    if (CONFIG) {
-      const config = CONFIG;
-      const {title, components} = config;
+    if (window.config || false) {
+      const {title, components} = window.config;
       $(document).prop("title", title);
       compiledPageComponents = components.map(componentData => {
         const {name, data} = componentData;
@@ -66,6 +65,8 @@ const pageRenderer = (() => {
           alert("Error: fetching data failed.");
         });
     }
+
+
   };
 
   return {
@@ -73,6 +74,6 @@ const pageRenderer = (() => {
   }
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   pageRenderer.render();
 });
