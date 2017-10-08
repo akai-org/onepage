@@ -41,7 +41,7 @@ const pageRenderer = (() => {
     })
     .done(() => {
       const compiled = compiledPageComponents.join("\n");
-      $("#content").append(compiled);
+      $("body").append(compiled);
       registerComponents(pageComponents);
     })
     .fail(() => {
