@@ -7,7 +7,6 @@ src/img/
 src/libs/
 src/config.json
 src/iCal*
-src/index.html
 
 .babelrc
 .eslintrc
@@ -17,6 +16,8 @@ src/index.html
 postcss.config.js
 README.md
 yarn.lock
+
+.idea/
 
 # === From .gitignore ===
 

@@ -18,7 +18,8 @@
     ]
   },
   "globals": {
-    "$": true
+    "$": true,
+    "CONFIG": true
   },
   "parserOptions": {
     "sourceType": "module"

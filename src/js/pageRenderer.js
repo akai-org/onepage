@@ -25,7 +25,8 @@ const pageRenderer = (() => {
     let pageComponents = [];
     let compiledPageComponents = [];
 
-    $.getJSON("./../config.json", config => {
+    if (CONFIG) {
+      const config = CONFIG;
       const {title, components} = config;
       $(document).prop("title", title);
       compiledPageComponents = components.map(componentData => {
@@ -38,15 +39,33 @@ const pageRenderer = (() => {
           return ``;
         }
       });
-    })
-    .done(() => {
       const compiled = compiledPageComponents.join("\n");
       $("body").append(compiled);
       registerComponents(pageComponents);
-    })
-    .fail(() => {
-      alert("Error: fetching data failed.");
-    });
+    } else {
+      $.getJSON("./../config.json", config => {
+        const {title, components} = config;
+        $(document).prop("title", title);
+        compiledPageComponents = components.map(componentData => {
+          const {name, data} = componentData;
+          const component = allComponents.find(componentData => componentData.name === name);
+          if (component !== undefined) {
+            pageComponents.push(component);
+            return component.api.compile(data);
+          } else {
+            return ``;
+          }
+        });
+      })
+        .done(() => {
+          const compiled = compiledPageComponents.join("\n");
+          $("body").append(compiled);
+          registerComponents(pageComponents);
+        })
+        .fail(() => {
+          alert("Error: fetching data failed.");
+        });
+    }
   };
 
   return {
@@ -54,4 +73,6 @@ const pageRenderer = (() => {
   }
 })();
 
-pageRenderer.render();
+document.addEventListener("DOMContentLoaded", () => {
+  pageRenderer.render();
+});
