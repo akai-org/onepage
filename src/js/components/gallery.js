@@ -25,7 +25,7 @@ const Gallery = (() => {
     const pause = 4000;
     let interval;
     let $container = $('#gallery .container');
-    let $slider = $('<div class="gallery-slider" class="image-set">');
+    let $slider = $('<div class="gallery-slider image-set">');
 
     photosArray.forEach(photo => {
       $slider.append(`<a href="${photo}" data-lightbox="image"><img src="${photo}" /></a>`)
@@ -51,7 +51,6 @@ const Gallery = (() => {
     $('.gallery-slider')
         .mouseenter(pauseSlider)
         .mouseleave(startSlider);
-
 
     startSlider();
   };

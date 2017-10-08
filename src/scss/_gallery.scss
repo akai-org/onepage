@@ -36,7 +36,7 @@ $img-height-small: $img-width-small/1.5;
       width: $img-width-medium;
     }
 
-    @include respond-to(-small-mobile) {
+    @include respond-to(small-mobile) {
       height: $img-height-small;
       width: $img-width-small;
     }
