@@ -1,17 +1,9 @@
 const $ = require("jquery");
 
-const Home = require('./components/home');
-const About = require('./components/about');
-const DateAndVenue = require('./components/dateAndVenue');
-const Events = require('./components/events');
-const Contact = require('./components/contact');
-const CollaborationPricing = require('./components/collaborationPricing');
-const Footer = require('./components/footer');
+const Components = require('./componentsLoader');
 
 const pageRenderer = (() => {
-  const allComponents = [
-    Home, About, DateAndVenue, Events, Contact, CollaborationPricing, Footer
-  ];
+  const allComponents = Components;
 
   const registerComponents = (components) => {
     $(() => {
