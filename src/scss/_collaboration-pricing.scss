@@ -100,6 +100,28 @@
     .heading {
       margin-bottom: 30px;
 
+      .collaboration-copper {
+        background-color: $collaboration-copper;
+        color: $white-text;
+      }
+
+      .collaboration-bronze {
+        background-color: $collaboration-bronze;
+        color: $white-text;
+      }
+
+      .collaboration-silver {
+        background-color: $collaboration-silver;
+      }
+
+      .collaboration-gold {
+        background-color: $collaboration-gold;
+      }
+
+      .collaboration-diamond {
+        background-color: $collaboration-diamond;
+      }
+
       .name {
         border-radius: 10px;
         font-weight: 700;
@@ -234,24 +256,3 @@
   }
 }
 
-.collaboration-copper {
-  background-color: $collaboration-copper;
-  color: $white-text;
-}
-
-.collaboration-bronze {
-  background-color: $collaboration-bronze;
-  color: $white-text;
-}
-
-.collaboration-silver {
-  background-color: $collaboration-silver;
-}
-
-.collaboration-gold {
-  background-color: $collaboration-gold;
-}
-
-.collaboration-diamond {
-  background-color: $collaboration-diamond;
-}
