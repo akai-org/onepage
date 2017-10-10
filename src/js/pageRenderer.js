@@ -4,8 +4,9 @@ const Components = require('./componentsLoader');
 
 const pageRenderer = (() => {
   const allComponents = Components;
+  let title = '';
 
-  const registerComponents = (components) => {
+  const registerComponents = (components = Components) => {
     $(() => {
       components.forEach(component => {
         component.api.componentReady();
@@ -13,59 +14,30 @@ const pageRenderer = (() => {
     });
   };
 
-  const render = () => {
+  const render = (data) => {
     let pageComponents = [];
-    let compiledPageComponents = [];
 
-    if (window.config || false) {
-      const {title, components} = window.config;
-      $(document).prop("title", title);
-      compiledPageComponents = components.map(componentData => {
-        const {name, data} = componentData;
-        const component = allComponents.find(componentData => componentData.name === name);
-        if (component !== undefined) {
-          pageComponents.push(component);
-          return component.api.compile(data);
-        } else {
-          return ``;
-        }
-      });
-      const compiled = compiledPageComponents.join("\n");
-      $("body").append(compiled);
-      registerComponents(pageComponents);
-    } else {
-      $.getJSON("./../config.json", config => {
-        const {title, components} = config;
-        $(document).prop("title", title);
-        compiledPageComponents = components.map(componentData => {
-          const {name, data} = componentData;
-          const component = allComponents.find(componentData => componentData.name === name);
-          if (component !== undefined) {
-            pageComponents.push(component);
-            return component.api.compile(data);
-          } else {
-            return ``;
-          }
-        });
-      })
-        .done(() => {
-          const compiled = compiledPageComponents.join("\n");
-          $("body").append(compiled);
-          registerComponents(pageComponents);
-        })
-        .fail(() => {
-          alert("Error: fetching data failed.");
-        });
-    }
+    const {pageTitle, components} = data;
+    title = pageTitle;
+    let compiledPageComponents = components.map(componentData => {
+      const {name, data} = componentData;
+      const component = allComponents.find(componentData => componentData.name === name);
+      if (component !== undefined) {
+        pageComponents.push(component);
+        return component.api.compile(data);
+      } else {
+        return ``;
+      }
+    });
 
-
+    return compiledPageComponents.join("\n");
   };
 
   return {
-    render: render
+    render: render,
+    registerComponents: registerComponents,
+    getTitle: () => { return title }
   }
 })();
 
-document.addEventListener("DOMContentLoaded", function () {
-  pageRenderer.render();
-});
+module.exports = pageRenderer;

@@ -6,7 +6,7 @@ var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const paths = {
   source: {
-    scripts: './src/js/pageRenderer.js',
+    scripts: ['./src/js/main.js'],
     styles: './src/scss/main.scss',
     libs: [
       './src/libs/css/font-awesome.min.css',
@@ -22,7 +22,7 @@ const paths = {
 
 module.exports = {
   entry: [
-    paths.source.scripts,
+    ...paths.source.scripts,
     paths.source.styles,
     ...paths.source.libs,
   ],
