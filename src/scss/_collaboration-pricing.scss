@@ -18,17 +18,33 @@
   }
 
   .collaboration-plans {
-    display: flex;
     margin: 50px -10px 10px;
-    overflow-x: auto;
     padding: 20px 10px;
+
+    @include respond-to(large-desktop) {
+      display: flex;
+      overflow-x: auto;
+    }
+
+    @include respond-to(desktop) {
+      display: flex;
+      overflow-x: auto;
+    }
   }
 
   .benefits {
+    display: none;
     margin-right: 30px;
     max-width: 300px;
     min-width: 200px;
     text-align: left;
+
+    @include respond-to(desktop) {
+      display: block;
+    }
+    @include respond-to(large-desktop) {
+      display: block;
+    }
 
     .heading {
       @include font-size(1.6);
@@ -45,21 +61,50 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
-    max-width: 300px;
-    min-width: 150px;
     padding: 20px;
-    width: 20%;
 
-    &:last-of-type {
-      margin-right: 0;
+    @include respond-to(small-mobile) {
+      margin: 30px auto;
+      width: auto;
+    }
+
+    @include respond-to(mobile) {
+      margin: 30px auto;
+      width: 70%;
+    }
+
+    @include respond-to(tablet) {
+      margin: 30px auto;
+      width: 50%;
+    }
+
+    @include respond-to(desktop) {
+      max-width: 300px;
+      min-width: 150px;
+      width: 20%;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    @include respond-to(large-desktop) {
+      max-width: 300px;
+      min-width: 150px;
+      width: 20%;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
 
     .heading {
       margin-bottom: 30px;
 
       .name {
+        border-radius: 10px;
         font-weight: 700;
         margin: 10px 0;
+        padding: 10px 0;
       }
 
       .price {
@@ -95,6 +140,35 @@
         background-color: $bg-color;
       }
     }
+
+    .mobile-benefit {
+      display: flex;
+      @include respond-to(desktop) {
+        display: none;
+      }
+      @include respond-to(large-desktop) {
+        display: none;
+      }
+
+    }
+
+    .desktop-benefit {
+      display: none;
+      @include respond-to(desktop) {
+        display: flex;
+      }
+      @include respond-to(large-desktop) {
+        display: flex;
+      }
+    }
+
+    .available-benefit {
+      color: $akai-blue;
+    }
+
+    .unavailable-benefit {
+      color: $light-grey;
+    }
   }
 
   .benefits-list li {
@@ -106,15 +180,17 @@
     justify-content: center;
     text-align: center;
 
-    &.tick {
-      @include font-size(1.6);
+    span {
+      &.tick {
+        @include font-size(1.6);
 
-      color: $akai-blue;
-      font-weight: 700;
-    }
+        color: $akai-blue;
+        font-weight: 700;
+      }
 
-    &.cross {
-      color: $light-grey;
+      &.cross {
+        color: $light-grey;
+      }
     }
   }
 
@@ -156,4 +232,26 @@
       color: $white-text;
     }
   }
+}
+
+.collaboration-copper {
+  background-color: $collaboration-copper;
+  color: $white-text;
+}
+
+.collaboration-bronze {
+  background-color: $collaboration-bronze;
+  color: $white-text;
+}
+
+.collaboration-silver {
+  background-color: $collaboration-silver;
+}
+
+.collaboration-gold {
+  background-color: $collaboration-gold;
+}
+
+.collaboration-diamond {
+  background-color: $collaboration-diamond;
 }

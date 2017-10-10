@@ -11,20 +11,24 @@ const CollaborationPricing = (() => {
     const compiledCategories = categories.map(category => `<li>${category}</li>`).join("\n");
     const compiledPlans = plans.map((plan) => {
       const {name, price, period, benefits} = plan;
-      const compiledPlanBenefits = benefits.map((benefit) => {
+
+      const compiledPlanBenefits = benefits.map((benefit, index) => {
+        const name = categories[index];
         if (typeof benefit === 'boolean' && benefit) {
-          return `<li class="tick">&#10003</li>`;
+          return `<li><span class="desktop-benefit tick">&#10003</span><span class="mobile-benefit available-benefit">&#10003 ${name}</span></li>`;
         } else if (typeof benefit === 'boolean' && !benefit){
-          return `<li class="cross">&#10005</li>`;
+          return `<li><span class="desktop-benefit cross">&#10005</span><span class="mobile-benefit unavailable-benefit">&#10005 ${name}</span></li>`;
         } else {
-          return `<li>${benefit}</li>`;
+          return `<li><span class="desktop-benefit available-benefit">${benefit}</span><span class="mobile-benefit available-benefit">&#10003 ${benefit}</span></li>`;
         }
       }).join("\n");
 
+      const colorClass = "collaboration-"+name.toLowerCase();
+
       return `
       <div class="plan">
-        <div class="heading">
-          <p class="name">${name}</p>
+        <div class="heading" >
+          <p class="name ${colorClass}">${name}</p>
           <span class="price">${price}</span>
           <span class="period">/ ${period}</span>
         </div>
