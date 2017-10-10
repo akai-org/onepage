@@ -72,7 +72,7 @@ const Events = (() => {
     }
   };
 
-  const author = (name) => {
+  const authorName = (name) => {
     if (name) {
       return `
         <div class="event-detail--author">
@@ -84,13 +84,13 @@ const Events = (() => {
     }
   };
 
-  const mainDescription = (title, authorName) => {
+  const mainDescription = (title, author) => {
     if (title) {
       return `
         <div class="event-detail--title">
           ${title}
         </div>
-        ${ author(authorName) }
+        ${ authorName(author) }
       `;
     } else {
       return '';
@@ -100,7 +100,7 @@ const Events = (() => {
   const compileEvents = (events) => {
     if (events instanceof Array) {
       return events.map((event) => {
-        const {title, time, authorName, aboutAuthor, information, image} = event;
+        const {title, time, author, aboutAuthor, information, image} = event;
 
         if (title || authorName || time || aboutAuthor || information || image) {
           return `
