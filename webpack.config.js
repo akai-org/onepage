@@ -9,7 +9,7 @@ const paths = {
     scripts: ['./src/js/main.js'],
     styles: './src/scss/main.scss',
     libs: [
-      './src/libs/css/font-awesome.min.css',
+      './node_modules/font-awesome/css/font-awesome.min.css',
       './src/config.json'
     ]
   },
