@@ -135,6 +135,76 @@
         "buttonText": "Zostaw wiadomość"
       }
     },
+    {
+    	"name": "collaborationPricing",
+      "data": {
+        "title": "Chcesz promować swoją firmę?",
+        "text": "W grupie można osiągnąć więcej. Zapoznaj się z ofertą skierowaną do firm zajmujących się developmentem dla web oraz mobile.",
+        "collaboration": {
+          "benefits": {
+            "name": "Co dostajesz?",
+            "categories": [
+              "Logo na stronie",
+              "Dostęp do grupy AKAI Praca",
+              "Możliwość wystawienia materiałów promocyjnych na eventach (rollup, ulotki)",
+              "Logo na grafikach eventów",
+              "Logo na stronie promującej event",
+              "Udostępnianie postów z wydarzeniami i ofertami pracy na Fanpage FB"
+            ]
+          },
+          "plans": [
+            {
+              "name": "Bronze",
+              "price": "200 zł",
+              "period": "semestr",
+              "benefits": [
+                "Logo w sekcji brązowej",
+                true,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            {
+              "name": "Silver",
+              "price": "500 zł",
+              "period": "semestr",
+              "benefits": [
+                "Logo w sekcji srebrnej",
+                true,
+                true,
+                true,
+                true,
+                false
+              ]
+            },
+            {
+              "name": "Gold",
+              "price": "1000 zł",
+              "period": "semestr",
+              "benefits": [
+                "Logo w sekcji złotej",
+                true,
+                true,
+                true,
+                true,
+                true
+              ]
+            }
+          ]
+        },
+        "additional": {
+          "title": "Nota",
+          "text": "Możesz także skorzystać z bezpłatnego pakietu Copper, w którym zapewniamy umieszczenie logo na stronie wydarzenia i na Fanpage w postach promujących wydarzenie, w którym sponsor bierze udział oraz Wspieranie darmowych niekomercyjnych eventów skierowanych do społeczności."
+        },
+        "cta": "Wybrałeś pakiet współpracy?",
+        "contactButton": {
+          "text": "Skontaktuj się z nami",
+          "link": "#"
+        }
+      }
+    },
   	{
     	"name": "footer",
       "data": {

@@ -6,11 +6,12 @@ const DateAndVenue = require('./components/dateAndVenue');
 const Events = require('./components/events');
 const Gallery = require('./components/gallery')
 const Contact = require('./components/contact');
+const CollaborationPricing = require('./components/collaborationPricing');
 const Footer = require('./components/footer');
 
 const pageRenderer = (() => {
   const allComponents = [
-    Home, About, DateAndVenue, Events, Gallery, Contact, Footer
+    Home, About, DateAndVenue, Events, Gallery, Contact, CollaborationPricing, Footer
   ];
 
   const registerComponents = (components) => {
