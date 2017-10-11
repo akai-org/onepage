@@ -2,17 +2,39 @@ const $ = require("jquery");
 
 const Gallery = (() => {
 
+  const heading = (title) => {
+    if (title) {
+      return `<h1 class="gallery-heading">${title}</h1>`;
+    } else {
+      return '';
+    }
+  };
+
+  const insertPhotos = (photos) => {
+    if (photos instanceof Array) {
+      return photos.map(photo => {
+        if (photo) {
+          return `<a href="${photo}" data-lightbox="image"><img src="${photo}" /></a>`;
+        } else {
+          return '';
+        }
+      }).join('');
+    } else {
+      return '';
+    }
+  };
+
+
   const api = {};
 
   api.compile = (data) => {
     const {title, photos} = data;
-    const compiledPhotos = photos.map(photo => `<a href="${photo}" data-lightbox="image"><img src="${photo}" /></a>`).join('');
     return `
       <section class="gallery" id="gallery">
         <div class="container">
-          <h1 class="gallery-heading">${title}</h1>
+          ${ heading(title) }
           <div class="gallery-slider image-set">
-            ${compiledPhotos}
+            ${ insertPhotos(photos) }
           </div>
         </div>
       </section>
@@ -25,7 +47,7 @@ const Gallery = (() => {
     let interval;
     let $slider = $('#gallery .container .gallery-slider');
 
-    function startSlider() {
+    const startSlider = () => {
         interval = setInterval( () => {
           //insert first image after last
           let $img = $('a', $slider);
@@ -34,10 +56,10 @@ const Gallery = (() => {
           });
           $img.fadeIn(fadingSpeed);
         }, pause);
-    };
+    }
 
-    function pauseSlider() {
-        clearInterval(interval);
+    const pauseSlider = () => {
+        clearInterval(interval)
     };
 
     $slider
