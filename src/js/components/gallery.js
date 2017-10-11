@@ -56,7 +56,7 @@ const Gallery = (() => {
           });
           $img.fadeIn(fadingSpeed);
         }, pause);
-    }
+    };
 
     const pauseSlider = () => {
         clearInterval(interval)
