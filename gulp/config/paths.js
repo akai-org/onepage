@@ -29,7 +29,7 @@ const paths = {
     markup: './public',
     styles: './public/assets',
     scripts: './public/assets',
-    libs: './build/assets'
+    libs: './build/libs'
   }
 };
 
