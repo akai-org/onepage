@@ -15,20 +15,26 @@ const CollaborationPricing = (() => {
       const compiledPlanBenefits = benefits.map((benefit, index) => {
         const name = categories[index];
         if (typeof benefit === 'boolean' && benefit) {
-          return `<li><span class="desktop-benefit tick">&#10003</span><span class="mobile-benefit available-benefit">&#10003 ${name}</span></li>`;
+          return `<li>
+                    <span class="desktop-benefit tick">&#10003</span>
+                    <span class="mobile-benefit available-benefit">&#10003 ${name}</span>
+                  </li>`;
         } else if (typeof benefit === 'boolean' && !benefit){
-          return `<li><span class="desktop-benefit cross">&#10005</span><span class="mobile-benefit unavailable-benefit">&#10005 ${name}</span></li>`;
+          return `<li>
+                    <span class="desktop-benefit cross">&#10005</span>
+                    <span class="mobile-benefit unavailable-benefit">&#10005 ${name}</span>
+                  </li>`;
         } else {
-          return `<li><span class="desktop-benefit available-benefit">${benefit}</span><span class="mobile-benefit available-benefit">&#10003 ${benefit}</span></li>`;
+          return `<li>
+                    <span class="desktop-benefit available-benefit">${benefit}</span>
+                    <span class="mobile-benefit available-benefit">&#10003 ${benefit}</span>
+                  </li>`;
         }
       }).join("\n");
-
-      const colorClass = "collaboration-"+name.toLowerCase();
-
       return `
       <div class="plan">
         <div class="heading" >
-          <p class="name ${colorClass}">${name}</p>
+          <p class="name collaboration-${name.toLowerCase()}">${name}</p>
           <span class="price">${price}</span>
           <span class="period">/ ${period}</span>
         </div>

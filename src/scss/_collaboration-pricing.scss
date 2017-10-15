@@ -21,12 +21,7 @@
     margin: 50px -10px 10px;
     padding: 20px 10px;
 
-    @include respond-to(large-desktop) {
-      display: flex;
-      overflow-x: auto;
-    }
-
-    @include respond-to(desktop) {
+    @include respond-to-minimum(desktop) {
       display: flex;
       overflow-x: auto;
     }
@@ -39,10 +34,7 @@
     min-width: 200px;
     text-align: left;
 
-    @include respond-to(desktop) {
-      display: block;
-    }
-    @include respond-to(large-desktop) {
+    @include respond-to-minimum(desktop) {
       display: block;
     }
 
@@ -63,18 +55,19 @@
     margin-right: 20px;
     padding: 20px;
 
-    @include respond-to(small-mobile) {
+    @include respond-to-smaller-than(desktop) {
       margin: 30px auto;
+    }
+
+    @include respond-to(small-mobile) {
       width: auto;
     }
 
     @include respond-to(mobile) {
-      margin: 30px auto;
       width: 70%;
     }
 
     @include respond-to(tablet) {
-      margin: 30px auto;
       width: 50%;
     }
 
@@ -87,6 +80,7 @@
         margin-right: 0;
       }
     }
+
     @include respond-to(large-desktop) {
       max-width: 300px;
       min-width: 150px;
@@ -165,21 +159,14 @@
 
     .mobile-benefit {
       display: flex;
-      @include respond-to(desktop) {
+      @include respond-to-minimum(desktop) {
         display: none;
       }
-      @include respond-to(large-desktop) {
-        display: none;
-      }
-
     }
 
     .desktop-benefit {
       display: none;
-      @include respond-to(desktop) {
-        display: flex;
-      }
-      @include respond-to(large-desktop) {
+      @include respond-to-minimum(desktop) {
         display: flex;
       }
     }
@@ -205,7 +192,6 @@
     span {
       &.tick {
         @include font-size(1.6);
-
         color: $akai-blue;
         font-weight: 700;
       }
