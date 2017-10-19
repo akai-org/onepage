@@ -119,8 +119,8 @@
       .name {
         border-radius: 10px;
         font-weight: 700;
-        margin: 10px 0;
-        padding: 10px 0;
+        margin: 10px 0 0;
+        padding: 10px 0 0;
       }
 
       .price {
@@ -131,6 +131,13 @@
 
       .period {
         color: $text-color;
+      }
+
+      .plan-name-divider {
+        border-radius: 3px;
+        height: 6px;
+        margin: 25px auto 0;
+        width: 55%;
       }
     }
   }
@@ -172,7 +179,7 @@
     }
 
     .available-benefit {
-      color: $akai-blue;
+      color: $text-color;
     }
 
     .unavailable-benefit {

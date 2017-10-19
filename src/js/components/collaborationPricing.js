@@ -16,27 +16,27 @@ const CollaborationPricing = (() => {
         const name = categories[index];
         if (typeof benefit === 'boolean' && benefit) {
           return `<li>
-                    <span class="desktop-benefit tick">&#10003</span>
-                    <span class="mobile-benefit available-benefit">&#10003 ${name}</span>
+                    <span class="tick">&#10003</span>
+                    <span class="mobile-benefit available-benefit">${name}</span>
                   </li>`;
         } else if (typeof benefit === 'boolean' && !benefit){
           return `<li>
-                    <span class="desktop-benefit cross">&#10005</span>
-                    <span class="mobile-benefit unavailable-benefit">&#10005 ${name}</span>
+                    <span class="cross">&#10005</span>
+                    <span class="mobile-benefit unavailable-benefit">${name}</span>
                   </li>`;
         } else {
           return `<li>
-                    <span class="desktop-benefit available-benefit">${benefit}</span>
-                    <span class="mobile-benefit available-benefit">&#10003 ${benefit}</span>
+                    <span class="available-benefit">${benefit}</span>
                   </li>`;
         }
       }).join("\n");
       return `
       <div class="plan">
         <div class="heading" >
-          <p class="name collaboration-${name.toLowerCase()}">${name}</p>
+          <p class="name">${name}</p>
           <span class="price">${price}</span>
           <span class="period">/ ${period}</span>
+          <div class="plan-name-divider collaboration-${name.toLowerCase()}"></div>
         </div>
         <ul class="plan-list">
           ${compiledPlanBenefits}
