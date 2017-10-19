@@ -36,7 +36,7 @@ const CollaborationPricing = (() => {
           <p class="name">${name}</p>
           <span class="price">${price}</span>
           <span class="period">/ ${period}</span>
-          <div class="plan-name-divider collaboration-${name.toLowerCase()}"></div>
+          <div class="divider collaboration-${name.toLowerCase()}"></div>
         </div>
         <ul class="plan-list">
           ${compiledPlanBenefits}
