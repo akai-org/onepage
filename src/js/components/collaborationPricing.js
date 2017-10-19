@@ -11,22 +11,32 @@ const CollaborationPricing = (() => {
     const compiledCategories = categories.map(category => `<li>${category}</li>`).join("\n");
     const compiledPlans = plans.map((plan) => {
       const {name, price, period, benefits} = plan;
-      const compiledPlanBenefits = benefits.map((benefit) => {
+
+      const compiledPlanBenefits = benefits.map((benefit, index) => {
+        const name = categories[index];
         if (typeof benefit === 'boolean' && benefit) {
-          return `<li class="tick">&#10003</li>`;
+          return `<li>
+                    <span class="tick">&#10003</span>
+                    <span class="mobile-benefit available-benefit">${name}</span>
+                  </li>`;
         } else if (typeof benefit === 'boolean' && !benefit){
-          return `<li class="cross">&#10005</li>`;
+          return `<li>
+                    <span class="cross">&#10005</span>
+                    <span class="mobile-benefit unavailable-benefit">${name}</span>
+                  </li>`;
         } else {
-          return `<li>${benefit}</li>`;
+          return `<li>
+                    <span class="available-benefit">${benefit}</span>
+                  </li>`;
         }
       }).join("\n");
-
       return `
       <div class="plan">
-        <div class="heading">
+        <div class="heading" >
           <p class="name">${name}</p>
           <span class="price">${price}</span>
           <span class="period">/ ${period}</span>
+          <div class="divider collaboration-${name.toLowerCase()}"></div>
         </div>
         <ul class="plan-list">
           ${compiledPlanBenefits}
