@@ -2,24 +2,61 @@ const About = (() => {
 
   const api = {};
 
+  const header = (title, subtitle) => {
+    let compiledTitle = '';
+    let compiledSubtitle = '';
+
+    if (title) {
+      compiledTitle = `
+        <h2>${title}</h2>
+        <div class="divider"></div>
+      `;
+    }
+
+    if (subtitle) {
+      compiledSubtitle = `<h3>${subtitle}</h3>`;
+    }
+
+    return `
+      <div class="about-header">
+        ${compiledSubtitle}
+        ${compiledTitle}
+      </div>
+    `;
+  };
+
+  const copy = (text) => {
+    if (text instanceof Array) {
+      return text.map(p => `<p>${p}</p>`).join('\n');
+    } else if (typeof text === 'string') {
+      return text;
+    } else {
+      return '';
+    }
+  };
+
+  const photo = (image) => {
+    if (image === undefined) return '';
+    const {src, alt} = image;
+
+    if (src) {
+      return `<img src="${src}" alt="${alt}">`;
+    }
+  };
+
   api.compile = (data) => {
     const {title, subtitle, text, image} = data;
-    const compiledText = text.map(paragraph => `<p>${paragraph}</p>`).join("\n");
 
     return `
       <section class="about" id="about">
         <div class="container">
-         <div class="about-header">
-            <h3>${subtitle}</h3>
-            <h2>${title}</h2>
-            <div class="divider"></div>
-          </div>
+          ${ header(title, subtitle) }
           <div class="about-columns">
             <div class="about-left">
-              ${compiledText}
+              ${ copy(text) }
             </div>
             <div class="about-right">
-              <img src="${image.src}" alt="${image.alt}">
+              ${ photo(image) }
             </div>
           </div>
         </div>
