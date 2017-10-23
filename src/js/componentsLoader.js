@@ -6,4 +6,5 @@ module.exports = [
   require('./components/contact'),
   require('./components/collaborationPricing'),
   require('./components/footer'),
+  require('./components/gallery'),
 ];

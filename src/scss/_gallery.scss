@@ -1,0 +1,49 @@
+$img-width: $desktop;
+$img-height: $img-width/1.5;
+
+$img-width-medium: 600px;
+$img-height-medium: $img-width-medium/1.5;
+
+$img-width-small: 300px;
+$img-height-small: $img-width-small/1.5;
+
+.gallery {
+  padding: 20px 0;
+
+  .gallery-heading {
+    text-align: center;
+
+    &::after {
+      background: $akai-yellow;
+      content: '';
+      display: block;
+      height: 0.3rem;
+      margin: 2rem auto;
+      width: 4.5rem;
+    }
+  }
+
+  .gallery-slider {
+    box-shadow: 0 3px 30px -5px rgba(0, 0, 0, 0.75);
+    height: $img-height;
+    margin: auto;
+    margin-bottom: 2%;
+    overflow: hidden;
+    width: $img-width;
+
+    @include respond-to(tablet) {
+      height: $img-height-medium;
+      width: $img-width-medium;
+    }
+
+    @include respond-to(small-mobile) {
+      height: $img-height-small;
+      width: $img-width-small;
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}

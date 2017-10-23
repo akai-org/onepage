@@ -4,50 +4,131 @@ const Events = (() => {
 
   const api = {};
 
-  api.compile = (data) => {
-    var {events} = data;
-    var compiledEvents = events.map((event) => {
-      var {title, time, author, aboutAuthor, information, image} = event;
-      var compiledInformation = information.map(info => `<li>${info}</li>`).join("\n");
-
+  const informationList = (list) => {
+    if (list instanceof Array) {
       return `
-        <div class="event-detail">
-          <div class="event-detail--time">
-            ${time}
-          </div>
-          <div class="divider"></div>
-          <div class="event-detail--description">
-            <div class="event-detail--title">
-              ${title}
-            </div>
-            <div class="event-detail--author">
-              ${author}
-            </div>
-            <div class="event-detail--more">
-              <div class="event-detail--about">
-                <strong>O prelegencie</strong>
-                <p>${aboutAuthor}</p>
-              </div>
-              <div class="event-detail--learn">
-                <strong>Dowiesz się:</strong>
-                <ul>
-                  ${compiledInformation}
-                </ul>
-              </div>
-            </div>
-            <p class="event-detail--toggle">Pokaż więcej</p>
-          </div>
-          <div class="event-detail--photo">
-            <img src="${image.src}" alt="${image.alt}">
-          </div>
+        <div class="event-detail--learn">
+          <strong>Dowiesz się:</strong>
+          <ul>
+            ${ list.map(el => `<li>${el}</li>`).join("\n") }
+          </ul>
         </div>
       `;
-    }).join("\n");
+    } else {
+      return '';
+    }
+  };
+
+  const informationText = (text) => {
+    if (text) {
+      return `
+        <div class="event-detail--about">
+          <strong>O prelegencie</strong>
+          <p>${text}</p>
+        </div>
+      `;
+    } else {
+      return '';
+    }
+  };
+
+  const expandableDetails = (text, list) => {
+    if (text || list) {
+      return `
+        <div class="event-detail--more">
+          ${ informationText(text) }
+          ${ informationList(list) }
+        </div>
+        <p class="event-detail--toggle">Pokaż więcej</p>
+      `;
+    } else {
+      return '';
+    }
+  };
+
+  const photo = (image) => {
+    if (image === undefined) return '';
+    const {src, alt} = image;
+
+    if (src) {
+      return `
+        <div class="event-detail--photo">
+          <img src="${src}" alt="${alt}">
+        </div>
+      `;
+    }
+  };
+
+  const timeColumn = (time) => {
+    if (time) {
+      return `
+        <div class="event-detail--time">
+          ${time}
+        </div>
+        <div class="divider"></div>
+      `;
+    } else {
+      return '';
+    }
+  };
+
+  const authorName = (name) => {
+    if (name) {
+      return `
+        <div class="event-detail--author">
+          ${name}
+        </div>
+      `;
+    } else {
+      return '';
+    }
+  };
+
+  const mainDescription = (title, author) => {
+    if (title) {
+      return `
+        <div class="event-detail--title">
+          ${title}
+        </div>
+        ${ authorName(author) }
+      `;
+    } else {
+      return '';
+    }
+  };
+
+  const compileEvents = (events) => {
+    if (events instanceof Array) {
+      return events.map((event) => {
+        const {title, time, author, aboutAuthor, information, image} = event;
+
+        if (title || authorName || time || aboutAuthor || information || image) {
+          return `
+            <div class="event-detail">
+              ${ timeColumn(time) }
+              <div class="event-detail--description">
+                ${ mainDescription(title, author) }
+                ${ expandableDetails(aboutAuthor, information) }
+              </div>
+              ${ photo(image) }
+            </div>
+          `;
+        } else {
+          return '';
+        }
+      }).join("\n");
+    } else {
+      return '';
+    }
+  }
+
+  api.compile = (data) => {
+    const {events} = data;
 
     return `
       <section class="events" id="#events">
         <div class="container">
-          ${compiledEvents}
+          ${ compileEvents(events) }
         </div>
       </section>
     `;

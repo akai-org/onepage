@@ -81,7 +81,7 @@
     }
   }
 
-  @include respond-to(mobile) {
+  @include respond-to-smaller-than(tablet) {
     .container {
       align-items: center;
       flex-direction: column-reverse;
