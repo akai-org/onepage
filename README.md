@@ -7,22 +7,16 @@ Project of a onepage website template with interchangeable sections, dedicated t
 
 1. Install required dependencies
 ```
-npm install
+npm install -g yarn
+yarn
 ```
 
-2. Run gulp
+2. Run development server
 ```
-gulp
+yarn start
 ```
 
-Server will run at localhost:3000.
-
-## Update project base
-Add new remote
+3. Build for production
 ```
-git remote add base https://github.com/rrudol/gulp-starter.git
-```
-merge with master
-```
-git pull base master
+yarn build
 ```

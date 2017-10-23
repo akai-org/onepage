@@ -1,20 +1,12 @@
 const $ = require("jquery");
 
-const Home = require('./components/home');
-const About = require('./components/about');
-const DateAndVenue = require('./components/dateAndVenue');
-const Events = require('./components/events');
-const Gallery = require('./components/gallery')
-const Contact = require('./components/contact');
-const CollaborationPricing = require('./components/collaborationPricing');
-const Footer = require('./components/footer');
+const Components = require('./componentsLoader');
 
 const pageRenderer = (() => {
-  const allComponents = [
-    Home, About, DateAndVenue, Events, Gallery, Contact, CollaborationPricing, Footer
-  ];
+  const allComponents = Components;
+  let title = '';
 
-  const registerComponents = (components) => {
+  const registerComponents = (components = Components) => {
     $(() => {
       components.forEach(component => {
         component.api.componentReady();
@@ -22,37 +14,30 @@ const pageRenderer = (() => {
     });
   };
 
-  const render = () => {
+  const render = (data) => {
     let pageComponents = [];
-    let compiledPageComponents = [];
 
-    $.getJSON("./../config.json", config => {
-      const {title, components} = config;
-      $(document).prop("title", title);
-      compiledPageComponents = components.map(componentData => {
-        const {name, data} = componentData;
-        const component = allComponents.find(componentData => componentData.name === name);
-        if (component !== undefined) {
-          pageComponents.push(component);
-          return component.api.compile(data);
-        } else {
-          return ``;
-        }
-      });
-    })
-    .done(() => {
-      const compiled = compiledPageComponents.join("\n");
-      $("#content").append(compiled);
-      registerComponents(pageComponents);
-    })
-    .fail(() => {
-      alert("Error: fetching data failed.");
+    const {pageTitle, components} = data;
+    title = pageTitle;
+    let compiledPageComponents = components.map(componentData => {
+      const {name, data} = componentData;
+      const component = allComponents.find(componentData => componentData.name === name);
+      if (component !== undefined) {
+        pageComponents.push(component);
+        return component.api.compile(data);
+      } else {
+        return ``;
+      }
     });
+
+    return compiledPageComponents.join("\n");
   };
 
   return {
-    render: render
+    render: render,
+    registerComponents: registerComponents,
+    getTitle: () => { return title }
   }
 })();
 
-pageRenderer.render();
+module.exports = pageRenderer;

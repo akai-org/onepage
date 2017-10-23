@@ -1,6 +1,5 @@
 {
   "extends": "stylelint-config-sass-guidelines",
-  "processors": ["stylelint-processor-html"],
   "rules": {
     "max-empty-lines": 1,
     "max-nesting-depth": 4,
