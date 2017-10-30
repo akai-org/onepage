@@ -1,14 +1,11 @@
 const $ = require("jquery");
 const pageRenderer = require('./pageRenderer');
+const components = require('./componentsLoader');
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.config || false) {
-    $("body").append(
-      pageRenderer.render(window.config)
-    );
-    $(document).prop("title", pageRenderer.getTitle());
-    pageRenderer.registerComponents();
-  } else {
+  const isDev = $('title').text() === "Webpack App";
+
+  if (isDev) {
     $.getJSON("./../config.json")
       .done((config) => {
         $("body").append(
@@ -20,5 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .fail(() => {
         alert("Error: fetching data failed.");
       });
+  } else {
+    const pageComponents = components.filter(
+      component => return $(component.selector).length;
+    });
+    pageRenderer.registerComponents(pageComponents);
   }
 });
