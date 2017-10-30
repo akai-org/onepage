@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   } else {
     const pageComponents = components.filter(
-      component => return $(component.selector).length;
-    });
+      component => $(component.selector).length
+    );
     pageRenderer.registerComponents(pageComponents);
   }
 });
