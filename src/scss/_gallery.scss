@@ -1,6 +1,7 @@
 .gallery {
-  padding: 20px 0;
-
+  margin: 10px 0;
+  padding: 50px 0;
+  
   .gallery-heading {
     text-align: center;
 
@@ -44,16 +45,10 @@
     }
 
     @include respond-to(small-mobile) {
-      $small-mobile: 300px;
+      $small-mobile: 280px;
       height: $small-mobile/1.5;
       width: $small-mobile;
     }
-
-    @media only screen and (max-width: 340px) {
-      $small-mobile: 260px;
-      height: $small-mobile/1.5;
-      width: $small-mobile;
-    };
 
     img {
       height: auto;
