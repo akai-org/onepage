@@ -69,14 +69,14 @@ const Home = (() => {
   };
 
   api.compile = (data) => {
-    var {title, subtitle, description, primaryButton, seconadryButton, scrollButton} = data;
+    var {title, subtitle, description, primaryButton, secondaryButton, scrollButton} = data;
 
     return `
       <section class="home" id="home">
         <div class="container">
           <div class="home-topbar">
             <img src="img/logo.svg" alt="Logo" class="home-logo">
-            ${ button(seconadryButton, 'button button-alt') }
+            ${ button(secondaryButton, 'button button-alt') }
           </div>
           <div class="home-title">
             ${ headingSubtitle(subtitle) }
