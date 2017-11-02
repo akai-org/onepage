@@ -205,6 +205,52 @@
         }
       }
     },
+    {
+      "name": "roles",
+      "data": {
+        "title": "Dołącz do nas!",
+        "text": "Interesujesz się back-endem, front-endem, masz wyczucie designu czy może chcesz sprawdzić swoje zdolności do zarządzania i organizacji? Dołącz do nas, w każdej z tych ról będziesz mógł się realizować w AKAI.",
+        "sections": [
+          {
+            "image": {
+              "src": "img/photos/section-frontend.jpg",
+              "alt": "Front-end"
+            },
+            "name": "Front-end development",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "image": {
+              "src": "img/photos/section-backend.jpg",
+              "alt": "Back-end"
+            },
+            "name": "Back-end development",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "image": {
+              "src": "img/photos/section-design.jpg",
+              "alt": "Graphic design"
+            },
+            "name": "Graphic design",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          },
+          {
+            "image": {
+              "src": "img/photos/section-mobile.jpg",
+              "alt": "Mobile"
+            },
+            "name": "Mobile",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          }
+        ],
+        "cta": "Zdecydowany, żeby dołączyć?",
+        "contactButton": {
+          "text": "Skontaktuj się z nami",
+          "link": "#"
+        }
+      }
+    },
   	{
     	"name": "footer",
       "data": {

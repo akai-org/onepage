@@ -7,4 +7,5 @@ module.exports = [
   require('./components/collaborationPricing'),
   require('./components/footer'),
   require('./components/gallery'),
+  require('./components/roles')
 ];
