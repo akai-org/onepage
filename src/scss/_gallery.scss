@@ -1,16 +1,9 @@
-$img-width: $desktop;
-$img-height: $img-width/1.5;
-
-$img-width-medium: 600px;
-$img-height-medium: $img-width-medium/1.5;
-
-$img-width-small: 300px;
-$img-height-small: $img-width-small/1.5;
-
 .gallery {
-  padding: 20px 0;
+  margin: 10px 0;
+  padding: 50px 0;
 
   .gallery-heading {
+    
     text-align: center;
 
     &::after {
@@ -25,20 +18,37 @@ $img-height-small: $img-width-small/1.5;
 
   .gallery-slider {
     box-shadow: 0 3px 30px -5px rgba(0, 0, 0, 0.75);
-    height: $img-height;
     margin: auto;
     margin-bottom: 2%;
     overflow: hidden;
-    width: $img-width;
+
+    @include respond-to(large-desktop) {
+      height: $desktop/1.5;
+      width: $desktop;
+    }
+
+    @include respond-to(desktop) {
+      $desktop: $desktop - 100;
+      height: $desktop/1.5;
+      width: $desktop;
+    }
 
     @include respond-to(tablet) {
-      height: $img-height-medium;
-      width: $img-width-medium;
+      $tablet: $tablet - 100;
+      height: $tablet/1.5;
+      width: $tablet;
+    }
+
+    @include respond-to(mobile) {
+      $mobile: $mobile - 50;
+      height: $mobile/1.5;
+      width: $mobile;
     }
 
     @include respond-to(small-mobile) {
-      height: $img-height-small;
-      width: $img-width-small;
+      $small-mobile: 280px;
+      height: $small-mobile/1.5;
+      width: $small-mobile;
     }
 
     img {

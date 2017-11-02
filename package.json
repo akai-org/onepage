@@ -1,6 +1,6 @@
 {
   "name": "akai-onepage",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "repository": {
     "type": "git",
@@ -14,8 +14,8 @@
   "homepage": "https://github.com/akai-org/onepage#readme",
   "main": "app.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack --watch",
+    "build": "set NODE_ENV=production && webpack",
+    "start": "set NODE_ENV=development && webpack --watch",
     "test": "stylelint './src/scss/**/*.scss' && eslint './src/js/**/*.js'"
   },
   "engines": {
