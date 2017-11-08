@@ -86,7 +86,7 @@ const Home = (() => {
     const {title, subtitle, description, backgroundImg, primaryButton, secondaryButton, scrollButton} = data;
 
     return `
-      <section class="home" id="home" ${ background(backgroundImg) }">
+      <section class="home" id="home" ${ background(backgroundImg) }>
         <div class="container">
           <div class="home-topbar">
             <img src="img/logo.svg" alt="Logo" class="home-logo">
