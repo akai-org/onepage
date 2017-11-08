@@ -6,12 +6,13 @@
       "data": {
         "title": "Webstarter 2017",
         "subtitle": "Akai",
+        "backgroundImg": "img/background.png",
         "description": "Zbiór prelekcji wprowadzających w świat webdevelopmentu przygotowanych przez firmy IT we współpracy z Akademickim Kołem Aplikacji Internetowych.",
         "primaryButton": {
           "text": "Zarezerwuj miejsce",
           "link": "#"
         },
-        "seconadryButton": {
+        "secondaryButton": {
           "text": "Kontakt",
           "link": "#"
         },
