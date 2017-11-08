@@ -31,9 +31,7 @@ const Home = (() => {
                 case ".jpg":
                 case ".png":
                 case ".gif":
-                    return `
-                    background-image: url(${backgroundUrl}); 
-                `;
+                    return `style = "background-image: url('${backgroundUrl}');"`;
             }
         }
         return ``;
@@ -88,7 +86,7 @@ const Home = (() => {
     const {title, subtitle, description, backgroundImg, primaryButton, secondaryButton, scrollButton} = data;
 
     return `
-      <section class="home" id="home" style="${ background(backgroundImg) }">
+      <section class="home" id="home" ${ background(backgroundImg) }">
         <div class="container">
           <div class="home-topbar">
             <img src="img/logo.svg" alt="Logo" class="home-logo">
