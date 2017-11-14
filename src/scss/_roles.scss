@@ -2,7 +2,7 @@ $number-of-sections: 4;
 
 .roles {
   color: $heading-color;
-  padding: 50px 0;
+  padding: 50px 0 100px;
   text-align: center;
   width: 100%;
 
@@ -24,16 +24,27 @@ $number-of-sections: 4;
   }
 
   .section-detail {
-    @include clearfix;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
     margin: 80px 0;
 
-    @include respond-to(tablet) {
+    @include respond-to(desktop) {
+      justify-content: space-around;
       margin: 40px 0;
     }
 
+    @include respond-to(tablet) {
+      justify-content: space-around;
+    }
+
     @include respond-to-smaller-than(tablet) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 40px 0;
+    }
+
+    @include respond-to(mobile) {
       flex-wrap: wrap;
       justify-content: center;
       margin: 40px 0;
@@ -48,19 +59,20 @@ $number-of-sections: 4;
     }
 
     .section-photo {
-      margin: 0 30px;
-
       img {
         box-shadow: 0 3px 30px -5px rgba(0, 0, 0, 0.75);
         max-width: 500px;
 
-        @include respond-to(tablet) {
-          margin: 0;
+        @include respond-to(desktop) {
           max-width: 400px;
         }
 
+        @include respond-to(tablet) {
+          max-width: 350px;
+        }
+
         @include respond-to-smaller-than(tablet) {
-          max-width: 90%;
+          max-width: 500px;
         }
       }
     }
@@ -70,9 +82,23 @@ $number-of-sections: 4;
     }
 
     .section-text {
-      margin: 20px 30px;
       max-width: 500px;
       padding-top: 30px;
+
+      @include respond-to(desktop) {
+        max-width: 400px;
+      }
+
+      @include respond-to(tablet) {
+        padding-top: 0;
+        max-width: 350px;
+      }
+
+      @include respond-to-smaller-than(tablet) {
+        margin: 20px 0;
+        order: 2;
+        padding-top: 0;
+      }
 
       &--name {
         @include font-size(3.4);
@@ -83,6 +109,7 @@ $number-of-sections: 4;
 
         @include respond-to-smaller-than(tablet) {
           text-align: center;
+          margin: 20px 0;
         }
       }
 
@@ -91,19 +118,7 @@ $number-of-sections: 4;
 
         color: $text-color;
         line-height: 2.6rem;
-        margin: 0;
         text-align: left;
-      }
-
-      @include respond-to(tablet) {
-        margin: 20px;
-        padding: 0;
-      }
-
-      @include respond-to-smaller-than(tablet) {
-        margin: 20px 0;
-        order: 2;
-        padding-top: 0;
       }
     }
   }

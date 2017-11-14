@@ -35,7 +35,7 @@ const Roles = (() => {
       return sections.map((section) => {
         const {image, name, description} = section;
         sideIterator++;
-        if (image || name || description) {
+        if (image && name && description) {
           return `
           <div class="section-detail">
             <div class="section-photo ${ side( sideIterator ) }">
@@ -61,6 +61,17 @@ const Roles = (() => {
     }
   }
 
+  const contact = (cta, contactButton) => {
+    if (cta && contactButton) {
+      return `
+      <p class="cta">${cta}</p>
+      <a href="${contactButton.link}" class="contact-btn">${contactButton.text}</a>
+      `;
+    } else {
+      return '';
+    }
+  }
+
   api.compile = (data) => {
     const {title, text, sections, cta, contactButton} = data;
     return `
@@ -69,9 +80,7 @@ const Roles = (() => {
           ${ heading(title) }
           ${ copy(text) }
           ${ compileSections(sections) }
-
-          <p class="cta">${cta}</p>
-          <a href="${contactButton.link}" class="contact-btn">${contactButton.text}</a>
+          ${ contact(cta, contactButton) }
           </div>
       </section>
     `;
