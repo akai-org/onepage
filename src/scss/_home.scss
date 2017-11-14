@@ -2,7 +2,7 @@ $home-color: #eee;
 
 .home {
   background-attachment: fixed;
-  background-image: url('../img/background.png');
+  background-color: $section-dark-background !important; /* overwrite section:nth-child(2n+1) selector */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

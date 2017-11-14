@@ -23,6 +23,20 @@ const Home = (() => {
     }
   };
 
+    const background = (backgroundUrl) => {
+        if(typeof backgroundUrl === "string") {
+            let ext = backgroundUrl.substring((backgroundUrl.length - 4), backgroundUrl.length);
+            //^ This gets the last four characters of the string 'backgroundUrl'.
+            switch (ext) {
+                case ".jpg":
+                case ".png":
+                case ".gif":
+                    return `style = "background-image: url('${backgroundUrl}');"`;
+            }
+        }
+        return ``;
+    };
+
   const headingDescription = (text) => {
     if (text) {
       return `
@@ -69,14 +83,14 @@ const Home = (() => {
   };
 
   api.compile = (data) => {
-    var {title, subtitle, description, primaryButton, seconadryButton, scrollButton} = data;
+    const {title, subtitle, description, backgroundImg, primaryButton, secondaryButton, scrollButton} = data;
 
     return `
-      <section class="home" id="home">
+      <section class="home" id="home" ${ background(backgroundImg) }>
         <div class="container">
           <div class="home-topbar">
             <img src="img/logo.svg" alt="Logo" class="home-logo">
-            ${ button(seconadryButton, 'button button-alt') }
+            ${ button(secondaryButton, 'button button-alt') }
           </div>
           <div class="home-title">
             ${ headingSubtitle(subtitle) }
