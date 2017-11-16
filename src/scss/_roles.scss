@@ -90,8 +90,8 @@ $number-of-sections: 4;
       }
 
       @include respond-to(tablet) {
-        padding-top: 0;
         max-width: 350px;
+        padding-top: 0;
       }
 
       @include respond-to-smaller-than(tablet) {
@@ -108,8 +108,8 @@ $number-of-sections: 4;
         text-align: left;
 
         @include respond-to-smaller-than(tablet) {
-          text-align: center;
           margin: 20px 0;
+          text-align: center;
         }
       }
 
