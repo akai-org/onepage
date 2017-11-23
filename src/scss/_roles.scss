@@ -73,6 +73,7 @@ $number-of-sections: 4;
 
         @include respond-to-smaller-than(tablet) {
           max-width: 500px;
+          width: 100%;
         }
       }
     }
@@ -119,6 +120,10 @@ $number-of-sections: 4;
         color: $text-color;
         line-height: 2.6rem;
         text-align: left;
+
+        @include respond-to-smaller-than(mobile) {
+          text-align: center;
+        }
       }
     }
   }
