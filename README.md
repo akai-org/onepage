@@ -7,13 +7,12 @@ Project of a onepage website template with interchangeable sections, dedicated t
 
 1. Install required dependencies
 ```
-npm install -g yarn
 yarn
 ```
 
 2. Run development server
 ```
-yarn start
+yarn develop
 ```
 
 3. Build for production
