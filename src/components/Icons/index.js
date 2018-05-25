@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const Icons = ({icons}) => (
+const Icons = ({ icons }) => (
   <section className="date" id="date">
     <div className="container">
       <div className="row">
-        { icons.map( ({icon, big, title, caption}) => (
+        {icons.map(({ icon, big, title, caption }) => (
           <div className="column">
             <img src={icon} alt="" />
             <span className="date-value">{big}</span>

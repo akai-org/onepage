@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Akademickie Koło Aplikacji Interentowych',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
