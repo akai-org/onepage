@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import './style.scss';
 
 const Footer = () => (
   <section className="footer" id="footer">
