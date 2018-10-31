@@ -1,0 +1,103 @@
+{
+  "title": "Onepage",
+  "components": [
+    {
+      "name": "home",
+      "data": {
+        "title": "Camp #Google",
+        "subtitle": "AKAI",
+        "backgroundImg": "/img/background.png",
+        "description": "Kolejny rok akademicki nadszedł, zatem my ruszamy z kolejnym AKAI Campem, gdzie oprócz standardowych prelekcji, dowiecie się również o możliwości odbycia praktyk/pracy w Google, które pomogło w organizacji tego wydarzenia.",
+        "primaryButton": {
+          "text": "Zarezerwuj miejsce",
+          "link": "#"
+        },
+        "secondaryButton": {
+          "text": "Kontakt",
+          "link": "#"
+        },
+        "scrollButton": {
+          "text": "Dowiedz się więcej",
+          "link": "#"
+        }
+      }
+    },
+    {
+      "name": "about",
+      "data": {
+        "title": "Z roku na rok rozwój technologiczny nabiera rozpędu",
+        "subtitle": "O wydarzeniu",
+        "text": [
+          "Jeśli interesujesz się programowaniem, aplikacjami internetowymi i JavaScriptem, a pomiędzy intensywnymi dawkami wiedzy lubisz nabrać siły przy pomocy pizzy, to nie może Ciebie zabraknąć!",
+          "Widzimy się już 15 listopada (czwartek) o godzinie 18:30, w sali L053BT Centrum Wykładowego Politechniki Poznańskiej."
+        ],
+        "image": {
+          "src": "http://placehold.it/350x350",
+          "alt": "Photo"
+        }
+      }
+    },
+    {
+      "name": "dateAndVenue",
+      "data": {
+        "date": "15.11",
+        "time": "18:30",
+        "venue": "Centrum wykładowe Politechniki Poznańskiej",
+        "venueDetails": "Sala L053BT",
+        "calendar": {
+          "google": "#",
+          "apple": "#"
+        }
+      }
+    },
+    {
+      "name": "events",
+      "data": {
+        "events": [
+          {
+            "title": "Life of code at Google",
+            "time": "18:30",
+            "author": "Jan Łukaszewicz, Google",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": ["informację o możliwości praktyk/pracy w Google"],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          },
+          {
+            "title": "...",
+            "time": "10:00",
+            "author": "Radomir Wojtera, Egnyte",
+            "aboutAuthor": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mi tellus, mattis sed faucibus sit amet, euismod in urna. Nulla id felis mollis, condimentum lectus vel, pulvinar libero. Quisque dictum id felis a egestas. Praesent risus mi, feugiat vel dictum nec, maximus vitae risus. Aenean et arcu lectus. Etiam eros orci, semper a convallis et, posuere non ex. Quisque tortor enim, cursus at elit et, pulvinar bibendum mi. Praesent tempor molestie turpis, in porta velit sodales lobortis.",
+            "information": [
+              "opowie o swoich doświadczeniach w pisaniu gier w JavaScripcie"
+            ],
+            "image": {
+              "src": "http://placehold.it/350x350",
+              "alt": "Photo"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "footer",
+      "data": {
+        "title": "AKAI webstarter",
+        "copy": "&copy; 2017 Akademickie Koło Aplikacji Internetowych",
+        "email": "webstarter@akai.org.pl",
+        "socials": [
+          {
+            "icon": "fa-facebook",
+            "link": "https://www.facebook.com/akai.pp"
+          },
+          {
+            "icon": "fa-twitter",
+            "link": "https://twitter.com/akai.pp"
+          }
+        ]
+      }
+    }
+  ]
+}
